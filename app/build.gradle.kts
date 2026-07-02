@@ -1,6 +1,6 @@
 /*
  * ImageToolbox is an image editor for android
- * Copyright (c) 2024 T8RIN (Malik Mukhametzyanov)
+ * Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,16 +23,16 @@ plugins {
 }
 
 android {
-    var isFoss = false
+    val supportedAbi = arrayOf("armeabi-v7a", "arm64-v8a", "x86_64")
 
-    var supportedAbi = arrayOf("armeabi-v7a", "arm64-v8a", "x86_64")
-
-    namespace = "ru.tech.imageresizershrinker"
+    namespace = "com.t8rin.imagetoolbox"
 
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
 
+        //Maintained for compatibility with old version
         applicationId = "ru.tech.imageresizershrinker"
+
         versionCode = libs.versions.versionCode.get().toIntOrNull()
         versionName = System.getenv("VERSION_NAME") ?: libs.versions.versionName.get()
 
@@ -41,8 +41,6 @@ android {
             //noinspection ChromeOsAbiSupport
             abiFilters += supportedAbi.toSet()
         }
-
-        setProperty("archivesBaseName", "image-toolbox-$versionName${if (isFoss) "-foss" else ""}")
     }
 
     androidResources {
@@ -54,7 +52,7 @@ android {
     productFlavors {
         create("foss") {
             dimension = "app"
-            isFoss = true
+            versionNameSuffix = "-foss"
             extra.set("gmsEnabled", false)
         }
         create("market") {
@@ -64,6 +62,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+            resValue("string", "app_launcher_name", "Image Toolbox DEBUG")
+            resValue("string", "file_provider", "com.t8rin.imagetoolbox.fileprovider.debug")
+        }
         release {
             isMinifyEnabled = true
             isShrinkResources = true
@@ -71,28 +74,48 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            resValue("string", "app_launcher_name", "Image Toolbox")
+            resValue("string", "file_provider", "com.t8rin.imagetoolbox.fileprovider")
         }
         create("benchmark") {
             initWith(buildTypes.getByName("release"))
             signingConfig = signingConfigs.getByName("debug")
             matchingFallbacks += listOf("release")
-            isMinifyEnabled = false
-            isShrinkResources = false
         }
     }
 
     splits {
         abi {
-            isEnable = true
+            // Detect app bundle and conditionally disable split abis
+            // This is needed due to a "Sequence contains more than one matching element" error
+            // present since AGP 8.9.0, for more info see:
+            // https://issuetracker.google.com/issues/402800800
+
+            // AppBundle tasks usually contain "bundle" in their name
+            //noinspection WrongGradleMethod
+            val isBuildingBundle =
+                gradle.startParameter.taskNames.any { it.lowercase().contains("bundle") }
+
+            // Disable split abis when building appBundle
+            isEnable = !isBuildingBundle
             reset()
             //noinspection ChromeOsAbiSupport
             include(*supportedAbi)
             isUniversalApk = true
         }
     }
+
+    lint {
+        disable += "Instantiatable"
+    }
+
     packaging {
         jniLibs {
+            keepDebugSymbols.add("**/*.so")
             pickFirsts.add("lib/*/libcoder.so")
+            pickFirsts.add("**/libc++_shared.so")
+            pickFirsts.add("**/libdatstore_shared_counter.so")
+            useLegacyPackaging = true
         }
         resources {
             excludes += "META-INF/"
@@ -104,33 +127,76 @@ android {
         }
     }
 
-    aboutLibraries {
-        // Remove the "generated" timestamp to allow for reproducible builds
-        excludeFields = arrayOf("generated")
+    buildFeatures {
+        resValues = true
     }
+}
+
+base {
+    archivesName = "image-toolbox-${android.defaultConfig.versionName}"
+}
+
+aboutLibraries {
+    export.excludeFields.addAll("generated")
 }
 
 dependencies {
     implementation(projects.feature.root)
     implementation(projects.feature.mediaPicker)
     implementation(projects.feature.quickTiles)
+
+    implementation(projects.lib.opencvTools)
+    implementation(projects.lib.neuralTools)
+    implementation(projects.lib.collages)
+
     implementation(libs.bouncycastle.pkix)
     implementation(libs.bouncycastle.provider)
+    implementation(libs.pdfbox)
+
+    "marketImplementation"(libs.quickie.bundled)
+    "fossImplementation"(libs.quickie.foss)
 }
 
+dependencySubstitution {
+    substitute(
+        dependency = "com.caverock:androidsvg-aar:1.4",
+        using = "com.github.deckerst:androidsvg:cc9d59a88f"
+    )
+}
 
-afterEvaluate {
-    android.productFlavors.forEach { flavor ->
-        tasks.matching { task ->
-            listOf("GoogleServices", "Crashlytics").any {
-                task.name.contains(it)
-            }.and(
-                task.name.contains(
-                    flavor.name.replaceFirstChar(Char::uppercase)
-                )
-            )
-        }.forEach { task ->
-            task.enabled = flavor.extra.get("gmsEnabled") == true
+androidComponents {
+    beforeVariants(selector().all()) { variantBuilder ->
+        val flavorName = variantBuilder.productFlavors.firstOrNull()?.second.orEmpty()
+        val flavorCap = flavorName.replaceFirstChar(Char::uppercase)
+
+        val gmsEnabled = android.productFlavors
+            .findByName(flavorName)
+            ?.extra
+            ?.get("gmsEnabled") == true
+
+        tasks.configureEach {
+            val isTargetTask = listOf("GoogleServices", "Crashlytics").any { marker ->
+                name.contains(marker)
+            } && name.contains(flavorCap)
+
+            if (isTargetTask) {
+                enabled = gmsEnabled
+            }
         }
     }
+}
+
+fun Project.dependencySubstitution(action: DependencySubstitutions.() -> Unit) {
+    allprojects {
+        configurations.all {
+            resolutionStrategy.dependencySubstitution(action)
+        }
+    }
+}
+
+fun DependencySubstitutions.substitute(
+    dependency: String,
+    using: String
+) {
+    substitute(module(dependency)).using(module(using))
 }

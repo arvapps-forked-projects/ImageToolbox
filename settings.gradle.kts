@@ -1,6 +1,6 @@
 /*
  * ImageToolbox is an image editor for android
- * Copyright (c) 2024 T8RIN (Malik Mukhametzyanov)
+ * Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,7 +58,7 @@ dependencyResolutionManagement {
 }
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "Image_Toolbox"
+rootProject.name = "ImageToolbox"
 
 include(":app")
 
@@ -72,7 +72,7 @@ include(":feature:erase-background")
 include(":feature:single-edit")
 include(":feature:pdf-tools")
 include(":feature:resize-convert")
-include(":feature:generate-palette")
+include(":feature:palette-tools")
 include(":feature:delete-exif")
 include(":feature:compare")
 include(":feature:weight-resize")
@@ -101,13 +101,25 @@ include(":feature:image-splitting")
 include(":feature:color-tools")
 include(":feature:webp-tools")
 include(":feature:noise-generation")
-include(":feature:colllage-maker")
+include(":feature:texture-generation")
+include(":feature:collage-maker")
 include(":feature:libraries-info")
 include(":feature:markup-layers")
 include(":feature:base64-tools")
 include(":feature:checksum-tools")
 include(":feature:mesh-gradients")
 include(":feature:edit-exif")
+include(":feature:image-cutting")
+include(":feature:audio-cover-extractor")
+include(":feature:library-details")
+include(":feature:wallpapers-export")
+include(":feature:ascii-art")
+include(":feature:ai-tools")
+include(":feature:color-library")
+include(":feature:app-logs")
+include(":feature:shader-studio")
+include(":feature:help")
+include(":feature:usage-statistics")
 
 include(":feature:root")
 
@@ -118,5 +130,24 @@ include(":core:domain")
 include(":core:ui")
 include(":core:di")
 include(":core:crash")
+include(":core:ksp")
+include(":core:utils")
+
+include(":lib:neural-tools")
+include(":lib:collages")
+include(":lib:ascii")
+include(":lib:opencv-tools")
+include(":lib:documentscanner")
+include(":lib:snowfall")
+include(":lib:curves")
+include(":lib:dynamic-theme")
+include(":lib:palette")
+include(":lib:modalsheet")
+include(":lib:qrose")
+include(":lib:cropper")
+include(":lib:colors")
+include(":lib:gesture")
+include(":lib:image")
+include(":lib:zoomable")
 
 include(":benchmark")

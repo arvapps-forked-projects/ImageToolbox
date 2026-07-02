@@ -1,6 +1,6 @@
 /*
  * ImageToolbox is an image editor for android
- * Copyright (c) 2024 T8RIN (Malik Mukhametzyanov)
+ * Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,25 +27,26 @@ import org.gradle.kotlin.dsl.provideDelegate
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
+import org.jetbrains.kotlin.gradle.dsl.KotlinBaseExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
-import org.jetbrains.kotlin.gradle.dsl.KotlinTopLevelExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 internal fun Project.configureKotlinAndroid(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension,
     createFlavors: Boolean = true
 ) {
     commonExtension.apply {
-        compileSdk = libs.findVersion("androidCompileSdk").get().toString().toIntOrNull()
+        compileSdk = libs.versions.androidCompileSdk.get().toIntOrNull()
+        compileSdkExtension = libs.versions.androidCompileSdkExtension.get().toIntOrNull()
 
-        defaultConfig {
-            minSdk = libs.findVersion("androidMinSdk").get().toString().toIntOrNull()
+        defaultConfig.apply {
+            minSdk = libs.versions.androidMinSdk.get().toIntOrNull()
         }
 
         if (createFlavors) {
             flavorDimensions += "app"
 
-            productFlavors {
+            productFlavors.apply {
                 create("foss") {
                     dimension = "app"
                 }
@@ -55,51 +56,52 @@ internal fun Project.configureKotlinAndroid(
             }
         }
 
-        compileOptions {
+        compileOptions.apply {
             sourceCompatibility = javaVersion
             targetCompatibility = javaVersion
             isCoreLibraryDesugaringEnabled = true
         }
 
-        buildFeatures {
+        buildFeatures.apply {
             compose = false
             aidl = false
-            renderScript = false
             shaders = false
             buildConfig = false
             resValues = false
         }
 
-        packaging {
+        packaging.apply {
             resources {
                 excludes.add("/META-INF/{AL2.0,LGPL2.1}")
             }
         }
 
-        lint {
+        lint.apply {
             disable += "UsingMaterialAndMaterial3Libraries"
             disable += "ModifierParameter"
+            disable += "ConvertLongToDuration"
         }
     }
 
     configureKotlin<KotlinAndroidProjectExtension>()
 
     dependencies {
-        add("coreLibraryDesugaring", libs.findLibrary("desugaring").get())
+        coreLibraryDesugaring(libs.desugaring)
     }
 }
 
 val Project.javaVersion: JavaVersion
     get() = JavaVersion.toVersion(
-        libs.findVersion("jvmTarget").get().toString()
+        libs.versions.jvmTarget.get()
     )
 
 /**
  * Configure base Kotlin options
  */
-private inline fun <reified T : KotlinTopLevelExtension> Project.configureKotlin() = configure<T> {
+private inline fun <reified T : KotlinBaseExtension> Project.configureKotlin() = configure<T> {
     val args = listOf(
         "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+        "-opt-in=androidx.compose.material3.ExperimentalMaterial3ExpressiveApi",
         "-opt-in=androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi",
         "-opt-in=androidx.compose.animation.ExperimentalAnimationApi",
         "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
@@ -107,6 +109,16 @@ private inline fun <reified T : KotlinTopLevelExtension> Project.configureKotlin
         "-opt-in=androidx.compose.ui.unit.ExperimentalUnitApi",
         "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
         "-opt-in=kotlinx.coroutines.FlowPreview",
+        "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+        "-opt-in=com.arkivanov.decompose.ExperimentalDecomposeApi",
+        "-opt-in=coil3.annotation.ExperimentalCoilApi",
+        "-opt-in=coil3.annotation.DelicateCoilApi",
+        "-opt-in=kotlin.contracts.ExperimentalContracts",
+        "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
+        "-opt-in=androidx.compose.ui.text.ExperimentalTextApi",
+        "-opt-in=kotlinx.coroutines.DelicateCoroutinesApi",
+        "-Xannotation-default-target=param-property",
+        "-XXLanguage:+PropertyParamAnnotationDefaultTargetMode"
     )
     // Treat all Kotlin warnings as errors (disabled by default)
     // Override by setting warningsAsErrors=true in your ~/.gradle/gradle.properties
@@ -116,7 +128,7 @@ private inline fun <reified T : KotlinTopLevelExtension> Project.configureKotlin
         is KotlinJvmProjectExtension -> compilerOptions
         else -> error("Unsupported project extension $this ${T::class}")
     }.apply {
-        jvmTarget = JvmTarget.fromTarget(libs.findVersion("jvmTarget").get().toString())
+        jvmTarget = JvmTarget.fromTarget(libs.versions.jvmTarget.get())
         allWarningsAsErrors = warningsAsErrors.toBoolean()
         freeCompilerArgs.addAll(args)
     }

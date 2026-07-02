@@ -1,6 +1,6 @@
 /*
  * ImageToolbox is an image editor for android
- * Copyright (c) 2024 T8RIN (Malik Mukhametzyanov)
+ * Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  * along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
  */
 
+import com.t8rin.imagetoolbox.implementation
+import com.t8rin.imagetoolbox.ksp
 import com.t8rin.imagetoolbox.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -29,8 +31,9 @@ class ImageToolboxHiltPlugin : Plugin<Project> {
             apply(plugin = "com.google.devtools.ksp")
 
             dependencies {
-                "implementation"(libs.findLibrary("hilt").get())
-                "ksp"(libs.findLibrary("dagger.hilt.compiler").get())
+                implementation(libs.dagger.hilt.android)
+                ksp(libs.dagger.hilt.compiler)
+                ksp(libs.kotlin.metadata.jvm)
             }
         }
     }

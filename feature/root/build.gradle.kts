@@ -1,6 +1,6 @@
 /*
  * ImageToolbox is an image editor for android
- * Copyright (c) 2024 T8RIN (Malik Mukhametzyanov)
+ * Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ plugins {
     alias(libs.plugins.image.toolbox.compose)
 }
 
-android.namespace = "ru.tech.imageresizershrinker.feature.root"
+android.namespace = "com.t8rin.imagetoolbox.feature.root"
 
 dependencies {
     implementation(projects.feature.main)
@@ -34,7 +34,7 @@ dependencies {
     implementation(projects.feature.weightResize)
     implementation(projects.feature.compare)
     implementation(projects.feature.deleteExif)
-    implementation(projects.feature.generatePalette)
+    implementation(projects.feature.paletteTools)
     implementation(projects.feature.resizeConvert)
     implementation(projects.feature.pdfTools)
     implementation(projects.feature.singleEdit)
@@ -61,11 +61,23 @@ dependencies {
     implementation(projects.feature.colorTools)
     implementation(projects.feature.webpTools)
     implementation(projects.feature.noiseGeneration)
-    implementation(projects.feature.colllageMaker)
+    implementation(projects.feature.textureGeneration)
+    implementation(projects.feature.collageMaker)
     implementation(projects.feature.librariesInfo)
     implementation(projects.feature.markupLayers)
     implementation(projects.feature.base64Tools)
     implementation(projects.feature.checksumTools)
     implementation(projects.feature.meshGradients)
     implementation(projects.feature.editExif)
+    implementation(projects.feature.imageCutting)
+    implementation(projects.feature.audioCoverExtractor)
+    implementation(projects.feature.libraryDetails)
+    implementation(projects.feature.wallpapersExport)
+    implementation(projects.feature.asciiArt)
+    implementation(projects.feature.aiTools)
+    implementation(projects.feature.colorLibrary)
+    implementation(projects.feature.appLogs)
+    implementation(projects.feature.shaderStudio)
+    implementation(projects.feature.help)
+    implementation(projects.feature.usageStatistics)
 }
