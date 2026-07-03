@@ -36,7 +36,8 @@ internal fun CausticsParams(
             value = value.backgroundColor.toColor(),
             onValueChange = {
                 onValueChange(value.copy(backgroundColor = it.toModel()))
-            }
+            },
+            shape = ShapeDefaults.top
         )
         FloatParam(
             value = value.scale,
@@ -72,13 +73,7 @@ internal fun CausticsParams(
             value = value.time,
             title = stringResource(R.string.time),
             range = 0f..10f,
-            onValueChange = { onValueChange(value.copy(time = it)) }
-        )
-        IntParam(
-            value = value.samples,
-            title = stringResource(R.string.samples),
-            range = 1f..32f,
-            onValueChange = { onValueChange(value.copy(samples = it)) },
+            onValueChange = { onValueChange(value.copy(time = it)) },
             shape = ShapeDefaults.bottom
         )
     }

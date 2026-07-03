@@ -34,7 +34,8 @@ internal fun PlasmaParams(
         ColorParam(
             title = stringResource(R.string.color),
             value = value.color.toColor(),
-            onValueChange = { onValueChange(value.copy(color = it.toModel())) }
+            onValueChange = { onValueChange(value.copy(color = it.toModel())) },
+            shape = ShapeDefaults.top
         )
         FloatParam(
             value = value.turbulence,
@@ -45,7 +46,7 @@ internal fun PlasmaParams(
         FloatParam(
             value = value.scaling,
             title = stringResource(R.string.scaling),
-            range = 0f..10f,
+            range = 0f..1f,
             onValueChange = { onValueChange(value.copy(scaling = it)) },
             shape = ShapeDefaults.bottom
         )

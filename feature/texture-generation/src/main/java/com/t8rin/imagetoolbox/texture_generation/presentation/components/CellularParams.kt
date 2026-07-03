@@ -37,7 +37,8 @@ internal fun CellularParams(
         ColorParam(
             title = stringResource(R.string.color),
             value = value.color.toColor(),
-            onValueChange = { onValueChange(value.copy(color = it.toModel())) }
+            onValueChange = { onValueChange(value.copy(color = it.toModel())) },
+            shape = ShapeDefaults.top
         )
         FloatParam(
             value = value.scale,
@@ -80,18 +81,6 @@ internal fun CellularParams(
             title = "F2",
             range = -5f..5f,
             onValueChange = { onValueChange(value.copy(f2 = it)) }
-        )
-        FloatParam(
-            value = value.f3,
-            title = "F3",
-            range = -5f..5f,
-            onValueChange = { onValueChange(value.copy(f3 = it)) }
-        )
-        FloatParam(
-            value = value.f4,
-            title = "F4",
-            range = -5f..5f,
-            onValueChange = { onValueChange(value.copy(f4 = it)) }
         )
         FloatParam(
             value = value.randomness,
