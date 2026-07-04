@@ -9,7 +9,7 @@ versionCode = "251"
 
 jvmTarget = "21"
 
-imageToolboxLibs = "7.1.0"
+imageToolboxLibs = "7.1.1"
 trickle = "1.8.2"
 evaluator = "1.0.0"
 quickie = "1.18.1"
@@ -45,7 +45,7 @@ gms = "4.5.0"
 
 ktor = "3.5.1"
 coil = "3.5.0"
-dotlottieAndroid = "0.14.3"
+dotlottieAndroid = "0.15.0"
 appCompat = "1.8.0-alpha01"
 androidxCore = "1.19.0"
 desugaring = "2.1.5"

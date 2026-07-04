@@ -83,11 +83,6 @@ fun DocumentScannerContent(
 ) {
     var showExitDialog by rememberSaveable { mutableStateOf(false) }
 
-    val onBack = {
-        if (component.haveChanges) showExitDialog = true
-        else component.onGoBack()
-    }
-
     val savePdfLauncher = rememberFileCreator(
         mimeType = MimeType.Pdf,
         onSuccess = component::savePdfTo
@@ -145,7 +140,7 @@ fun DocumentScannerContent(
     }
 
     AdaptiveLayoutScreen(
-        shouldDisableBackHandler = !component.haveChanges,
+        shouldDisableBackHandler = false,
         title = {
             Text(
                 text = stringResource(R.string.document_scanner),
@@ -155,7 +150,9 @@ fun DocumentScannerContent(
         topAppBarPersistentActions = {
             TopAppBarEmoji()
         },
-        onGoBack = onBack,
+        onGoBack = {
+            showExitDialog = true
+        },
         actions = {},
         imagePreview = {
             if (!isPortrait) previewBlock()

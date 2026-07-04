@@ -41,6 +41,7 @@ import coil3.request.transformations
 import coil3.transform.Transformation
 import com.t8rin.imagetoolbox.core.resources.Icons
 import com.t8rin.imagetoolbox.core.resources.R
+import com.t8rin.imagetoolbox.core.resources.icons.Brick
 import com.t8rin.imagetoolbox.core.resources.icons.Build
 import com.t8rin.imagetoolbox.core.ui.widget.controls.selection.DataSelector
 import com.t8rin.imagetoolbox.core.ui.widget.image.Picture
@@ -82,7 +83,10 @@ fun TextureParamsSelection(
                 },
                 entries = TextureFilterType.entries,
                 title = stringResource(R.string.texture_type),
-                titleIcon = null,
+                titleIcon = Icons.TwoTone.Brick,
+                badgeContent = {
+                    Text(TextureFilterType.entries.size.toString())
+                },
                 itemContentText = {
                     Row(
                         verticalAlignment = Alignment.CenterVertically
@@ -98,7 +102,7 @@ fun TextureParamsSelection(
                                     .build()
                             },
                             modifier = Modifier
-                                .size(24.dp)
+                                .size(28.dp)
                                 .offset(x = (-2).dp),
                             shape = ShapeDefaults.mini
                         )
@@ -108,8 +112,9 @@ fun TextureParamsSelection(
 
                     null
                 },
-                chipHeight = 42.dp,
-                spanCount = 3,
+                chipHeight = 46.dp,
+                minSpanCount = 2,
+                spanCount = 4,
                 containerColor = MaterialTheme.colorScheme.surface,
                 shape = ShapeDefaults.default
             )

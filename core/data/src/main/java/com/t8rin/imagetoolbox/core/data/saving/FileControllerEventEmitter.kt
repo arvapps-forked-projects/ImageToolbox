@@ -15,14 +15,29 @@
  * along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
  */
 
-package com.t8rin.imagetoolbox.texture_generation.domain.model
+package com.t8rin.imagetoolbox.core.data.saving
 
-enum class CellularGridType(
-    val value: Int
-) {
-    Random(0),
-    Square(1),
-    Hexagonal(2),
-    Octagonal(3),
-    Triangular(4)
+import android.content.IntentSender
+import kotlinx.coroutines.flow.Flow
+
+interface FileControllerEventEmitter {
+    val events: Flow<FileControllerEvent>
+
+    fun onDeleteOriginalsPermissionResult(
+        requestId: Long,
+        granted: Boolean
+    )
+}
+
+sealed interface FileControllerEvent {
+    data class RequestDeleteOriginalsPermission(
+        val requestId: Long,
+        val intentSender: IntentSender,
+        val count: Int
+    ) : FileControllerEvent
+
+    data class OriginalFilesDeleteResult(
+        val deleted: Int,
+        val failed: Int
+    ) : FileControllerEvent
 }

@@ -15,14 +15,24 @@
  * along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
  */
 
-package com.t8rin.imagetoolbox.texture_generation.domain.model
+package com.t8rin.imagetoolbox.core.data.coil
 
-enum class CellularGridType(
-    val value: Int
-) {
-    Random(0),
-    Square(1),
-    Hexagonal(2),
-    Octagonal(3),
-    Triangular(4)
+import coil3.map.Mapper
+import coil3.request.Options
+import coil3.toUri
+import com.t8rin.imagetoolbox.core.utils.UriReplacements
+
+internal object OriginalUriMapper : Mapper<Any, Any> {
+    override fun map(
+        data: Any,
+        options: Options
+    ): Any? = when (data) {
+        is String -> UriReplacements.resolve(data).takeIf { it != data }
+        is android.net.Uri -> UriReplacements.resolve(data).takeIf { it != data }
+        is coil3.Uri -> UriReplacements.resolve(data.toString())
+            .takeIf { it != data.toString() }
+            ?.toUri()
+
+        else -> null
+    }
 }
