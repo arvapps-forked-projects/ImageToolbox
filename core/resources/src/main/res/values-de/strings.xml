@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -22,7 +23,7 @@
     <string name="resize_type">Methode</string>
     <string name="explicit">Explizit</string>
     <string name="no_palette">Kann Farbpalette aus gewähltem Bild nicht erzeugen</string>
-    <string name="folder">Ausgabeverzeichnis</string>
+    <string name="folder">Ausgabeordner</string>
     <string name="def">Standardeinstellung</string>
     <string name="custom">Benutzerdefiniert</string>
     <string name="by_bytes_resize_sub">Ändern der Größe eines Bildes entsprechend der angegebenen Größe in KB</string>
@@ -46,8 +47,8 @@
     <string name="issue_tracker_sub">Sende Fehlermeldungen und Änderungswünsche hierhin</string>
     <string name="help_translate">Hilf beim Übersetzen</string>
     <string name="smth_went_wrong">Etwas ging schief: %1$s</string>
-    <string name="image_too_large_preview">Bild ist zu groß für die Vorschau, es wird aber trotzdem versucht es zu speichern</string>
-    <string name="loading">Lade…</string>
+    <string name="image_too_large_preview">Bild ist zu groß für die Vorschau, es wird aber trotzdem versucht, es zu speichern</string>
+    <string name="loading">Laden…</string>
     <string name="pick_image">Zum Starten Bild wählen</string>
     <string name="width">Breite %1$s</string>
     <string name="reset_image">Bild zurücksetzen</string>
@@ -58,7 +59,7 @@
     <string name="add_tag">Tag hinzufügen</string>
     <string name="flexible">Flexibel</string>
     <string name="pick_image_alt">Bild auswählen</string>
-    <string name="app_closing">Schließe App</string>
+    <string name="app_closing">App wird geschlossen</string>
     <string name="reset">Zurücksetzen</string>
     <string name="app_closing_sub">Bist du sicher, dass du die App schließen willst?</string>
     <string name="close">Schließen</string>
@@ -72,20 +73,20 @@
     <string name="no_exif">Keine EXIF Daten gefunden</string>
     <string name="cancel">Abbrechen</string>
     <string name="presets">Voreinstellungen</string>
-    <string name="image_not_saved">Speichern</string>
+    <string name="image_not_saved">Wird gespeichert</string>
     <string name="clear">Leeren</string>
     <string name="clear_exif_sub">Alle EXIF-Daten des Bildes werden gelöscht. Dies kann nicht rückgängig gemacht werden!</string>
     <string name="save">Speichern</string>
     <string name="clear_exif">EXIF leeren</string>
     <string name="single_edit">Einzelne Bearbeitung</string>
-    <string name="image_not_saved_sub">Alle ungespeicherten Änderungen gehen verloren, wenn Du den Dialog jetzt schließt</string>
+    <string name="image_not_saved_sub">Alle ungespeicherten Änderungen gehen verloren, wenn Du den Vorgang jetzt schließt</string>
     <string name="pick_color">Farbwähler</string>
     <string name="update">Aktualisierung</string>
     <string name="check_source_code">Quellcode</string>
     <string name="image">Bild</string>
     <string name="keep_exif">EXIF behalten</string>
-    <string name="check_source_code_sub">Aktuelle Meldungen, Problemmeldungen und mehr</string>
-    <string name="pick_color_sub">Farbe aus einem Bild wählen und diese kopieren oder teilen</string>
+    <string name="check_source_code_sub">Erhalte die neuesten Updates, diskutiere Probleme und vieles mehr</string>
+    <string name="pick_color_sub">Farbe aus Bild wählen, kopieren oder teilen</string>
     <string name="color">Farbe</string>
     <string name="color_copied">Farbe kopiert</string>
     <string name="crop_sub">Bild beliebig zuschneiden</string>
@@ -2050,11 +2051,9 @@
     <string name="squircle_shapes_sub">Elegante abgerundete UI-Elemente</string>
     <string name="filename_format">Dateinamenformat</string>
     <string name="prefix_pattern_description">Benutzerdefinierter Text wird ganz am Anfang des Dateinamens platziert, ideal für Projektnamen, Marken oder persönliche Tags.</string>
-    <string name="original_filename_pattern_description">Verwendet den ursprünglichen Dateinamen ohne Erweiterung, sodass die Quellenidentifizierung erhalten bleibt.</string>
     <string name="width_pattern_description">Die Bildbreite in Pixel, nützlich zum Verfolgen von Auflösungsänderungen oder zum Skalieren von Ergebnissen.</string>
     <string name="height_pattern_description">Die Bildhöhe in Pixel, hilfreich beim Arbeiten mit Seitenverhältnissen oder Exporten.</string>
     <string name="random_numbers_pattern_description">Erzeugt zufällige Ziffern, um eindeutige Dateinamen zu gewährleisten; Fügen Sie weitere Ziffern hinzu, um die Sicherheit vor Duplikaten zu erhöhen.</string>
-    <string name="sequence_number_pattern_description">Automatisch inkrementierender Zähler für Batch-Exporte, ideal beim Speichern mehrerer Bilder in einer Sitzung.</string>
     <string name="preset_info_pattern_description">Fügt den Namen der angewendeten Voreinstellung in den Dateinamen ein, damit Sie sich leicht daran erinnern können, wie das Bild verarbeitet wurde.</string>
     <string name="scale_mode_pattern_description">Zeigt den Bildskalierungsmodus an, der während der Verarbeitung verwendet wird, und hilft dabei, in der Größe veränderte, zugeschnittene oder angepasste Bilder zu unterscheiden.</string>
     <string name="suffix_pattern_description">Benutzerdefinierter Text am Ende des Dateinamens, nützlich für die Versionierung, z. B. _v2, _edited oder _final.</string>
@@ -3178,16 +3177,16 @@
     <string name="show_recent_tools">Aktuelle Tools anzeigen</string>
     <string name="show_recent_tools_sub">Zeigen Sie den Schnellzugriff auf zuletzt verwendete Tools auf dem Hauptbildschirm an</string>
     <string name="usage_statistics">Nutzungsstatistik</string>
-    <string name="usage_statistics_sub">Entdecken Sie App-Öffnungen, Tool-Starts und Ihre am häufigsten verwendeten Tools</string>
-    <string name="app_opens">App wird geöffnet</string>
-    <string name="tool_opens">Werkzeug öffnet sich</string>
+    <string name="usage_statistics_sub">Entdecke App-Öffnungen, Tool-Starts und deine am häufigsten verwendeten Tools</string>
+    <string name="app_opens">App geöffnet</string>
+    <string name="tool_opens">Tool-Öffnungen</string>
     <string name="last_tool_opened">Letztes Werkzeug</string>
     <string name="successful_saves">Erfolgreiche Speicherungen</string>
     <string name="activity_streak">Aktivitätssträhne</string>
     <string name="data_saved">Daten gespeichert</string>
     <string name="top_format">Top-Format</string>
     <string name="tools_used">Verwendete Werkzeuge</string>
-    <string name="tool_usage_subtitle">%1$d öffnet sich • %2$s</string>
+    <string name="tool_usage_subtitle">%1$d Öffnungen • %2$s</string>
     <string name="no_usage_statistics">Noch keine Nutzungsstatistiken</string>
     <string name="no_usage_statistics_sub">Öffnen Sie einige Tools und sie werden hier automatisch angezeigt</string>
     <string name="usage_statistics_info">Ihre Nutzungsstatistiken werden nur lokal auf Ihrem Gerät gespeichert. ImageToolbox verwendet sie nur, um Ihre persönlichen Aktivitäten, bevorzugten Tools und gespeicherten Dateneinblicke anzuzeigen</string>
@@ -3273,7 +3272,7 @@
     <string name="left_edge">Linker Rand</string>
     <string name="torn_edge">Abgerissener Rand</string>
     <string name="reset_usage_statistics">Nutzungsstatistik zurücksetzen</string>
-    <string name="reset_usage_statistics_sub">Das Tool wird geöffnet, die Speicherstatistiken, der Streak, die gespeicherten Daten und das Topformat werden zurückgesetzt. App-Öffnungen bleiben unverändert.</string>
+    <string name="reset_usage_statistics_sub">Tool-Öffnungen, Speicherstatistiken, Streak, gespeicherte Daten und das Topformat werden zurückgesetzt. App-Öffnungen bleiben unverändert.</string>
     <string name="audio">Audio</string>
     <string name="file">Datei</string>
     <string name="export_profiles">Profile exportieren</string>
@@ -3659,4 +3658,40 @@
     <string name="bit_depth">Bittiefe</string>
     <string name="lossless">Verlustfrei</string>
     <string name="bit_depth_value">%1$d-Bit</string>
+    <string name="batch_rename">Stapelumbenennung</string>
+    <string name="batch_rename_sub">Benennen Sie mehrere Dateien mithilfe von Dateinamenmustern um</string>
+    <string name="search_keywords_batch_rename">Batch-Umbenennung von Dateien, Dateinamen, Muster, Sequenz, Datumserweiterung</string>
+    <string name="pick_files_to_rename">Wählen Sie Dateien zum Umbenennen aus</string>
+    <string name="filename_pattern">Dateinamenmuster</string>
+    <string name="rename">Umbenennen</string>
+    <string name="date_source">Datumsquelle</string>
+    <string name="date_source_exif">EXIF-Datum übernommen</string>
+    <string name="date_source_modified">Änderungsdatum der Datei</string>
+    <string name="date_source_created">Erstellungsdatum der Datei</string>
+    <string name="date_source_current">Aktuelles Datum</string>
+    <string name="date_source_manual">Manuelles Datum</string>
+    <string name="manual_date">Manuelles Datum</string>
+    <string name="manual_time">Manuelle Zeit</string>
+    <string name="date_source_fallback">Das ausgewählte Datum ist für einige Dateien nicht verfügbar. Für sie wird das aktuelle Datum verwendet.</string>
+    <string name="rename_error_empty_pattern">Geben Sie ein Dateinamenmuster ein</string>
+    <string name="rename_error_invalid_name">Das Muster erzeugt einen ungültigen oder zu langen Dateinamen</string>
+    <string name="rename_error_duplicate_name">Das Muster erzeugt doppelte Dateinamen</string>
+    <string name="rename_error_no_changes">Alle Dateinamen stimmen bereits mit dem Muster überein</string>
+    <string name="rename_error_unsupported_pattern">Dieses Muster verwendet Token, die nicht für die Stapelumbenennung verfügbar sind</string>
+    <string name="rename_unchanged">Der Name bleibt gleich</string>
+    <string name="batch_rename_success">Dateien erfolgreich umbenannt</string>
+    <string name="batch_rename_failed">Einige Dateien konnten nicht umbenannt werden</string>
+    <string name="permission_not_granted">Die Erlaubnis wurde nicht erteilt</string>
+    <string name="original_filename_pattern_description">Verwendet den ursprünglichen Dateinamen ohne Erweiterung, sodass die Quellenidentifizierung erhalten bleibt. Unterstützt auch Slicing mit \\o{start:end}, Transliteration mit \\o{t} und Ersetzen durch \\o{s/old/new/}.</string>
+    <string name="sequence_number_pattern_description">Automatisch inkrementierender Zähler. Unterstützt benutzerdefinierte Formatierung: \\c{padding} (z. B. \\c{3} -&amp;gt; 001), \\c{start:step} oder \\c{start:step:padding}.</string>
+    <string name="parent_folder_pattern_description">Der Name des übergeordneten Ordners, in dem sich die Originaldatei befand.</string>
+    <string name="file_size_pattern_description">Die Größe der Originaldatei. Unterstützt Einheiten: \\z{b}, \\z{kb}, \\z{mb} oder einfach \\z für ein menschenlesbares Format.</string>
+    <string name="uuid_pattern_description">Erzeugt einen zufälligen Universally Unique Identifier (UUID), um die Eindeutigkeit des Dateinamens sicherzustellen.</string>
+    <string name="rename_cannot_undone">Das Umbenennen von Dateien kann nicht rückgängig gemacht werden. Stellen Sie sicher, dass die neuen Namen korrekt sind, bevor Sie fortfahren.</string>
+    <string name="confirm_rename_title">Umbenennen bestätigen</string>
+    <string name="markup_layers_side_menu_settings">Seitenmenüeinstellungen</string>
+    <string name="markup_layers_side_menu_scale">Menüskala</string>
+    <string name="markup_layers_side_menu_alpha">Menü Alpha</string>
+    <string name="auto_white_balance">Automatischer Weißabgleich</string>
+    <string name="clipping">Ausschnitt</string>
 </resources>

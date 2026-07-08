@@ -17,9 +17,9 @@
 
 package com.t8rin.imagetoolbox.feature.compare.presentation.components.beforeafter
 
-import androidx.annotation.FloatRange
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableFloatState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
@@ -61,7 +61,7 @@ internal fun BeforeAfterLayout(
         afterContent = afterContent,
         beforeLabel = beforeLabel,
         afterLabel = afterLabel,
-        progress = progress,
+        progress = { progress },
         onProgressChange = {
             progress = it
         },
@@ -100,7 +100,8 @@ internal fun BeforeAfterLayout(
     modifier: Modifier = Modifier,
     enableProgressWithTouch: Boolean = true,
     contentOrder: ContentOrder = ContentOrder.BeforeAfter,
-    @FloatRange(from = 0.0, to = 100.0) progress: Float = 50f,
+    progress: () -> Float = { 50f },
+    sharedProgress: MutableFloatState? = null,
     onProgressChange: ((Float) -> Unit)? = null,
     overlayStyle: OverlayStyle = OverlayStyle(),
     beforeContent: @Composable () -> Unit,
@@ -116,6 +117,7 @@ internal fun BeforeAfterLayout(
         beforeLabel = beforeLabel,
         afterLabel = afterLabel,
         progress = progress,
+        sharedProgress = sharedProgress,
         onProgressChange = onProgressChange,
         contentOrder = contentOrder,
         enableProgressWithTouch = enableProgressWithTouch,
@@ -164,7 +166,7 @@ internal fun BeforeAfterLayout(
         afterContent = afterContent,
         beforeLabel = beforeLabel,
         afterLabel = afterLabel,
-        progress = progress,
+        progress = { progress },
         onProgressChange = {
             progress = it
         },
@@ -193,7 +195,7 @@ internal fun BeforeAfterLayout(
 @Composable
 internal fun BeforeAfterLayout(
     modifier: Modifier = Modifier,
-    @FloatRange(from = 0.0, to = 100.0) progress: Float = 50f,
+    progress: () -> Float = { 50f },
     onProgressChange: ((Float) -> Unit)? = null,
     enableProgressWithTouch: Boolean = true,
     contentOrder: ContentOrder = ContentOrder.BeforeAfter,
