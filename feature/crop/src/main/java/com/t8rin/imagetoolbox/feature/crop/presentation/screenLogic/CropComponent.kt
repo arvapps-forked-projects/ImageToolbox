@@ -22,6 +22,7 @@ import android.net.Uri
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.unit.IntSize
 import androidx.core.net.toUri
 import com.arkivanov.decompose.ComponentContext
 import com.t8rin.cropper.model.AspectRatio
@@ -94,13 +95,21 @@ class CropComponent @AssistedInject internal constructor(
     val cropType: CropType by _cropType
 
     private val _uri = mutableStateOf(Uri.EMPTY)
+    private val _currentUri = mutableStateOf(Uri.EMPTY)
+    val currentUri: Uri?
+        get() = _currentUri.value.takeIf { it != Uri.EMPTY }
+
+    private val _originalImageSize = mutableStateOf(IntSize.Zero)
+
+    private val _imageSize = mutableStateOf(IntSize.Zero)
+    val imageSize: IntSize by _imageSize
 
     private var internalBitmap = mutableStateOf<Bitmap?>(null)
 
     private val _bitmap: MutableState<Bitmap?> = mutableStateOf(null)
     val bitmap: Bitmap? by _bitmap
 
-    val isBitmapChanged get() = internalBitmap.value != _bitmap.value
+    val isBitmapChanged get() = _currentUri.value != _uri.value
 
     private val _imageFormat = mutableStateOf<ImageFormat>(ImageFormat.Png.Lossless)
     val imageFormat by _imageFormat
@@ -111,18 +120,30 @@ class CropComponent @AssistedInject internal constructor(
     private val _saveExif: MutableState<Boolean> = mutableStateOf(false)
     val saveExif: Boolean by _saveExif
 
+    private var isBitmapLoading = false
+    private var isCropperLoading = false
+
+    private fun updateImageLoadingState() {
+        _isImageLoading.value = isBitmapLoading || isCropperLoading
+    }
+
     fun updateBitmap(
         bitmap: Bitmap?,
         newBitmap: Boolean = false
     ) {
         componentScope.launch {
-            _isImageLoading.value = true
-            val bmp = imageScaler.scaleUntilCanShow(bitmap)
-            if (newBitmap) {
-                internalBitmap.value = bmp
+            isBitmapLoading = true
+            updateImageLoadingState()
+            try {
+                val bmp = imageScaler.scaleUntilCanShow(bitmap)
+                if (newBitmap) {
+                    internalBitmap.value = bmp
+                }
+                _bitmap.value = bmp
+            } finally {
+                isBitmapLoading = false
+                updateImageLoadingState()
             }
-            _bitmap.value = bmp
-            _isImageLoading.value = false
         }
     }
 
@@ -143,38 +164,35 @@ class CropComponent @AssistedInject internal constructor(
     ) {
         savingJob = trackProgress {
             _isSaving.value = true
-            bitmap?.let { localBitmap ->
-                val byteArray = imageCompressor.compressAndTransform(
-                    image = localBitmap,
-                    imageInfo = ImageInfo(
+            currentUri?.let { uri ->
+                imageGetter.getImage(
+                    uri = uri.toString(),
+                    originalSize = true
+                )?.image?.let { localBitmap ->
+                    val imageInfo = ImageInfo(
                         originalUri = _uri.value.toString(),
                         imageFormat = imageFormat,
                         width = localBitmap.width,
                         height = localBitmap.height
                     )
-                )
-
-                val decoded = imageGetter.getImage(data = byteArray)
-
-                _bitmap.value = decoded
-
-                parseSaveResult(
-                    fileController.save(
-                        saveTarget = ImageSaveTarget(
-                            imageInfo = ImageInfo(
-                                originalUri = _uri.value.toString(),
-                                imageFormat = imageFormat,
-                                width = localBitmap.width,
-                                height = localBitmap.height
-                            ),
-                            originalUri = _uri.value.toString(),
-                            sequenceNumber = null,
-                            data = byteArray
-                        ),
-                        keepOriginalMetadata = saveExif,
-                        oneTimeSaveLocationUri = oneTimeSaveLocationUri
+                    val byteArray = imageCompressor.compressAndTransform(
+                        image = localBitmap,
+                        imageInfo = imageInfo
                     )
-                )
+
+                    parseSaveResult(
+                        fileController.save(
+                            saveTarget = ImageSaveTarget(
+                                imageInfo = imageInfo,
+                                originalUri = _uri.value.toString(),
+                                sequenceNumber = null,
+                                data = byteArray
+                            ),
+                            keepOriginalMetadata = saveExif,
+                            oneTimeSaveLocationUri = oneTimeSaveLocationUri
+                        )
+                    )
+                }
             }
             _isSaving.value = false
         }
@@ -220,27 +238,48 @@ class CropComponent @AssistedInject internal constructor(
     }
 
     fun resetBitmap() {
+        _currentUri.value = _uri.value
+        _imageSize.value = _originalImageSize.value
         _bitmap.value = internalBitmap.value
     }
 
     fun imageCropStarted() {
-        _isImageLoading.value = true
+        isCropperLoading = true
+        updateImageLoadingState()
     }
 
     fun imageCropFinished() {
-        _isImageLoading.value = false
+        isCropperLoading = false
+        updateImageLoadingState()
     }
 
     fun setUri(
         uri: Uri
     ) {
         _uri.value = uri
+        _currentUri.value = uri
         imageGetter.getImageAsync(
             uri = uri.toString(),
             originalSize = true,
             onGetImage = {
+                val size = IntSize(it.imageInfo.width, it.imageInfo.height)
+                _originalImageSize.value = size
+                _imageSize.value = size
                 updateBitmap(it.image, true)
                 setImageFormat(it.imageInfo.imageFormat)
+            },
+            onFailure = AppToastHost::showFailureToast
+        )
+    }
+
+    fun updateImageUri(uri: Uri) {
+        _currentUri.value = uri
+        imageGetter.getImageAsync(
+            uri = uri.toString(),
+            originalSize = true,
+            onGetImage = {
+                _imageSize.value = IntSize(it.imageInfo.width, it.imageInfo.height)
+                updateBitmap(it.image)
             },
             onFailure = AppToastHost::showFailureToast
         )
@@ -249,20 +288,25 @@ class CropComponent @AssistedInject internal constructor(
     fun shareBitmap() {
         savingJob = trackProgress {
             _isSaving.value = true
-            bitmap?.let { localBitmap ->
-                shareProvider.shareImage(
-                    imageInfo = ImageInfo(
-                        originalUri = _uri.value.toString(),
-                        imageFormat = imageFormat,
-                        width = localBitmap.width,
-                        height = localBitmap.height
-                    ),
-                    image = localBitmap,
-                    onComplete = {
-                        _isSaving.value = false
-                        AppToastHost.showConfetti()
-                    }
-                )
+            currentUri?.let { uri ->
+                imageGetter.getImage(
+                    uri = uri.toString(),
+                    originalSize = true
+                )?.image?.let { image ->
+                    shareProvider.shareImage(
+                        imageInfo = ImageInfo(
+                            originalUri = _uri.value.toString(),
+                            imageFormat = imageFormat,
+                            width = image.width,
+                            height = image.height
+                        ),
+                        image = image,
+                        onComplete = {
+                            _isSaving.value = false
+                            AppToastHost.showConfetti()
+                        }
+                    )
+                }
             }
         }
     }
@@ -278,17 +322,22 @@ class CropComponent @AssistedInject internal constructor(
     fun cacheCurrentImage(onComplete: (Uri) -> Unit) {
         savingJob = trackProgress {
             _isSaving.value = true
-            bitmap?.let { image ->
-                shareProvider.cacheImage(
-                    image = image,
-                    imageInfo = ImageInfo(
-                        originalUri = _uri.value.toString(),
-                        imageFormat = imageFormat,
-                        width = image.width,
-                        height = image.height
-                    )
-                )?.let { uri ->
-                    onComplete(uri.toUri())
+            currentUri?.let { uri ->
+                imageGetter.getImage(
+                    uri = uri.toString(),
+                    originalSize = true
+                )?.image?.let { image ->
+                    shareProvider.cacheImage(
+                        image = image,
+                        imageInfo = ImageInfo(
+                            originalUri = _uri.value.toString(),
+                            imageFormat = imageFormat,
+                            width = image.width,
+                            height = image.height
+                        )
+                    )?.let { cachedUri ->
+                        onComplete(cachedUri.toUri())
+                    }
                 }
             }
             _isSaving.value = false
