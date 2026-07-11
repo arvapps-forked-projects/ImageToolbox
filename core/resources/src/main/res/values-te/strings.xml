@@ -303,7 +303,6 @@
     <string name="cache_size">కాష్ పరిమాణం</string>
     <string name="found_s">కనుగొనబడింది %1$s</string>
     <string name="auto_cache_clearing">ఆటో కాష్ క్లియరింగ్</string>
-    <string name="auto_cache_clearing_sub">ప్రారంభించబడితే యాప్ కాష్ యాప్ స్టార్టప్‌లో క్లియర్ చేయబడుతుంది</string>
     <string name="create">సృష్టించు</string>
     <string name="tools">ఉపకరణాలు</string>
     <string name="group_options_by_type">రకం ద్వారా సమూహ ఎంపికలు</string>
@@ -3694,4 +3693,15 @@
     <string name="markup_layers_side_menu_alpha">మెనూ ఆల్ఫా</string>
     <string name="auto_white_balance">ఆటో వైట్ బ్యాలెన్స్</string>
     <string name="clipping">క్లిప్పింగ్</string>
+    <string name="checking_for_hidden_watermarks">దాచిన వాటర్‌మార్క్‌ల కోసం తనిఖీ చేస్తోంది</string>
+    <string name="storage">నిల్వ</string>
+    <string name="cache_auto_clear_limit">కాష్ పరిమితి</string>
+    <string name="cache_auto_clear_limit_sub">కాష్ ఈ పరిమాణానికి మించి పెరిగినప్పుడు స్వయంచాలకంగా క్లియర్ చేయండి</string>
+    <string name="cache_auto_clear_interval">శుభ్రపరిచే విరామం</string>
+    <string name="cache_auto_clear_interval_sub">కాష్ క్లియర్ చేయబడాలో లేదో ఎంత తరచుగా తనిఖీ చేయాలి</string>
+    <string name="cache_auto_clear_on_app_launch">యాప్ లాంచ్‌లో</string>
+    <string name="cache_auto_clear_after_day">1 రోజు</string>
+    <string name="cache_auto_clear_after_week">1 వారం</string>
+    <string name="cache_auto_clear_after_month">1 నెల</string>
+    <string name="auto_cache_clearing_sub">ఎంచుకున్న పరిమితి మరియు విరామం ప్రకారం యాప్ కాష్‌ని స్వయంచాలకంగా క్లియర్ చేయండి</string>
 </resources>

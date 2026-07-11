@@ -275,7 +275,6 @@
     <string name="cache_size">Cachearen tamaina</string>
     <string name="found_s">Aurkitu %1$s</string>
     <string name="auto_cache_clearing">Cache garbiketa automatikoa</string>
-    <string name="auto_cache_clearing_sub">Gaituta badago, aplikazioaren cachea garbituko da aplikazioa abiaraztean</string>
     <string name="tools">Tresnak</string>
     <string name="group_options_by_type">Talde aukerak motaren arabera</string>
     <string name="group_options_by_type_sub">Taldeko aukerak bere motako pantaila nagusiko zerrenda pertsonalizatuaren ordez</string>
@@ -3693,4 +3692,15 @@
     <string name="markup_layers_side_menu_alpha">Menu alfa</string>
     <string name="auto_white_balance">Zurien balantze automatikoa</string>
     <string name="clipping">Mozketa</string>
+    <string name="checking_for_hidden_watermarks">Ezkutuko ur-markak egiaztatzea</string>
+    <string name="storage">Biltegiratzea</string>
+    <string name="cache_auto_clear_limit">Cache muga</string>
+    <string name="cache_auto_clear_limit_sub">Garbitu cachea automatikoki tamaina horretatik gora hazten denean</string>
+    <string name="cache_auto_clear_interval">Garbiketa tartea</string>
+    <string name="cache_auto_clear_interval_sub">Zenbat aldiz egiaztatu cachea garbitu behar den</string>
+    <string name="cache_auto_clear_on_app_launch">Aplikazioa abiaraztean</string>
+    <string name="cache_auto_clear_after_day">1 egun</string>
+    <string name="cache_auto_clear_after_week">1 aste</string>
+    <string name="cache_auto_clear_after_month">1 hilabete</string>
+    <string name="auto_cache_clearing_sub">Garbitu aplikazioaren cachea automatikoki hautatutako muga eta tartearen arabera</string>
 </resources>

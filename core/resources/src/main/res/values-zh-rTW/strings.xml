@@ -14,7 +14,9 @@
   ~
   ~ You should have received a copy of the Apache License
   ~ along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
-  --><resources xmlns:tools="http://schemas.android.com/tools">
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="size">大小 %1$s</string>
     <string name="loading">載入中…</string>
     <string name="no_exif">沒有發現 EXIF 資料</string>
@@ -274,7 +276,6 @@
     <string name="cache_size">快取大小</string>
     <string name="found_s">已發現 %1$s</string>
     <string name="auto_cache_clearing">自動清除快取</string>
-    <string name="auto_cache_clearing_sub">如果啟用，應用程式快取將在應用程式啟動時清除</string>
     <string name="create">創作</string>
     <string name="draw_on_background_sub">選擇背景顏色並在其上繪畫</string>
     <string name="background_color">背景顏色</string>
@@ -3691,4 +3692,15 @@
     <string name="markup_layers_side_menu_alpha">阿爾法菜單</string>
     <string name="auto_white_balance">自動白平衡</string>
     <string name="clipping">剪裁</string>
+    <string name="checking_for_hidden_watermarks">檢查隱藏浮水印</string>
+    <string name="storage">貯存</string>
+    <string name="cache_auto_clear_limit">快取限制</string>
+    <string name="cache_auto_clear_limit_sub">當快取超過此大小時自動清除緩存</string>
+    <string name="cache_auto_clear_interval">清理間隔</string>
+    <string name="cache_auto_clear_interval_sub">多久檢查一次快取是否應該清除</string>
+    <string name="cache_auto_clear_on_app_launch">應用程式啟動時</string>
+    <string name="cache_auto_clear_after_day">1天</string>
+    <string name="cache_auto_clear_after_week">1週</string>
+    <string name="cache_auto_clear_after_month">1個月</string>
+    <string name="auto_cache_clearing_sub">根據選擇的限制和間隔自動清除應用程式緩存</string>
 </resources>

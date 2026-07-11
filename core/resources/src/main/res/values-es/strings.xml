@@ -295,7 +295,6 @@
     <string name="activate_files">Desactivó la aplicación Archivos, actívela para usar esta función</string>
     <string name="draw_sub">Dibujar en la imagen como en un cuaderno de bocetos, o dibujar en el fondo mismo</string>
     <string name="compatibility_sub">Tenga en cuenta que no se garantiza la compatibilidad con otros servicios o software de cifrado de archivos. Un tratamiento de claves o una configuración de cifrado ligeramente diferentes pueden ser motivos de incompatibilidad.</string>
-    <string name="auto_cache_clearing_sub">Si la caché de la aplicación está habilitada, se borrará al iniciar la aplicación</string>
     <string name="copy">Copiar</string>
     <string name="warning_bytes">Guardar en modo %1$s puede ser inestable, porque es un formato sin pérdidas</string>
     <string name="found_s">Encontrado %1$s</string>
@@ -3693,4 +3692,15 @@
     <string name="markup_layers_side_menu_alpha">Menú alfa</string>
     <string name="auto_white_balance">Balance de blancos automático</string>
     <string name="clipping">Recorte</string>
+    <string name="checking_for_hidden_watermarks">Comprobando marcas de agua ocultas</string>
+    <string name="storage">Almacenamiento</string>
+    <string name="cache_auto_clear_limit">Límite de caché</string>
+    <string name="cache_auto_clear_limit_sub">Borre el caché automáticamente cuando supere este tamaño</string>
+    <string name="cache_auto_clear_interval">Intervalo de limpieza</string>
+    <string name="cache_auto_clear_interval_sub">Con qué frecuencia comprobar si se debe borrar el caché</string>
+    <string name="cache_auto_clear_on_app_launch">Al iniciar la aplicación</string>
+    <string name="cache_auto_clear_after_day">1 día</string>
+    <string name="cache_auto_clear_after_week">1 semana</string>
+    <string name="cache_auto_clear_after_month">1 mes</string>
+    <string name="auto_cache_clearing_sub">Borre el caché de la aplicación automáticamente según el límite y el intervalo seleccionados</string>
 </resources>

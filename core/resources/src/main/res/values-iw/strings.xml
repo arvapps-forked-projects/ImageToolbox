@@ -280,7 +280,6 @@
     <string name="image_size_warning">‌ניסיון לשמור תמונה עם רוחב וגובה נתונים עלול לגרום לשגיאת זיכרון מלא, עשה זאת על אחריותך בלבד.</string>
     <string name="cache">מטמון</string>
     <string name="found_s">נמצא %1$s</string>
-    <string name="auto_cache_clearing_sub">אם מופעלת מטמון האפליקציה ינוקה בעת הפעלת האפליקציה</string>
     <string name="tools">כלים</string>
     <string name="group_options_by_type">קבץ אפשרויות לפי סוג</string>
     <string name="group_options_by_type_sub">אפשרויות קבוצות במסך הראשי של סוגן במקום סידור רשימה מותאם אישית</string>
@@ -3696,4 +3695,15 @@
     <string name="markup_layers_side_menu_alpha">תפריט אלפא</string>
     <string name="auto_white_balance">איזון לבן אוטומטי</string>
     <string name="clipping">גֶזֶר</string>
+    <string name="checking_for_hidden_watermarks">בודק סימני מים נסתרים</string>
+    <string name="storage">אִחסוּן</string>
+    <string name="cache_auto_clear_limit">מגבלת מטמון</string>
+    <string name="cache_auto_clear_limit_sub">נקה את המטמון באופן אוטומטי כאשר הוא גדל מעבר לגודל זה</string>
+    <string name="cache_auto_clear_interval">מרווח ניקוי</string>
+    <string name="cache_auto_clear_interval_sub">באיזו תדירות לבדוק אם יש לנקות את המטמון</string>
+    <string name="cache_auto_clear_on_app_launch">בהפעלת האפליקציה</string>
+    <string name="cache_auto_clear_after_day">יום אחד</string>
+    <string name="cache_auto_clear_after_week">שבוע אחד</string>
+    <string name="cache_auto_clear_after_month">1 חודש</string>
+    <string name="auto_cache_clearing_sub">נקה את מטמון האפליקציה באופן אוטומטי בהתאם למגבלה ולמרווח שנבחרו</string>
 </resources>

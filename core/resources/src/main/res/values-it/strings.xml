@@ -290,7 +290,6 @@
     <string name="file_proceed">File elaborato</string>
     <string name="cannot_change_arrangement_while_options_grouping_enabled">Impossibile modificare la disposizione mentre il raggruppamento delle opzioni è abilitato</string>
     <string name="cache">Cache</string>
-    <string name="auto_cache_clearing_sub">Se abilitata, la cache dell\'app verrà cancellata all\'avvio dell\'app</string>
     <string name="create">Creare</string>
     <string name="compatibility_sub">Si prega di notare che la compatibilità con altri software o servizi di crittografia dei file non è garantita. Un trattamento della chiave o una configurazione di cifratura leggermente diversi possono causare incompatibilità.</string>
     <string name="image_size_warning">Il tentativo di salvare l\'immagine con una determinata larghezza e altezza potrebbe causare un errore OOM. Fallo a tuo rischio e non dire che non ti avevo avvertito!</string>
@@ -3693,4 +3692,15 @@
     <string name="markup_layers_side_menu_alpha">Menù alfa</string>
     <string name="auto_white_balance">Bilanciamento automatico del bianco</string>
     <string name="clipping">Ritaglio</string>
+    <string name="checking_for_hidden_watermarks">Controllo delle filigrane nascoste</string>
+    <string name="storage">Magazzinaggio</string>
+    <string name="cache_auto_clear_limit">Limite della cache</string>
+    <string name="cache_auto_clear_limit_sub">Svuota automaticamente la cache quando supera questa dimensione</string>
+    <string name="cache_auto_clear_interval">Intervallo di pulizia</string>
+    <string name="cache_auto_clear_interval_sub">La frequenza con cui verificare se è necessario svuotare la cache</string>
+    <string name="cache_auto_clear_on_app_launch">All\'avvio dell\'app</string>
+    <string name="cache_auto_clear_after_day">1 giorno</string>
+    <string name="cache_auto_clear_after_week">1 settimana</string>
+    <string name="cache_auto_clear_after_month">1 mese</string>
+    <string name="auto_cache_clearing_sub">Svuota automaticamente la cache dell\'app in base al limite e all\'intervallo selezionati</string>
 </resources>

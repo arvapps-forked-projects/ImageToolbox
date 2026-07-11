@@ -295,7 +295,6 @@
     <string name="cache_size">ক্যাশে আকার</string>
     <string name="found_s">%1$s পাওয়া গেছে</string>
     <string name="auto_cache_clearing">স্বয়ংক্রিয় ক্যাশে ক্লিয়ারিং</string>
-    <string name="auto_cache_clearing_sub">সক্ষম হলে অ্যাপ ক্যাশে অ্যাপ স্টার্টআপে সাফ হয়ে যাবে</string>
     <string name="create">তৈরি করুন</string>
     <string name="tools">টুলস</string>
     <string name="group_options_by_type">টাইপ দ্বারা গ্রুপ বিকল্প</string>
@@ -3693,4 +3692,15 @@
     <string name="markup_layers_side_menu_alpha">মেনু আলফা</string>
     <string name="auto_white_balance">অটো হোয়াইট ব্যালেন্স</string>
     <string name="clipping">ক্লিপিং</string>
+    <string name="checking_for_hidden_watermarks">লুকানো ওয়াটারমার্কের জন্য পরীক্ষা করা হচ্ছে</string>
+    <string name="storage">স্টোরেজ</string>
+    <string name="cache_auto_clear_limit">ক্যাশে সীমা</string>
+    <string name="cache_auto_clear_limit_sub">ক্যাশে স্বয়ংক্রিয়ভাবে সাফ করুন যখন এটি এই আকারের বাইরে বৃদ্ধি পায়</string>
+    <string name="cache_auto_clear_interval">পরিচ্ছন্নতার ব্যবধান</string>
+    <string name="cache_auto_clear_interval_sub">কত ঘন ঘন ক্যাশে সাফ করা উচিত কিনা তা পরীক্ষা করতে হবে</string>
+    <string name="cache_auto_clear_on_app_launch">অ্যাপ লঞ্চের সময়</string>
+    <string name="cache_auto_clear_after_day">1 দিন</string>
+    <string name="cache_auto_clear_after_week">১ সপ্তাহ</string>
+    <string name="cache_auto_clear_after_month">1 মাস</string>
+    <string name="auto_cache_clearing_sub">নির্বাচিত সীমা এবং ব্যবধান অনুযায়ী স্বয়ংক্রিয়ভাবে অ্যাপ ক্যাশে সাফ করুন</string>
 </resources>

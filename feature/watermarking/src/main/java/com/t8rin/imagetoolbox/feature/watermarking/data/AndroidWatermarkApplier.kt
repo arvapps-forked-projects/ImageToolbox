@@ -1,6 +1,6 @@
 /*
  * ImageToolbox is an image editor for android
- * Copyright (c) 2024 T8RIN (Malik Mukhametzyanov)
+ * Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,13 +35,17 @@ import com.t8rin.imagetoolbox.core.data.utils.asDomain
 import com.t8rin.imagetoolbox.core.domain.coroutines.DispatchersHolder
 import com.t8rin.imagetoolbox.core.domain.image.ImageGetter
 import com.t8rin.imagetoolbox.core.domain.image.ImageScaler
+import com.t8rin.imagetoolbox.core.domain.image.ImageShareProvider
 import com.t8rin.imagetoolbox.core.domain.image.ImageTransformer
 import com.t8rin.imagetoolbox.core.domain.image.model.BlendingMode
+import com.t8rin.imagetoolbox.core.domain.image.model.ImageFormat
+import com.t8rin.imagetoolbox.core.domain.image.model.ImageInfo
 import com.t8rin.imagetoolbox.core.domain.image.model.ResizeType
 import com.t8rin.imagetoolbox.core.domain.model.IntegerSize
 import com.t8rin.imagetoolbox.core.domain.model.Position
 import com.t8rin.imagetoolbox.core.domain.utils.runSuspendCatching
 import com.t8rin.imagetoolbox.core.domain.utils.timestamp
+import com.t8rin.imagetoolbox.core.utils.makeLog
 import com.t8rin.imagetoolbox.core.utils.toTypeface
 import com.t8rin.imagetoolbox.feature.watermarking.domain.DigitalParams
 import com.t8rin.imagetoolbox.feature.watermarking.domain.HiddenWatermark
@@ -71,6 +75,7 @@ internal class AndroidWatermarkApplier @Inject constructor(
     private val imageGetter: ImageGetter<Bitmap>,
     private val imageScaler: ImageScaler<Bitmap>,
     private val imageTransformer: ImageTransformer<Bitmap>,
+    private val shareProvider: ImageShareProvider<Bitmap>,
     dispatchersHolder: DispatchersHolder,
 ) : DispatchersHolder by dispatchersHolder, WatermarkApplier<Bitmap> {
 
@@ -184,24 +189,31 @@ internal class AndroidWatermarkApplier @Inject constructor(
     override suspend fun checkHiddenWatermark(
         image: Bitmap
     ): HiddenWatermark? = runSuspendCatching {
-        suspendCancellableCoroutine { continuation ->
+        val returnValue = suspendCancellableCoroutine<DetectionReturnValue?> { continuation ->
             WatermarkDetector
-                .create(image, true)
+                .create(image)
                 .detect(
                     object : DetectFinishListener {
-                        override fun onSuccess(
-                            returnValue: DetectionReturnValue
-                        ) = continuation.resume(
-                            returnValue.watermarkBitmap
-                                ?.let(HiddenWatermark::Image)
-                                ?: returnValue.watermarkString?.takeIf { it.isNotEmpty() }
-                                    ?.let(HiddenWatermark::Text)
-                        )
+                        override fun onSuccess(returnValue: DetectionReturnValue) =
+                            continuation.resume(returnValue)
 
                         override fun onFailure(message: String?) = continuation.resume(null)
                     }
                 )
-        }
+        } ?: return@runSuspendCatching null
+
+        returnValue.watermarkBitmap?.let { watermark ->
+            shareProvider.cacheImage(
+                image = watermark,
+                imageInfo = ImageInfo(
+                    width = watermark.width,
+                    height = watermark.height,
+                    imageFormat = ImageFormat.Png.Lossless
+                )
+            )?.let(HiddenWatermark::Image)
+        } ?: returnValue.watermarkString
+            ?.takeIf { it.isNotEmpty() }
+            ?.let(HiddenWatermark::Text)
     }.getOrNull()
 
     @OptIn(InternalCoroutinesApi::class)
@@ -214,7 +226,9 @@ internal class AndroidWatermarkApplier @Inject constructor(
                     params.isLSB,
                     object : BuildFinishListener<Bitmap> {
                         override fun onSuccess(image: Bitmap) = continuation.resume(image)
-                        override fun onFailure(reason: String) = continuation.resume(null)
+                        override fun onFailure(reason: String) = (reason to params)
+                            .makeLog("WatermarkBuilder.generateImage")
+                            .run { continuation.resume(null) }
                     }
                 )
             }

@@ -15,9 +15,10 @@
  * along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
  */
 
-package com.t8rin.imagetoolbox.feature.watermarking.domain
+package com.t8rin.imagetoolbox.core.settings.domain
 
-sealed interface HiddenWatermark {
-    data class Image(val uri: String) : HiddenWatermark
-    data class Text(val text: String) : HiddenWatermark
+import com.t8rin.imagetoolbox.core.settings.domain.model.SettingsState
+
+interface AutoCacheCleanupUseCase {
+    fun clearCacheIfNeeded(settings: SettingsState)
 }

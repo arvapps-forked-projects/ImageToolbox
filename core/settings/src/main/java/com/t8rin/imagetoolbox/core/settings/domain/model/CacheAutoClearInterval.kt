@@ -15,9 +15,35 @@
  * along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
  */
 
-package com.t8rin.imagetoolbox.feature.watermarking.domain
+package com.t8rin.imagetoolbox.core.settings.domain.model
 
-sealed interface HiddenWatermark {
-    data class Image(val uri: String) : HiddenWatermark
-    data class Text(val text: String) : HiddenWatermark
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.days
+
+enum class CacheAutoClearInterval(
+    val key: String,
+    val duration: Duration,
+) {
+    OnAppLaunch(
+        key = "on_app_launch",
+        duration = Duration.ZERO
+    ),
+    Day(
+        key = "day",
+        duration = 1.days
+    ),
+    Week(
+        key = "week",
+        duration = 7.days
+    ),
+    Month(
+        key = "month",
+        duration = 30.days
+    );
+
+    companion object {
+        fun fromKey(key: String?): CacheAutoClearInterval? = entries.find {
+            it.key == key
+        }
+    }
 }

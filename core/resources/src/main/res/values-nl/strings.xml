@@ -343,7 +343,6 @@
     <string name="cache_size">Cache grootte</string>
     <string name="found_s">Gevonden %1$s</string>
     <string name="auto_cache_clearing">Automatisch cache wissen</string>
-    <string name="auto_cache_clearing_sub">Indien ingeschakeld, wordt de app-cache gewist bij het opstarten van de app</string>
     <string name="create">Creëren</string>
     <string name="tools">Hulpmiddelen</string>
     <string name="group_options_by_type">Groepeer opties op type</string>
@@ -3693,4 +3692,15 @@
     <string name="markup_layers_side_menu_alpha">Menu alfa</string>
     <string name="auto_white_balance">Automatische witbalans</string>
     <string name="clipping">Knippen</string>
+    <string name="checking_for_hidden_watermarks">Controleren op verborgen watermerken</string>
+    <string name="storage">Opslag</string>
+    <string name="cache_auto_clear_limit">Cachelimiet</string>
+    <string name="cache_auto_clear_limit_sub">Wis de cache automatisch wanneer deze groter wordt dan deze omvang</string>
+    <string name="cache_auto_clear_interval">Opruimingsinterval</string>
+    <string name="cache_auto_clear_interval_sub">Hoe vaak moet worden gecontroleerd of de cache moet worden gewist</string>
+    <string name="cache_auto_clear_on_app_launch">Bij app-lancering</string>
+    <string name="cache_auto_clear_after_day">1 dag</string>
+    <string name="cache_auto_clear_after_week">1 week</string>
+    <string name="cache_auto_clear_after_month">1 maand</string>
+    <string name="auto_cache_clearing_sub">Wis de app-cache automatisch volgens de geselecteerde limiet en interval</string>
 </resources>

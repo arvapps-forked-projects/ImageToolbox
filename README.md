@@ -20,7 +20,7 @@
   </br>
   </br>
   
- <img src="https://img.shields.io/badge/400.5K-aeff4d?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BCiAgICA8cGF0aCBkPSJNMTIuODksM0wxNC44NSwzLjRMMTEuMTEsMjFMOS4xNSwyMC42TDEyLjg5LDNNMTkuNTksMTJMMTYsOC40MVY1LjU4TDIyLjQyLDEyTDE2LDE4LjQxVjE1LjU4TDE5LjU5LDEyTTEuNTgsMTJMOCw1LjU4VjguNDFMNC40MSwxMkw4LDE1LjU4VjE4LjQxTDEuNTgsMTJaIgogICAgICAgIGZpbGw9IndoaXRlIiAvPgo8L3N2Zz4%3D&label=Lines%20of%20code&labelColor=4b731a"/>
+ <img src="https://img.shields.io/badge/406.6K-aeff4d?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BCiAgICA8cGF0aCBkPSJNMTIuODksM0wxNC44NSwzLjRMMTEuMTEsMjFMOS4xNSwyMC42TDEyLjg5LDNNMTkuNTksMTJMMTYsOC40MVY1LjU4TDIyLjQyLDEyTDE2LDE4LjQxVjE1LjU4TDE5LjU5LDEyTTEuNTgsMTJMOCw1LjU4VjguNDFMNC40MSwxMkw4LDE1LjU4VjE4LjQxTDEuNTgsMTJaIgogICAgICAgIGZpbGw9IndoaXRlIiAvPgo8L3N2Zz4%3D&label=Lines%20of%20code&labelColor=4b731a"/>
 
 <img src="https://img.shields.io/github/commits-since/t8rin/ImageToolbox/v1.0?color=palegreen&label=Commits&style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHRpdGxlPnNvdXJjZS1jb21taXQ8L3RpdGxlPjxwYXRoIGQ9Ik0xNywxMkMxNywxNC40MiAxNS4yOCwxNi40NCAxMywxNi45VjIxSDExVjE2LjlDOC43MiwxNi40NCA3LDE0LjQyIDcsMTJDNyw5LjU4IDguNzIsNy41NiAxMSw3LjFWM0gxM1Y3LjFDMTUuMjgsNy41NiAxNyw5LjU4IDE3LDEyTTEyLDlBMywzIDAgMCwwIDksMTJBMywzIDAgMCwwIDEyLDE1QTMsMyAwIDAsMCAxNSwxMkEzLDMgMCAwLDAgMTIsOVoiIGZpbGw9IndoaXRlIiAvPjwvc3ZnPg==&labelColor=07ab4e&v=2">
  
@@ -1189,11 +1189,11 @@ And **[follow](https://github.com/t8rin)** me for my next creations! 🤩
 
 # ⭐ Star History
 
-<a href="https://star-history.com/#T8RIN/ImageToolbox&Date">
+<a href="https://www.star-history.com/?repos=T8RIN%2FImageToolbox">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=T8RIN/ImageToolbox&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=T8RIN/ImageToolbox&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=T8RIN/ImageToolbox&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=T8RIN/ImageToolbox&type=date&theme=dark&legend=top-left&sealed_token=ViSa8-VDH4Sf5WWNm4ZWb-FLJVTjmQMHv2Aq3D1jPkzYmm6VJSr_gosi7f4tr-U2beF_mTbjtUlwRLGN_AgQx5JV9FqzzLZxsOLOHrXDRII_gdV1xoHFPu093-radwKlTJDbkohvcJz4BppN1J9Mn5obJspMnJ0RTzyFghxKoM416U1pEwS2SEciDU2n" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=T8RIN/ImageToolbox&type=date&legend=top-left&sealed_token=ViSa8-VDH4Sf5WWNm4ZWb-FLJVTjmQMHv2Aq3D1jPkzYmm6VJSr_gosi7f4tr-U2beF_mTbjtUlwRLGN_AgQx5JV9FqzzLZxsOLOHrXDRII_gdV1xoHFPu093-radwKlTJDbkohvcJz4BppN1J9Mn5obJspMnJ0RTzyFghxKoM416U1pEwS2SEciDU2n" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=T8RIN/ImageToolbox&type=date&legend=top-left&sealed_token=ViSa8-VDH4Sf5WWNm4ZWb-FLJVTjmQMHv2Aq3D1jPkzYmm6VJSr_gosi7f4tr-U2beF_mTbjtUlwRLGN_AgQx5JV9FqzzLZxsOLOHrXDRII_gdV1xoHFPu093-radwKlTJDbkohvcJz4BppN1J9Mn5obJspMnJ0RTzyFghxKoM416U1pEwS2SEciDU2n" />
  </picture>
 </a>
 

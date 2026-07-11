@@ -287,7 +287,6 @@
     <string name="draw">Gumuhit</string>
     <string name="found_s">Natagpuan %1$s</string>
     <string name="auto_cache_clearing">Auto cache clearing</string>
-    <string name="auto_cache_clearing_sub">Kung pinagana ang cache ng app ay iki-clear sa pagsisimula ng app</string>
     <string name="group_options_by_type">Mga opsyon sa pangkat ayon sa uri</string>
     <string name="group_options_by_type_sub">Mga opsyon sa pangkat sa pangunahing screen ng kanilang uri sa halip na pasadyang pag-aayos ng listahan</string>
     <string name="draw_on_background">Gumuhit sa background</string>
@@ -3694,4 +3693,15 @@
     <string name="markup_layers_side_menu_alpha">Menu alpha</string>
     <string name="auto_white_balance">Auto White Balance</string>
     <string name="clipping">Clipping</string>
+    <string name="checking_for_hidden_watermarks">Sinusuri ang mga nakatagong watermark</string>
+    <string name="storage">Imbakan</string>
+    <string name="cache_auto_clear_limit">Limitasyon ng cache</string>
+    <string name="cache_auto_clear_limit_sub">Awtomatikong i-clear ang cache kapag lumampas ito sa laki</string>
+    <string name="cache_auto_clear_interval">Agwat ng paglilinis</string>
+    <string name="cache_auto_clear_interval_sub">Gaano kadalas suriin kung dapat i-clear ang cache</string>
+    <string name="cache_auto_clear_on_app_launch">Sa paglulunsad ng app</string>
+    <string name="cache_auto_clear_after_day">1 araw</string>
+    <string name="cache_auto_clear_after_week">1 linggo</string>
+    <string name="cache_auto_clear_after_month">1 buwan</string>
+    <string name="auto_cache_clearing_sub">Awtomatikong i-clear ang cache ng app ayon sa napiling limitasyon at pagitan</string>
 </resources>

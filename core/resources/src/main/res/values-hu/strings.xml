@@ -287,7 +287,6 @@
     <string name="invalid_password_or_not_encrypted">Érvénytelen jelszó vagy a kiválasztott fájl nincs titkosítva</string>
     <string name="image_size_warning">A kép megadott szélességgel és magassággal történő mentése memóriahiány hibát okozhat. Csak saját felelősségre.</string>
     <string name="auto_cache_clearing">Automatikus gyorsítótár törlése</string>
-    <string name="auto_cache_clearing_sub">Ha engedélyezve van, az alkalmazás gyorsítótára törlődik az alkalmazás indításakor</string>
     <string name="create">Teremt</string>
     <string name="tools">Eszközök</string>
     <string name="group_options_by_type_sub">A főképernyőn megjelenő lehetőségeket típusuk szerint csoportosítja az egyéni listaelrendezés helyett</string>
@@ -3694,4 +3693,15 @@
     <string name="markup_layers_side_menu_alpha">Alfa menü</string>
     <string name="auto_white_balance">Automatikus fehéregyensúly</string>
     <string name="clipping">Darabka</string>
+    <string name="checking_for_hidden_watermarks">Rejtett vízjelek keresése</string>
+    <string name="storage">Tárolás</string>
+    <string name="cache_auto_clear_limit">Gyorsítótár korlát</string>
+    <string name="cache_auto_clear_limit_sub">Automatikusan törölje a gyorsítótárat, ha az meghaladja ezt a méretet</string>
+    <string name="cache_auto_clear_interval">Tisztítási intervallum</string>
+    <string name="cache_auto_clear_interval_sub">Milyen gyakran ellenőrizze, hogy a gyorsítótárat törölni kell-e</string>
+    <string name="cache_auto_clear_on_app_launch">Az alkalmazás indításakor</string>
+    <string name="cache_auto_clear_after_day">1 nap</string>
+    <string name="cache_auto_clear_after_week">1 hét</string>
+    <string name="cache_auto_clear_after_month">1 hónap</string>
+    <string name="auto_cache_clearing_sub">Az alkalmazás gyorsítótárának automatikus törlése a kiválasztott korlátnak és intervallumnak megfelelően</string>
 </resources>

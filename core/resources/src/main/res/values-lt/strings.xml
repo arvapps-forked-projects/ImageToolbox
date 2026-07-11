@@ -323,7 +323,6 @@
     <string name="cache_size">Talpyklos dydis</string>
     <string name="found_s">Rasta %1$s</string>
     <string name="auto_cache_clearing">Automatinis talpyklos išvalymas</string>
-    <string name="auto_cache_clearing_sub">Jei įjungta, programos talpykla bus išvalyta paleidžiant programą</string>
     <string name="create">Sukurti</string>
     <string name="tools">Įrankiai</string>
     <string name="group_options_by_type">Grupuokite parinktis pagal tipą</string>
@@ -3695,4 +3694,15 @@
     <string name="markup_layers_side_menu_alpha">Alfa meniu</string>
     <string name="auto_white_balance">Automatinis baltos spalvos balansas</string>
     <string name="clipping">Apkarpymas</string>
+    <string name="checking_for_hidden_watermarks">Tikrinama, ar nėra paslėptų vandens ženklų</string>
+    <string name="storage">Sandėliavimas</string>
+    <string name="cache_auto_clear_limit">Talpyklos limitas</string>
+    <string name="cache_auto_clear_limit_sub">Automatiškai išvalykite talpyklą, kai ji viršys šį dydį</string>
+    <string name="cache_auto_clear_interval">Valymo intervalas</string>
+    <string name="cache_auto_clear_interval_sub">Kaip dažnai tikrinti, ar reikia išvalyti talpyklą</string>
+    <string name="cache_auto_clear_on_app_launch">Paleidus programą</string>
+    <string name="cache_auto_clear_after_day">1 diena</string>
+    <string name="cache_auto_clear_after_week">1 savaitė</string>
+    <string name="cache_auto_clear_after_month">1 mėnuo</string>
+    <string name="auto_cache_clearing_sub">Automatiškai išvalykite programos talpyklą pagal pasirinktą limitą ir intervalą</string>
 </resources>

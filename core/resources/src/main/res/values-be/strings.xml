@@ -602,7 +602,6 @@
     <string name="cache_size">Памер кэша</string>
     <string name="found_s">Знойдзена %1$s</string>
     <string name="auto_cache_clearing">Аўтаматычная ачыстка кэша</string>
-    <string name="auto_cache_clearing_sub">Калі ўключана, кэш праграмы будзе ачышчаны пры запуску праграмы</string>
     <string name="create">Ствараць</string>
     <string name="tools">інструменты</string>
     <string name="edit_screenshot">Рэдагаваць скрыншот</string>
@@ -3695,4 +3694,15 @@
     <string name="markup_layers_side_menu_alpha">Альфа меню</string>
     <string name="auto_white_balance">Аўтаматычны баланс белага</string>
     <string name="clipping">Выразанне</string>
+    <string name="checking_for_hidden_watermarks">Праверка схаваных вадзяных знакаў</string>
+    <string name="storage">Захоўванне</string>
+    <string name="cache_auto_clear_limit">Ліміт кэша</string>
+    <string name="cache_auto_clear_limit_sub">Аўтаматычна ачысціць кэш, калі ён перавышае гэты памер</string>
+    <string name="cache_auto_clear_interval">Інтэрвал ачысткі</string>
+    <string name="cache_auto_clear_interval_sub">Як часта правяраць, ці трэба ачышчаць кэш</string>
+    <string name="cache_auto_clear_on_app_launch">Пры запуску праграмы</string>
+    <string name="cache_auto_clear_after_day">1 дзень</string>
+    <string name="cache_auto_clear_after_week">1 тыдзень</string>
+    <string name="cache_auto_clear_after_month">1 месяц</string>
+    <string name="auto_cache_clearing_sub">Аўтаматычна ачысціць кэш праграмы ў адпаведнасці з абраным лімітам і інтэрвалам</string>
 </resources>

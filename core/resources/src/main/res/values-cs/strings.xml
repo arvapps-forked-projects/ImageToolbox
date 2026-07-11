@@ -302,7 +302,6 @@
     <string name="cache_size">Velikost mezipaměti</string>
     <string name="found_s">Nalezeno %1$s</string>
     <string name="auto_cache_clearing">Automatické vymazání mezipaměti</string>
-    <string name="auto_cache_clearing_sub">Pokud je povoleno, mezipaměť aplikace se vymaže při spuštění aplikace</string>
     <string name="tools">Nástroje</string>
     <string name="group_options_by_type">Seskupit možnosti podle typu</string>
     <string name="group_options_by_type_sub">Seskupí možnosti na hlavní obrazovce svého typu namísto vlastního uspořádání seznamu</string>
@@ -3695,4 +3694,15 @@
     <string name="markup_layers_side_menu_alpha">Menu alfa</string>
     <string name="auto_white_balance">Automatické vyvážení bílé</string>
     <string name="clipping">Výstřižek</string>
+    <string name="checking_for_hidden_watermarks">Kontrola skrytých vodoznaků</string>
+    <string name="storage">Skladování</string>
+    <string name="cache_auto_clear_limit">Limit mezipaměti</string>
+    <string name="cache_auto_clear_limit_sub">Jakmile mezipaměť překročí tuto velikost, automaticky ji vymažte</string>
+    <string name="cache_auto_clear_interval">Interval čištění</string>
+    <string name="cache_auto_clear_interval_sub">Jak často kontrolovat, zda má být vymazána mezipaměť</string>
+    <string name="cache_auto_clear_on_app_launch">Při spuštění aplikace</string>
+    <string name="cache_auto_clear_after_day">1 den</string>
+    <string name="cache_auto_clear_after_week">1 týden</string>
+    <string name="cache_auto_clear_after_month">1 měsíc</string>
+    <string name="auto_cache_clearing_sub">Vymažte mezipaměť aplikace automaticky podle zvoleného limitu a intervalu</string>
 </resources>

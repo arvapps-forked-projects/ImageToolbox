@@ -286,7 +286,6 @@
     <string name="features">คุณสมบัติ</string>
     <string name="file_size_sub">ขนาดไฟล์สูงสุดถูกจำกัดโดยระบบปฏิบัติการ Android และหน่วยความจำที่มี ซึ่งขึ้นอยู่กับอุปกรณ์ของคุณ \nโปรดทราบ: หน่วยความจำไม่ใช่ที่เก็บข้อมูล</string>
     <string name="image_size_warning">การพยายามบันทึกรูปภาพด้วยความกว้างและความสูงที่กำหนดอาจทำให้เกิดข้อผิดพลาด OOM คุณต้องยอมรับความเสี่ยงเอง และอย่าหาว่าฉันไม่เตือนคุณ!</string>
-    <string name="auto_cache_clearing_sub">หากเปิดใช้งานแคชของแอปจะถูกล้างเมื่อเริ่มต้นแอป</string>
     <string name="screenshot">ภาพหน้าจอ</string>
     <string name="fallback_option">ตัวเลือกสำรอง</string>
     <string name="draw">วาด</string>
@@ -3692,4 +3691,15 @@
     <string name="markup_layers_side_menu_alpha">เมนูอัลฟ่า</string>
     <string name="auto_white_balance">สมดุลสีขาวอัตโนมัติ</string>
     <string name="clipping">การตัด</string>
+    <string name="checking_for_hidden_watermarks">กำลังตรวจสอบลายน้ำที่ซ่อนอยู่</string>
+    <string name="storage">พื้นที่จัดเก็บ</string>
+    <string name="cache_auto_clear_limit">ขีดจำกัดแคช</string>
+    <string name="cache_auto_clear_limit_sub">ล้างแคชโดยอัตโนมัติเมื่อแคชมีขนาดใหญ่เกินขนาดนี้</string>
+    <string name="cache_auto_clear_interval">ช่วงเวลาการล้างข้อมูล</string>
+    <string name="cache_auto_clear_interval_sub">บ่อยแค่ไหนในการตรวจสอบว่าควรล้างแคชหรือไม่</string>
+    <string name="cache_auto_clear_on_app_launch">ในการเปิดตัวแอป</string>
+    <string name="cache_auto_clear_after_day">1 วัน</string>
+    <string name="cache_auto_clear_after_week">1 สัปดาห์</string>
+    <string name="cache_auto_clear_after_month">1 เดือน</string>
+    <string name="auto_cache_clearing_sub">ล้างแคชของแอปโดยอัตโนมัติตามขีดจำกัดและช่วงเวลาที่เลือก</string>
 </resources>

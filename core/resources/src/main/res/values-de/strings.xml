@@ -14,7 +14,9 @@
   ~
   ~ You should have received a copy of the Apache License
   ~ along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
-  --><resources>
+  -->
+
+<resources>
     <string name="size">Größe %1$s</string>
     <string name="height">Höhe %1$s</string>
     <string name="quality">Qualität</string>
@@ -296,7 +298,6 @@
     <string name="image_size_warning">Das Versuchen, das Bild mit der angegebenen Breite und Höhe zu speichern, kann zu einem Fehler führen, wenn der Speicher voll ist. Dies geschieht auf eigene Gefahr.</string>
     <string name="cache">Cache</string>
     <string name="cache_size">Cache-Größe</string>
-    <string name="auto_cache_clearing_sub">Wenn aktiviert, wird der App-Cache beim Start der App geleert</string>
     <string name="auto_cache_clearing">Automatische Cache-Leerung</string>
     <string name="cannot_change_arrangement_while_options_grouping_enabled">Die Anordnung kann nicht geändert werden, wenn die Optionen gruppiert sind</string>
     <string name="edit_screenshot">Screenshot bearbeiten</string>
@@ -3692,4 +3693,15 @@
     <string name="markup_layers_side_menu_alpha">Menü Alpha</string>
     <string name="auto_white_balance">Automatischer Weißabgleich</string>
     <string name="clipping">Ausschnitt</string>
+    <string name="checking_for_hidden_watermarks">Suche nach versteckten Wasserzeichen</string>
+    <string name="storage">Lagerung</string>
+    <string name="cache_auto_clear_limit">Cache-Limit</string>
+    <string name="cache_auto_clear_limit_sub">Leeren Sie den Cache automatisch, wenn er diese Größe überschreitet</string>
+    <string name="cache_auto_clear_interval">Reinigungsintervall</string>
+    <string name="cache_auto_clear_interval_sub">Wie oft soll überprüft werden, ob der Cache geleert werden soll</string>
+    <string name="cache_auto_clear_on_app_launch">Beim App-Start</string>
+    <string name="cache_auto_clear_after_day">1 Tag</string>
+    <string name="cache_auto_clear_after_week">1 Woche</string>
+    <string name="cache_auto_clear_after_month">1 Monat</string>
+    <string name="auto_cache_clearing_sub">Leeren Sie den App-Cache automatisch entsprechend dem ausgewählten Limit und Intervall</string>
 </resources>

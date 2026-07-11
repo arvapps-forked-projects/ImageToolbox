@@ -9,7 +9,7 @@ versionCode = "253"
 
 jvmTarget = "21"
 
-imageToolboxLibs = "7.2.5"
+imageToolboxLibs = "7.3.2"
 trickle = "1.9.0"
 evaluator = "1.0.0"
 quickie = "1.18.1"
@@ -56,7 +56,7 @@ reviewKtx = "2.0.2"
 splashScreen = "1.2.0"
 
 espresso = "3.7.0"
-ksp = "2.3.9"
+ksp = "2.3.10"
 
 androidx-test-ext-junit = "1.3.0"
 documentfile = "1.1.0"
@@ -87,7 +87,7 @@ materialKolor = "5.0.0-alpha07"
 paletteKtx = "1.0.0"
 kotlinxSerializationJson = "1.11.0"
 
-firebaseBom = "34.15.0"
+firebaseBom = "34.16.0"
 firebaseCrashlyticsGradle = "3.0.7"
 junit = "4.13.2"
 coilResvg = "1.0.0"

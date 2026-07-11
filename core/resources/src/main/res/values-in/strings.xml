@@ -278,7 +278,6 @@
     <string name="implementation_sub">AES-256, mode GCM, tanpa padding, infus acak 12 byte. Kunci digunakan sebagai hash SHA-3 (256 bit).</string>
     <string name="compatibility">Kesesuaian</string>
     <string name="found_s">Ditemukan %1$s</string>
-    <string name="auto_cache_clearing_sub">Jika diaktifkan, cache aplikasi akan dihapus saat memulai aplikasi</string>
     <string name="tools">Peralatan</string>
     <string name="group_options_by_type">Kelompokkan opsi berdasarkan jenis</string>
     <string name="group_options_by_type_sub">Opsi grup di layar utama jenisnya alih-alih pengaturan daftar kustom</string>
@@ -3692,4 +3691,15 @@
     <string name="markup_layers_side_menu_alpha">Menu alfa</string>
     <string name="auto_white_balance">Keseimbangan Putih Otomatis</string>
     <string name="clipping">Guntingan</string>
+    <string name="checking_for_hidden_watermarks">Memeriksa tanda air yang tersembunyi</string>
+    <string name="storage">Penyimpanan</string>
+    <string name="cache_auto_clear_limit">Batas cache</string>
+    <string name="cache_auto_clear_limit_sub">Hapus cache secara otomatis ketika ukurannya melebihi ukuran ini</string>
+    <string name="cache_auto_clear_interval">Interval pembersihan</string>
+    <string name="cache_auto_clear_interval_sub">Seberapa sering memeriksa apakah cache harus dibersihkan</string>
+    <string name="cache_auto_clear_on_app_launch">Saat peluncuran aplikasi</string>
+    <string name="cache_auto_clear_after_day">1 hari</string>
+    <string name="cache_auto_clear_after_week">1 minggu</string>
+    <string name="cache_auto_clear_after_month">1 bulan</string>
+    <string name="auto_cache_clearing_sub">Hapus cache aplikasi secara otomatis sesuai batas dan interval yang dipilih</string>
 </resources>
