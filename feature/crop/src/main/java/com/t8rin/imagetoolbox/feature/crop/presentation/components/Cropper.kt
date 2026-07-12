@@ -41,6 +41,7 @@ import androidx.compose.runtime.MutableFloatState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -60,6 +61,8 @@ import com.t8rin.imagetoolbox.core.settings.presentation.provider.LocalSettingsS
 import com.t8rin.imagetoolbox.core.ui.widget.modifier.transparencyChecker
 import com.t8rin.imagetoolbox.core.ui.widget.other.ZoomBadge
 import com.t8rin.opencv_tools.free_corners_crop.compose.FreeCornersCropper
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
 @Composable
@@ -94,6 +97,8 @@ fun Cropper(
                         mutableFloatStateOf(1f)
                     }
 
+                    val scope = rememberCoroutineScope()
+
                     AdvancedCropper(
                         imageModel = imageUri,
                         aspectRatio = if (cropProperties.aspectRatio != AspectRatio.Original) {
@@ -109,14 +114,17 @@ fun Cropper(
                                 rotate90Icon = Icons.Outlined.Rotate90Ccw
                             )
                         },
-                        isOverlayDraggable = true,
+                        isOverlayDraggable = settingsState.cropOverlayDraggable,
                         rotationAngleState = rotationState,
                         onLoadingStateChange = {
                             if (it) {
                                 onImageCropStarted()
                             } else {
                                 rotationState.floatValue = 0f
-                                onImageCropFinished(null)
+                                scope.launch {
+                                    delay(300)
+                                    if (!crop) onImageCropFinished(null)
+                                }
                             }
                         },
                         onZoomChange = { newZoom ->
@@ -173,7 +181,8 @@ fun Cropper(
                             onZoomChange = { newZoom ->
                                 zoomLevel = newZoom
                             },
-                            onCropSuccess = onImageCropFinished
+                            onCropSuccess = onImageCropFinished,
+                            isOverlayDraggable = settingsState.cropOverlayDraggable
                         )
                         ZoomBadge(
                             zoomLevel = zoomLevel,
@@ -184,41 +193,57 @@ fun Cropper(
             }
 
             CropType.FreeCorners -> {
-                Box {
-                    var zoomLevel by remember {
-                        mutableFloatStateOf(1f)
-                    }
-                    FreeCornersCropper(
-                        bitmap = bitmap,
-                        sourceImageUri = imageUri,
-                        sourceImageSize = imageSize,
-                        croppingTrigger = crop,
-                        onCropped = onImageCropFinished,
-                        coercePointsToImageArea = coercePointsToImageArea,
-                        modifier = Modifier.transparencyChecker(),
-                        contentPadding = WindowInsets.systemBars.union(WindowInsets.displayCutout)
-                            .let {
-                                if (addVerticalInsets) it.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom)
-                                else it.only(WindowInsetsSides.Horizontal)
-                            }
-                            .union(
-                                WindowInsets(
-                                    left = 16.dp,
-                                    top = 32.dp,
-                                    right = 16.dp,
-                                    bottom = 32.dp
+                AnimatedContent(
+                    targetState = bitmap,
+                    transitionSpec = { fadeIn() togetherWith fadeOut() },
+                    modifier = modifier.fillMaxSize()
+                ) { bitmap ->
+                    Box {
+                        var zoomLevel by remember {
+                            mutableFloatStateOf(1f)
+                        }
+                        FreeCornersCropper(
+                            bitmap = bitmap,
+                            sourceImageUri = imageUri,
+                            sourceImageSize = imageSize,
+                            croppingTrigger = crop,
+                            onCropped = onImageCropFinished,
+                            coercePointsToImageArea = coercePointsToImageArea,
+                            modifier = Modifier.transparencyChecker(),
+                            contentPadding = WindowInsets.systemBars
+                                .union(WindowInsets.displayCutout)
+                                .let {
+                                    if (addVerticalInsets) {
+                                        it.only(
+                                            WindowInsetsSides.Horizontal +
+                                                    WindowInsetsSides.Bottom
+                                        )
+                                    } else {
+                                        it.only(WindowInsetsSides.Horizontal)
+                                    }
+                                }
+                                .union(
+                                    WindowInsets(
+                                        left = 16.dp,
+                                        top = 32.dp,
+                                        right = 16.dp,
+                                        bottom = 32.dp
+                                    )
                                 )
-                            )
-                            .asPaddingValues(),
-                        onZoomChange = { newZoom ->
-                            zoomLevel = newZoom
-                        },
-                        showMagnifier = settingsState.magnifierEnabled
-                    )
-                    ZoomBadge(
-                        zoomLevel = zoomLevel,
-                        modifier = Modifier.align(Alignment.TopStart),
-                    )
+                                .asPaddingValues(),
+                            onZoomChange = { newZoom ->
+                                zoomLevel = newZoom
+                            },
+                            showMagnifier = settingsState.magnifierEnabled,
+                            isOverlayDraggable = settingsState.cropOverlayDraggable,
+                            gridColor = MaterialTheme.colorScheme.primaryFixed.copy(0.5f),
+                            handlesColor = MaterialTheme.colorScheme.primaryFixed
+                        )
+                        ZoomBadge(
+                            zoomLevel = zoomLevel,
+                            modifier = Modifier.align(Alignment.TopStart),
+                        )
+                    }
                 }
             }
         }
