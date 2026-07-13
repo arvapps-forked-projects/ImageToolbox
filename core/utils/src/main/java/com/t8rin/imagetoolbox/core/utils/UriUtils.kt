@@ -23,9 +23,11 @@ import android.content.Context
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
+import android.os.ParcelFileDescriptor
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.provider.OpenableColumns
+import android.system.Os
 import android.webkit.MimeTypeMap
 import androidx.core.net.toFile
 import androidx.core.net.toUri
@@ -44,6 +46,8 @@ import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
+import java.io.File
 import java.net.URLDecoder
 import java.net.URLEncoder
 import java.util.LinkedList
@@ -54,24 +58,26 @@ fun Uri?.uiPath(
     default: String,
     context: Context = appContext
 ): String = this?.let { uri ->
-    if (DocumentFile.isDocumentUri(context, uri)) {
-        DocumentFile.fromSingleUri(context, uri)
-    } else {
-        DocumentFile.fromTreeUri(context, uri)
-    }?.uri?.path?.split(":")
-        ?.lastOrNull()?.let { p ->
-            val endPath = p.takeIf {
-                it.isNotEmpty()
-            }?.let { "/$it" } ?: ""
-            val startPath = if (
-                uri.toString()
-                    .split("%")[0]
-                    .contains("primary")
-            ) context.getString(R.string.device_storage)
-            else context.getString(R.string.external_storage)
+    runCatching {
+        if (DocumentFile.isDocumentUri(context, uri)) {
+            DocumentFile.fromSingleUri(context, uri)
+        } else {
+            DocumentFile.fromTreeUri(context, uri)
+        }?.uri?.path?.split(":")
+            ?.lastOrNull()?.let { p ->
+                val endPath = p.takeIf {
+                    it.isNotEmpty()
+                }?.let { "/$it" } ?: ""
+                val startPath = if (
+                    uri.toString()
+                        .split("%")[0]
+                        .contains("primary")
+                ) context.getString(R.string.device_storage)
+                else context.getString(R.string.external_storage)
 
-            startPath + endPath
-        }?.decodeEscaped()
+                startPath + endPath
+            }?.decodeEscaped()
+    }.getOrNull()
 } ?: default
 
 fun Uri.lastModified(): Long? = tryExtractOriginal().run {
@@ -250,6 +256,63 @@ fun Uri.tryExtractOriginal(): Uri = UriReplacements.resolve(this).run {
     }
 }
 
+suspend fun List<Uri>.distinctUris(): List<Uri> = withContext(Dispatchers.IO) {
+    val identities = HashSet<UriIdentity>(size)
+
+    return@withContext filter { uri ->
+        identities.add(uri.uriIdentity())
+    }
+}
+
+private fun Uri.uriIdentity(): UriIdentity {
+    val normalizedUri = tryExtractOriginal()
+
+    normalizedUri.fileDescriptorIdentity()?.let {
+        return it
+    }
+
+    if (normalizedUri.scheme == ContentResolver.SCHEME_FILE) {
+        normalizedUri.path?.let(::File)?.let { file ->
+            return UriIdentity.FilePath(
+                runCatching { file.canonicalPath }.getOrDefault(file.absolutePath)
+            )
+        }
+    }
+
+    return UriIdentity.NormalizedUri(normalizedUri.normalizeScheme().toString())
+}
+
+private fun Uri.fileDescriptorIdentity(): UriIdentity.FileDescriptor? = runCatching {
+    openFileDescriptor()?.use { descriptor ->
+        Os.fstat(descriptor.fileDescriptor).let { stat ->
+            UriIdentity.FileDescriptor(
+                device = stat.st_dev,
+                inode = stat.st_ino
+            ).takeIf { stat.st_ino != 0L }
+        }
+    }
+}.getOrNull()
+
+private fun Uri.openFileDescriptor(): ParcelFileDescriptor? = when (scheme) {
+    ContentResolver.SCHEME_FILE -> path?.let(::File)?.let { file ->
+        ParcelFileDescriptor.open(file, ParcelFileDescriptor.MODE_READ_ONLY)
+    }
+
+    ContentResolver.SCHEME_CONTENT -> appContext.contentResolver.openFileDescriptor(this, "r")
+    else -> null
+}
+
+private sealed interface UriIdentity {
+    data class FileDescriptor(
+        val device: Long,
+        val inode: Long
+    ) : UriIdentity
+
+    data class FilePath(val path: String) : UriIdentity
+
+    data class NormalizedUri(val uri: String) : UriIdentity
+}
+
 suspend fun List<Uri>.sortedByType(
     sortType: SortType,
 ): List<Uri> = coroutineScope {
@@ -266,6 +329,8 @@ suspend fun List<Uri>.sortedByType(
         SortType.ExtensionReversed -> sortedByExtension(descending = true)
         SortType.DateAdded -> sortedByDateAdded()
         SortType.DateAddedReversed -> sortedByDateAdded(descending = true)
+        SortType.Reverse -> reversed()
+        SortType.Shuffle -> shuffled()
     }
 }
 
@@ -407,8 +472,60 @@ private fun List<Uri>.sortedByDateModified(
 
 private fun List<Uri>.sortedByName(
     descending: Boolean = false
-) = sortedByKey(descending) {
-    it.filename()
+): List<Uri> {
+    val comparator = Comparator<Pair<Uri, String?>> { first, second ->
+        first.second.orEmpty().naturalCompareTo(second.second.orEmpty())
+    }.let { if (descending) it.reversed() else it }
+
+    return map { it to it.filename() }
+        .sortedWith(comparator)
+        .map { it.first }
+}
+
+private fun String.naturalCompareTo(other: String): Int {
+    var firstIndex = 0
+    var secondIndex = 0
+
+    while (firstIndex < length && secondIndex < other.length) {
+        val firstChar = this[firstIndex]
+        val secondChar = other[secondIndex]
+
+        if (firstChar.isDigit() && secondChar.isDigit()) {
+            val firstEnd = indexOfFirstNonDigit(firstIndex)
+            val secondEnd = other.indexOfFirstNonDigit(secondIndex)
+            val firstNumber = substring(firstIndex, firstEnd)
+            val secondNumber = other.substring(secondIndex, secondEnd)
+            val firstSignificant = firstNumber.trimStart('0').ifEmpty { "0" }
+            val secondSignificant = secondNumber.trimStart('0').ifEmpty { "0" }
+
+            val lengthComparison = firstSignificant.length.compareTo(secondSignificant.length)
+            if (lengthComparison != 0) return lengthComparison
+
+            val numberComparison = firstSignificant.compareTo(secondSignificant)
+            if (numberComparison != 0) return numberComparison
+
+            val leadingZeroComparison = firstNumber.length.compareTo(secondNumber.length)
+            if (leadingZeroComparison != 0) return leadingZeroComparison
+
+            firstIndex = firstEnd
+            secondIndex = secondEnd
+        } else {
+            val characterComparison =
+                firstChar.lowercaseChar().compareTo(secondChar.lowercaseChar())
+            if (characterComparison != 0) return characterComparison
+
+            firstIndex++
+            secondIndex++
+        }
+    }
+
+    return length.compareTo(other.length)
+}
+
+private fun String.indexOfFirstNonDigit(startIndex: Int): Int {
+    var index = startIndex
+    while (index < length && this[index].isDigit()) index++
+    return index
 }
 
 private fun List<Uri>.sortedBySize(

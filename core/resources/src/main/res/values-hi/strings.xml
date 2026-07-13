@@ -3715,4 +3715,25 @@
     <string name="normalize_gif_frames">फ़्रेम का आकार सामान्य करें</string>
     <string name="normalize_gif_frames_sub">सबसे बड़ी क्लिप को फिट करने के लिए स्केल फ़्रेम; उनके मूल पैमाने को संरक्षित करने के लिए बंद करें</string>
     <string name="delay_between_clips">क्लिप के बीच विलंब (एमएस)</string>
+    <string name="folder_picker">फ़ोल्डर</string>
+    <string name="folder_picker_sub">किसी फ़ोल्डर और उसके सबफ़ोल्डर्स से सभी छवियों का चयन करें</string>
+    <string name="duplicate_finder">डुप्लिकेट खोजक</string>
+    <string name="duplicate_finder_sub">सटीक प्रतियाँ और दृष्टिगत रूप से समान छवियाँ ढूँढ़ें</string>
+    <string name="search_keywords_duplicate_finder">डुप्लिकेट खोजक समान छवियाँ सटीक प्रतिलिपियाँ फ़ोटो क्लीनअप स्टोरेज dHash SHA-256</string>
+    <string name="pick_images_for_duplicates">डुप्लिकेट ढूंढने के लिए छवियां चुनें</string>
+    <string name="duplicate_finder_sensitivity">समानता संवेदनशीलता</string>
+    <string name="exact_copies">सटीक प्रतिलिपियाँ</string>
+    <string name="similar_images">समान छवियाँ</string>
+    <string name="select_all_duplicates">सभी सटीक डुप्लिकेट का चयन करें</string>
+    <string name="select_all_except_best">अनुशंसित को छोड़कर सभी का चयन करें</string>
+    <string name="no_duplicates_found">कोई डुप्लिकेट नहीं मिला</string>
+    <string name="no_duplicates_found_sub">अधिक छवियाँ जोड़ने या समानता संवेदनशीलता बढ़ाने का प्रयास करें</string>
+    <string name="duplicate_analysis_errors">%1$d छवि(छवियों) को पढ़ा नहीं जा सका</string>
+    <string name="duplicate_group_summary">%1$s • %2$s पुनः प्राप्त करने योग्य</string>
+    <string name="duplicate_groups_summary">%1$d समूह • %2$s पुनः प्राप्त करने योग्य</string>
+    <string name="duplicate_selected_summary">%1$d चयनित • %2$s</string>
+    <string name="confirm_duplicate_deletion_text">इसे असंपादित नहीं किया जा सकता है। एंड्रॉइड आपसे सिस्टम डायलॉग में डिलीट की पुष्टि करने के लिए कह सकता है।</string>
+    <string name="not_found">नहीं मिला</string>
+    <string name="move_to_start">आरंभ करने के लिए आगे बढ़ें</string>
+    <string name="move_to_end">समाप्त करने के लिए ले जाएँ</string>
 </resources>
