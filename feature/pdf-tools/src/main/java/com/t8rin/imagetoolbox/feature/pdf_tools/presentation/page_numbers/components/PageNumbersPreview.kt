@@ -50,7 +50,8 @@ import com.t8rin.imagetoolbox.core.ui.widget.modifier.animateContentSizeNoClip
 import com.t8rin.imagetoolbox.core.ui.widget.modifier.container
 import com.t8rin.imagetoolbox.feature.pdf_tools.domain.model.PdfPageNumbersParams
 import com.t8rin.imagetoolbox.feature.pdf_tools.presentation.common.PageSwitcher
-import com.t8rin.imagetoolbox.feature.pdf_tools.presentation.common.PdfTextStyle
+import com.t8rin.imagetoolbox.feature.pdf_tools.presentation.common.asPdfPreviewText
+import com.t8rin.imagetoolbox.feature.pdf_tools.presentation.common.rememberPdfTextStyle
 import kotlin.math.max
 import kotlin.math.min
 
@@ -60,6 +61,8 @@ internal fun PageNumbersPreview(
     params: PdfPageNumbersParams,
     pageCount: Int
 ) {
+    val pdfTextStyle = rememberPdfTextStyle()
+
     PageSwitcher(
         activePages = null,
         pageCount = pageCount
@@ -83,6 +86,7 @@ internal fun PageNumbersPreview(
             val previewText = params.labelFormat
                 .replace("{n}", (page + 1).toString())
                 .replace("{total}", pageCount.toString())
+                .asPdfPreviewText()
 
             val previewAlignment = when (params.position) {
                 Position.TopLeft -> Alignment.TopStart
@@ -129,12 +133,13 @@ internal fun PageNumbersPreview(
                         density,
                         params.fontSize,
                         previewText,
-                        targetWidth
+                        targetWidth,
+                        pdfTextStyle
                     ) {
                         val baseFontSize = 100.sp
                         val textWidth = textMeasurer.measure(
                             text = previewText,
-                            style = PdfTextStyle.copy(fontSize = baseFontSize),
+                            style = pdfTextStyle.copy(fontSize = baseFontSize),
                             maxLines = 1,
                             softWrap = false
                         ).size.width.coerceAtLeast(1)
@@ -150,7 +155,7 @@ internal fun PageNumbersPreview(
                     ) {
                         val textLayout = textMeasurer.measure(
                             text = previewText,
-                            style = PdfTextStyle.copy(fontSize = scaledFontSize),
+                            style = pdfTextStyle.copy(fontSize = scaledFontSize),
                             maxLines = 1,
                             softWrap = false
                         )
@@ -201,7 +206,7 @@ internal fun PageNumbersPreview(
                         maxLines = 1,
                         softWrap = false,
                         textAlign = TextAlign.Center,
-                        style = PdfTextStyle.copy(fontSize = scaledFontSize)
+                        style = pdfTextStyle.copy(fontSize = scaledFontSize)
                     )
                 }
             }

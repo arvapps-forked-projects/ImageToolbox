@@ -4,12 +4,12 @@ androidTargetSdk = "37"
 androidCompileSdk = "37"
 androidCompileSdkExtension = "-"
 
-versionName = "4.2.0-beta01"
-versionCode = "254"
+versionName = "4.2.0-beta02"
+versionCode = "255"
 
 jvmTarget = "21"
 
-imageToolboxLibs = "7.3.7"
+imageToolboxLibs = "7.3.9"
 trickle = "1.9.0"
 evaluator = "1.0.0"
 quickie = "1.18.1"
@@ -71,7 +71,7 @@ squircle-shape = "5.3.0"
 
 mlkitDocumentScanner = "16.0.0"
 moshi = "1.15.2"
-bouncycastle = "1.84"
+bouncycastle = "1.85"
 pdfviewer = "1.0.0-alpha19"
 fragmentCompose = "1.9.0-alpha02"
 aboutlibraries = "15.0.3"
@@ -83,7 +83,7 @@ onnx = "1.27.0"
 opencv = "5.0.0.1"
 
 tiffdecoder = "1.0.5"
-materialKolor = "5.0.0-alpha07"
+materialKolor = "5.0.0"
 paletteKtx = "1.0.0"
 kotlinxSerializationJson = "1.11.0"
 
@@ -91,6 +91,7 @@ firebaseBom = "34.16.0"
 firebaseCrashlyticsGradle = "3.0.7"
 junit = "4.13.2"
 coilResvg = "1.0.0"
+runner = "1.7.0"
 
 [libraries]
 coil-resvg = { module = "com.hashsequence:coil-resvg", version.ref = "coilResvg" }
@@ -183,10 +184,11 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 androidx-documentfile = { group = "androidx.documentfile", name = "documentfile", version.ref = "documentfile" }
 uiautomator = { group = "androidx.test.uiautomator", name = "uiautomator", version.ref = "uiautomator" }
 benchmark-macro-junit4 = { group = "androidx.benchmark", name = "benchmark-macro-junit4", version.ref = "androidxMacroBenchmark" }
+androidx-runner = { module = "androidx.test:runner", version.ref = "runner" }
 tesseract = { module = "com.github.adaptech-cz.Tesseract4Android:tesseract4android-openmp", version.ref = "tesseract" }
 
-bouncycastle-pkix = { module = "org.bouncycastle:bcpkix-jdk15to18", version.ref = "bouncycastle" }
-bouncycastle-provider = { module = "org.bouncycastle:bcprov-jdk15to18", version.ref = "bouncycastle" }
+bouncycastle-pkix = { module = "org.bouncycastle:bcpkix-jdk18on", version.ref = "bouncycastle" }
+bouncycastle-provider = { module = "org.bouncycastle:bcprov-jdk18on", version.ref = "bouncycastle" }
 
 firebase-crashlytics-gradle = { module = "com.google.firebase:firebase-crashlytics-gradle", version.ref = "firebaseCrashlyticsGradle" }
 baselineprofile-gradle = { group = "androidx.benchmark", name = "benchmark-baseline-profile-gradle-plugin", version.ref = "androidxMacroBenchmark" }

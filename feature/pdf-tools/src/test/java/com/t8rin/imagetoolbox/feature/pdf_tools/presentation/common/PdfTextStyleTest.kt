@@ -1,6 +1,6 @@
 /*
  * ImageToolbox is an image editor for android
- * Copyright (c) 2024 T8RIN (Malik Mukhametzyanov)
+ * Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,18 @@
  * along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
  */
 
-package com.t8rin.imagetoolbox.core.ui.widget.image
+package com.t8rin.imagetoolbox.feature.pdf_tools.presentation.common
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
-import com.t8rin.imagetoolbox.core.domain.model.DomainAspectRatio
+import org.junit.Assert.assertEquals
+import org.junit.Test
 
-@Composable
-fun aspectRatios() = remember {
-    DomainAspectRatio.defaultList
+class PdfTextStyleTest {
+
+    @Test
+    fun `PDF preview removes color emoji presentation selectors`() {
+        assertEquals(
+            "Page 1 of 2 ❤ 🔥 👀",
+            "Page 1 of 2 ❤️ 🔥 👀".asPdfPreviewText()
+        )
+    }
 }
