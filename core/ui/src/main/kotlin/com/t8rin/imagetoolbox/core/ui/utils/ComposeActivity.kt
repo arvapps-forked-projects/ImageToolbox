@@ -106,7 +106,7 @@ abstract class ComposeActivity : AppCompatActivity() {
         }
 
     private val _settingsState = mutableStateOf(SettingsState.Default)
-    private val settingsState: SettingsState by _settingsState
+    protected val settingsState: SettingsState by _settingsState
 
     @Composable
     abstract fun Content()
@@ -128,8 +128,6 @@ abstract class ComposeActivity : AppCompatActivity() {
                     settingsManager.getSettingsState()
                 }
             }
-            handleSystemBarsBehavior()
-            handleSecureMode()
         }
         val newOverride = Configuration(newBase.resources?.configuration)
         settingsState.fontScale?.let { newOverride.fontScale = it }
@@ -163,6 +161,8 @@ abstract class ComposeActivity : AppCompatActivity() {
         handleSystemBarsBehavior()
 
         handleSecureMode()
+
+        applyDynamicColors()
 
         if (savedInstanceState == null) onFirstLaunch()
 
@@ -279,7 +279,7 @@ abstract class ComposeActivity : AppCompatActivity() {
     }
 
     private fun observeReview() {
-        lifecycleScope.launch {
+        activityScope.launch {
             ReviewHandler.current.apply {
                 reviewRequests.collect {
                     makeLog("collect reviewRequests")
