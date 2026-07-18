@@ -47,13 +47,17 @@ import com.t8rin.imagetoolbox.core.ui.utils.helper.AppToastHost
 import com.t8rin.imagetoolbox.core.ui.utils.helper.toCoil
 import com.t8rin.imagetoolbox.core.ui.utils.navigation.Screen
 import com.t8rin.imagetoolbox.core.ui.utils.state.update
+import com.t8rin.imagetoolbox.texture_generation.domain.TextureFavoritesRepository
 import com.t8rin.imagetoolbox.texture_generation.domain.TextureGenerator
+import com.t8rin.imagetoolbox.texture_generation.domain.model.TextureFilterType
 import com.t8rin.imagetoolbox.texture_generation.domain.model.TextureParams
 import com.t8rin.imagetoolbox.texture_generation.presentation.screenLogic.TextureGenerationComponent.HistorySnapshot
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.stateIn
 
 class TextureGenerationComponent @AssistedInject internal constructor(
     @Assisted componentContext: ComponentContext,
@@ -66,6 +70,7 @@ class TextureGenerationComponent @AssistedInject internal constructor(
     private val imageCompressor: ImageCompressor<Bitmap>,
     private val imageScaler: ImageScaler<Bitmap>,
     private val settingsManager: SettingsManager,
+    textureFavoritesRepository: TextureFavoritesRepository,
 ) : BaseHistoryComponent<HistorySnapshot>(
     dispatchersHolder = dispatchersHolder,
     componentContext = componentContext
@@ -88,6 +93,14 @@ class TextureGenerationComponent @AssistedInject internal constructor(
 
     private val _isSaving: MutableState<Boolean> = mutableStateOf(false)
     val isSaving by _isSaving
+
+    val favoriteTextureTypes = textureFavoritesRepository.favorites.stateIn(
+        scope = componentScope,
+        started = SharingStarted.Eagerly,
+        initialValue = emptySet()
+    )
+
+    private val favoritesRepository = textureFavoritesRepository
 
     init {
         resetHistory()
@@ -219,6 +232,12 @@ class TextureGenerationComponent @AssistedInject internal constructor(
         }
     }
 
+    fun toggleFavoriteTexture(type: TextureFilterType) {
+        componentScope.launch {
+            favoritesRepository.toggleFavorite(type)
+        }
+    }
+
     fun setTextureWidth(width: Int) {
         val coercedWidth = width.coerceAtMost(8192)
         if (_textureSize.value.width != coercedWidth) {
@@ -260,8 +279,8 @@ class TextureGenerationComponent @AssistedInject internal constructor(
             _isImageLoading.update { true }
             _previewBitmap.update { null }
             debouncedImageCalculation {
-                val previewSize = if (textureSize.width > 512 || textureSize.height > 512) {
-                    textureSize.flexibleResize(512, 512)
+                val previewSize = if (textureSize.width > 768 || textureSize.height > 768) {
+                    textureSize.flexibleResize(768, 768)
                 } else {
                     textureSize
                 }
@@ -273,8 +292,8 @@ class TextureGenerationComponent @AssistedInject internal constructor(
                 )?.let {
                     imageScaler.scaleImage(
                         image = it,
-                        width = 512,
-                        height = 512,
+                        width = 768,
+                        height = 768,
                         resizeType = ResizeType.Flexible
                     )
                 }.also { bitmap ->

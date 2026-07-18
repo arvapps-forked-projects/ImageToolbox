@@ -17,6 +17,10 @@
 
 package com.t8rin.imagetoolbox.texture_generation.domain.model
 
+import com.t8rin.imagetoolbox.core.ksp.annotations.FastNoiseTextureMappings
+import com.t8rin.imagetoolbox.core.ksp.annotations.FastNoiseTextureName
+
+@FastNoiseTextureMappings
 enum class TextureFilterType(val isFastNoise: Boolean = false) {
     BrushedMetal,
     Brick(true),
@@ -38,7 +42,10 @@ enum class TextureFilterType(val isFastNoise: Boolean = false) {
     Terrain(true),
     Topography(true),
     WaterRipple(true),
+
+    @FastNoiseTextureName("Wood")
     AdvancedWood(true),
+
     Grass(true),
     Dirt(true),
     Leather(true),
@@ -49,13 +56,22 @@ enum class TextureFilterType(val isFastNoise: Boolean = false) {
     Aurora(true),
     OilSlick(true),
     Watercolor(true),
+
+    @FastNoiseTextureName("Flow")
     AbstractFlow(true),
+
     Opal(true),
+
+    @FastNoiseTextureName("Damascus")
     DamascusSteel(true),
+
     Lightning(true),
     Velvet(true),
     InkMarbling(true),
+
+    @FastNoiseTextureName("Holographic")
     HolographicFoil(true),
+
     Bioluminescence(true),
     CosmicVortex(true),
     LavaLamp(true),
@@ -70,6 +86,77 @@ enum class TextureFilterType(val isFastNoise: Boolean = false) {
     PeacockFeather(true),
     NautilusShell(true),
     RingedPlanet(true),
+    Geode(true),
+    PrismaticLight(true),
+    StainedGlass(true),
+    KelpForest(true),
+    FrostFern(true),
+    LiquidCrystal(true),
+    DragonScales(true),
+    FireflySwarm(true),
+    Mycelium(true),
+    Kintsugi(true),
+    CarbonFiber(true),
+    CircuitBoard(true),
+    SoapFilm(true),
+    MoireGuilloche(true),
+    SnakeSkin(true),
+    Terrazzo(true),
+    GalaxyFilaments(true),
+    VolcanicObsidian(true),
+    MotherboardHeatmap(true),
+    MicroscopicDiatoms(true),
+    ReactionDiffusion(true),
+    CoralGrowth(true),
+    SlimeMold(true),
+    DendriticCrystal(true),
+    ElectricArcField(true),
+    CloudChamber(true),
+    TurbulentInk(true),
+    CellularEmbryo(true),
+    NeuralGarden(true),
+    MagneticField(true),
+    RiverDelta(true),
+    LichenColony(true),
+    BacterialCulture(true),
+    FluidVorticity(true),
+    CrystalGrowth(true),
+    GalacticWeb(true),
+    VeinedLeaf(true),
+    PorousSponge(true),
+    RainOnGlass(true),
+    EmberField(true),
+    QuantumFoam(true),
+    ChladniPlate(true),
+    CymaticRosette(true),
+    LichtenbergFigure(true),
+    Quasicrystal(true),
+    Mandelbrot(true),
+    BurningShip(true),
+    JuliaSet(true),
+    KaleidoscopeCrystal(true),
+    SpectralPrism(true),
+    TopologicalKnot(true),
+    XRayBotanical(true),
+    Chromatophore(true),
+    BiomechanicalTissue(true),
+    GildedFiligree(true),
+    AncientRunes(true),
+    SolarGranulation(true),
+    LunarEjecta(true),
+    OceanCurrents(true),
+    InkWashMountains(true),
+    NeonCity(true),
+    PhyllotaxisBloom(true),
+    SierpinskiTriangle(true),
+    ApollonianGasket(true),
+    HyperbolicTiling(true),
+    MoebiusWeave(true),
+    RorschachInkblot(true),
+    SeismicInterference(true),
+    RayleighBenard(true),
+    OrigamiFacets(true),
+    FiberOpticBundle(true),
     Caustics,
     Cellular,
     Check,

@@ -20,7 +20,7 @@
   </br>
   </br>
   
- <img src="https://img.shields.io/badge/411.3K-aeff4d?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BCiAgICA8cGF0aCBkPSJNMTIuODksM0wxNC44NSwzLjRMMTEuMTEsMjFMOS4xNSwyMC42TDEyLjg5LDNNMTkuNTksMTJMMTYsOC40MVY1LjU4TDIyLjQyLDEyTDE2LDE4LjQxVjE1LjU4TDE5LjU5LDEyTTEuNTgsMTJMOCw1LjU4VjguNDFMNC40MSwxMkw4LDE1LjU4VjE4LjQxTDEuNTgsMTJaIgogICAgICAgIGZpbGw9IndoaXRlIiAvPgo8L3N2Zz4%3D&label=Lines%20of%20code&labelColor=4b731a"/>
+ <img src="https://img.shields.io/badge/413.6K-aeff4d?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BCiAgICA8cGF0aCBkPSJNMTIuODksM0wxNC44NSwzLjRMMTEuMTEsMjFMOS4xNSwyMC42TDEyLjg5LDNNMTkuNTksMTJMMTYsOC40MVY1LjU4TDIyLjQyLDEyTDE2LDE4LjQxVjE1LjU4TDE5LjU5LDEyTTEuNTgsMTJMOCw1LjU4VjguNDFMNC40MSwxMkw4LDE1LjU4VjE4LjQxTDEuNTgsMTJaIgogICAgICAgIGZpbGw9IndoaXRlIiAvPgo8L3N2Zz4%3D&label=Lines%20of%20code&labelColor=4b731a"/>
 
 <img src="https://img.shields.io/github/commits-since/t8rin/ImageToolbox/v1.0?color=palegreen&label=Commits&style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHRpdGxlPnNvdXJjZS1jb21taXQ8L3RpdGxlPjxwYXRoIGQ9Ik0xNywxMkMxNywxNC40MiAxNS4yOCwxNi40NCAxMywxNi45VjIxSDExVjE2LjlDOC43MiwxNi40NCA3LDE0LjQyIDcsMTJDNyw5LjU4IDguNzIsNy41NiAxMSw3LjFWM0gxM1Y3LjFDMTUuMjgsNy41NiAxNyw5LjU4IDE3LDEyTTEyLDlBMywzIDAgMCwwIDksMTJBMywzIDAgMCwwIDEyLDE1QTMsMyAwIDAsMCAxNSwxMkEzLDMgMCAwLDAgMTIsOVoiIGZpbGw9IndoaXRlIiAvPjwvc3ZnPg==&labelColor=07ab4e&v=2">
  
@@ -525,7 +525,7 @@ or click one of the badges below.
     - You can create filter from any filter chain
     - Share created filters by QR code
     - Scan filters from the app to get them on your device
-- Texture generation with more than 60 presets
+- Texture generation with more than 130 presets
 
   <details>
   <summary>Available textures</summary>
@@ -591,10 +591,84 @@ or click one of the badges below.
     - Peacock Feather
     - Nautilus Shell
     - Ringed Planet
+    * Geode / Agate
+    * Prismatic Light
+    * Stained Glass
+    * Kelp Forest
+    * Frost Fern
+    * Liquid Crystal
+    * Dragon Scales
+    * Firefly Swarm
+    * Mycelium
+    * Kintsugi
+    * Carbon Fiber
+    * Circuit Board
+    * Soap Film
+    * Moiré Guilloché
+    * Snake Skin
+    * Terrazzo
+    * Galaxy Filaments
+    * Volcanic Obsidian
+    * Motherboard Heatmap
+    * Microscopic Diatoms
+    * Reaction Diffusion
+    * Coral Growth
+    * Slime Mold
+    * Dendritic Crystal
+    * Electric Arc Field
+    * Cloud Chamber
+    * Turbulent Ink
+    * Cellular Embryo
+    * Neural Garden
+    * Magnetic Field
+    * River Delta
+    * Lichen Colony
+    * Bacterial Culture
+    * Fluid Vorticity
+    * Crystal Growth
+    * Galactic Web
+    * Veined Leaf
+    * Porous Sponge
+    * Rain on Glass
+    * Ember Field
+    * Quantum Foam
+    * Chladni Plate
+    * Cymatic Rosette
+    * Lichtenberg Figure
+    * Quasicrystal
+    * Mandelbrot
+    * Burning Ship
+    * Julia Set
+    * Kaleidoscope Crystal
+    * Spectral Prism
+    * Topological Knot
+    * X-Ray Botanical
+    * Chromatophore
+    * Biomechanical Tissue
+    * Gilded Filigree
+    * Ancient Runes
+    * Solar Granulation
+    * Lunar Ejecta
+    * Ocean Currents
+    * Ink Wash Mountains
+    * Neon City
+    * Phyllotaxis Bloom
+    * Sierpiński Triangle
+    * Apollonian Gasket
+    * Hyperbolic Tiling
+    * Möbius Weave
+    * Rorschach Inkblot
+    * Seismic Interference
+    * Rayleigh–Bénard Convection
+    * Origami Facets
+    * Fiber Optic Bundle
 
   </details>
 
-- Fragment Shader creation
+- Shader Studio
+    - Creating, editing and validating custom fragment shaders with GLSL syntax highlighting
+    - Live preview with configurable shader parameters
+    - Importing, exporting, sharing and managing shader presets
 - Files encryption and decryption with 100+ different algorithms available
 - Adding Stickers and Text (Markup Layers Mode)
 - Extract Text From Images (OCR)
@@ -755,6 +829,7 @@ or click one of the badges below.
     - GIF to images
     - Images to GIF
     - GIF to WEBP
+    - Merge multiple GIFs into one animation
 - WEBP conversion
     - WEBP to images
     - Images to WEBP
@@ -817,7 +892,7 @@ or click one of the badges below.
       - SMS
       - Contact (vCard)
       - Calendar event
-    - Sharing as images
+    - Exporting and sharing as raster images or SVG
     - 13 formats available
       - QR CODE
       - AZTEC
@@ -844,6 +919,7 @@ or click one of the badges below.
     - Free rotation crop
     - Free corners crop (can be used as Perspective Correction)
     - Crop by aspect ratio
+    - Saving custom aspect ratios
     - Crop with shape mask
         
         <details>
@@ -983,6 +1059,8 @@ or click one of the badges below.
     - Brightness
     - Camera Like RGB
 - Image source selection
+    - Embedded picker, system photo picker, gallery, file picker and camera
+    - Selecting all images from a folder
 - Additional Features
     - Base64 Decode/Encode
     - Rotating
@@ -990,7 +1068,10 @@ or click one of the badges below.
     - Perlin Noise Generation
     - Previewing SVG, DNG, PSD, DJVU and almost all types of images
     - Saving to any specific folder
+    - Saving beside original files or deleting originals after a successful export
     - Long press on save to choose one time output folder
+    - Reusable export profiles for Single Edit and Resize & Convert
+    - Undo and redo history in editing tools
     - Randomizing output filename
     - Using image cheksum as filename
     - Checksum Tools with ability to calculate and compare hashes
@@ -999,8 +1080,13 @@ or click one of the badges below.
     - Embedded media picker
     - Wallpapers Export
     - Ascii Art
-    - Batch rename by pattern
+    - Batch rename by pattern with live preview and configurable date, sequence and extension handling
     - Duplicate Finder
+        - Exact copy and visually similar image detection with adjustable sensitivity
+        - Keep recommendations by quality, file size, date or selection order
+    - Android Quick Settings tiles for common tools and screenshot actions
+    - Searchable in-app Help & Tips
+    - App usage statistics and logs viewer
 
 **And More!**
 
@@ -1079,6 +1165,7 @@ or click one of the badges below.
 - Ability to import any font (OTF/TTF) to further use
 - In app font scale changing
 - Changing between options list and grouped view
+- Tool search, favorites and recently used tools
 - Confetti Type selection
     - Default
     - Festive

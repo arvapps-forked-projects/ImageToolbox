@@ -750,13 +750,13 @@ private fun Shape.toBallShape(density: Density) = object : QrBallShape {
     }
 }
 
-private fun QrCodeParams.BallShape.toLib(density: Density): QrBallShape = when (this) {
+internal fun QrCodeParams.BallShape.toLib(density: Density): QrBallShape = when (this) {
     QrCodeParams.BallShape.Square -> QrBallShape.square()
     QrCodeParams.BallShape.Circle -> QrBallShape.circle()
     is Shaped -> shape.toBallShape(density)
 }
 
-private fun QrCodeParams.FrameShape.toLib(): QrFrameShape = when (this) {
+internal fun QrCodeParams.FrameShape.toLib(): QrFrameShape = when (this) {
     is QrCodeParams.FrameShape.Corners -> {
         if (isCut) {
             QrFrameShape.cutCorners(
@@ -778,7 +778,7 @@ private fun QrCodeParams.FrameShape.toLib(): QrFrameShape = when (this) {
     }
 }
 
-private fun QrCodeParams.PixelShape.toLib(density: Density): QrPixelShape = when (this) {
+internal fun QrCodeParams.PixelShape.toLib(density: Density): QrPixelShape = when (this) {
     QrCodeParams.PixelShape.Square -> QrPixelShape.square()
     QrCodeParams.PixelShape.RoundSquare -> QrPixelShape.roundCorners()
     QrCodeParams.PixelShape.Circle -> QrPixelShape.circle()
@@ -788,7 +788,7 @@ private fun QrCodeParams.PixelShape.toLib(density: Density): QrPixelShape = when
     is QrCodeParams.PixelShape.Shaped -> pixelShape(density) { shape }
 }
 
-private fun QrCodeParams.ErrorCorrectionLevel.toLib(): QrErrorCorrectionLevel = when (this) {
+internal fun QrCodeParams.ErrorCorrectionLevel.toLib(): QrErrorCorrectionLevel = when (this) {
     QrCodeParams.ErrorCorrectionLevel.Auto -> QrErrorCorrectionLevel.Auto
     QrCodeParams.ErrorCorrectionLevel.L -> QrErrorCorrectionLevel.Low
     QrCodeParams.ErrorCorrectionLevel.M -> QrErrorCorrectionLevel.Medium
@@ -796,7 +796,7 @@ private fun QrCodeParams.ErrorCorrectionLevel.toLib(): QrErrorCorrectionLevel = 
     QrCodeParams.ErrorCorrectionLevel.H -> QrErrorCorrectionLevel.High
 }
 
-private fun QrCodeParams.MaskPattern.toLib(): MaskPattern? = when (this) {
+internal fun QrCodeParams.MaskPattern.toLib(): MaskPattern? = when (this) {
     QrCodeParams.MaskPattern.Auto -> null
     QrCodeParams.MaskPattern.P_000 -> MaskPattern.PATTERN000
     QrCodeParams.MaskPattern.P_001 -> MaskPattern.PATTERN001

@@ -25,6 +25,9 @@ plugins {
 android.namespace = "com.t8rin.imagetoolbox.feature.texture_generation"
 
 dependencies {
+    implementation(projects.core.ksp)
+    ksp(projects.core.ksp)
+
     implementation(libs.toolbox.fastNoise)
     implementation(libs.toolbox.jhlabs)
 }
