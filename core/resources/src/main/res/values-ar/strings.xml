@@ -286,7 +286,6 @@
     <string name="implementation">تطبيق</string>
     <string name="compatibility">التوافق</string>
     <string name="features_sub">تشفير الملفات على أساس كلمة المرور. يمكن تخزين الملفات التي تمت متابعتها في دليل Crypto أو مشاركتها. يمكن أيضًا فتح الملفات التي تم فك تشفيرها مباشرة.</string>
-    <string name="implementation_sub">AES-256، وضع GCM، بدون حشو، 12 بايت من المتجهات الأولية العشوائية افتراضيًا. يمكنك اختيار الخوارزمية المطلوبة. تُستخدم المفاتيح كقيم تجزئة SHA-3 بطول 256 بت.</string>
     <string name="file_size">حجم الملف</string>
     <string name="file_size_sub">الحد الأقصى لحجم الملف مقيد بنظام التشغيل أندرويد والذاكرة المتاحة، والتي تعتمد بشكل واضح على جهازك. \nيُرجى ملاحظة: الذاكرة ليست تخزين.</string>
     <string name="group_options_by_type_sub">خيارات المجموعات على الشاشة الرئيسية من نوعها بدلاً من ترتيب القائمة المخصص</string>
@@ -3956,4 +3955,28 @@
     <string name="texture_category_space">فضاء</string>
     <string name="texture_category_patterns">أنماط</string>
     <string name="texture_category_abstract">خلاصة</string>
+    <string name="exif_removal_preset">إزالة مسبقا</string>
+    <string name="exif_preset_all_metadata">جميع البيانات الوصفية</string>
+    <string name="exif_preset_privacy">خصوصية</string>
+    <string name="exif_preset_location_only">الموقع فقط</string>
+    <string name="exif_preset_keep_date_copyright">الحفاظ على التواريخ وحقوق النشر</string>
+    <string name="exif_tags_selected">%1$s • %2$d العلامات</string>
+    <string name="duplicate_scan_mode">وضع المسح</string>
+    <string name="duplicate_scan_exact_only">النسخ الدقيقة فقط</string>
+    <string name="duplicate_scan_exact_and_similar">بالضبط وما شابه</string>
+    <string name="no_exact_duplicates_found_sub">حاول إضافة المزيد من الصور أو تضمين صور مشابهة من الناحية المرئية</string>
+    <string name="unable_to_decode_image">غير قادر على فك تشفير %1$s</string>
+    <string name="implementation_sub_v2">يتم استخدام AES-256-GCM مع رقم عشوائي 12 بايت بشكل افتراضي. يحتوي كل ملف مشفر على رأس مُصدر، وملح عشوائي فريد، ومفتاح مشتق من كلمة المرور باستخدام PBKDF2-HMAC-SHA256 مع 210.000 تكرار. يمكنك أيضًا تحديد خوارزمية أخرى متاحة.</string>
+    <string name="encrypted_file_detected">تم اكتشاف ملف مشفر</string>
+    <string name="encrypted_file_detected_sub">سيتم قراءة خوارزمية التشفير والمعلمات من الملف تلقائيًا</string>
+    <string name="file_already_encrypted">هذا الملف مشفر بالفعل</string>
+    <string name="file_already_encrypted_sub">سيؤدي تشفيرها مرة أخرى إلى إنشاء طبقة تشفير إضافية</string>
+    <string name="decrypt_failed">فشل فك تشفير الملف: كلمة مرور غير صالحة أو بيانات مشفرة تالفة</string>
+    <string name="panorama">بانوراما</string>
+    <string name="crop_stitched_image_sub">قم بقص النتيجة إلى أكبر مساحة دون مناطق فارغة</string>
+    <string name="seam_blending">مزج التماس</string>
+    <string name="network_host_unreachable">لا يمكن الوصول إلى الخادم. تحقق من اتصالك بالإنترنت أو VPN أو العنوان وحاول مرة أخرى</string>
+    <string name="network_timeout">انتهت مهلة الاتصال. تحقق من اتصالك وحاول مرة أخرى</string>
+    <string name="network_connection_failed">تعذر الاتصال بالخادم. تحقق من اتصالك أو حاول مرة أخرى لاحقًا</string>
+    <string name="network_connection_interrupted">انقطع الاتصال. تحقق من اتصالك وحاول مرة أخرى</string>
 </resources>

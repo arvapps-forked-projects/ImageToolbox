@@ -26,7 +26,5 @@ android {
 
 dependencies {
     api(libs.onnx.runtime)
-    implementation(libs.ktor)
-    implementation(libs.ktor.logging)
     implementation(libs.aire)
 }

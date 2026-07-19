@@ -290,7 +290,6 @@
     <string name="group_options_by_type_sub">Gruppierung der Optionen auf dem Hauptbildschirm nach ihrem Typ anstelle einer benutzerdefinierten Listenanordnung</string>
     <string name="create">Erstellen</string>
     <string name="store_file_desc">Speichere die Datei auf deinem Gerät oder benutze Teilen, um es wo immer du möchtest abzulegen</string>
-    <string name="implementation_sub">AES-256, GCM-Modus, kein Padding, standardmäßig 12 Byte zufällige IVs. Du kannst den gewünschten Algorithmus auswählen. Schlüssel werden als 256-Bit SHA-3-Hashes benutzt</string>
     <string name="file_size_sub">Die maximale Dateigröße wird durch das Android-Betriebssystem und den verfügbaren Speicher begrenzt, was natürlich von Ihrem Gerät abhängt. \nBitte beachten Sie: Speicher ist nicht gleich Speicherplatz.</string>
     <string name="compatibility_sub">Bitte beachte, dass die Kompatibilität zu anderen Dateiverschlüsselungsprogrammen oder -diensten nicht gewährleistet ist. Eine leicht abweichende Behandlung des Schlüssels oder eine andere Chiffrierkonfiguration können Gründe für eine Inkompatibilität sein.</string>
     <string name="file_proceed">Datei bearbeitet</string>
@@ -3952,4 +3951,28 @@
     <string name="texture_category_space">Raum</string>
     <string name="texture_category_patterns">Muster</string>
     <string name="texture_category_abstract">Abstrakt</string>
+    <string name="exif_removal_preset">Entfernungsvoreinstellung</string>
+    <string name="exif_preset_all_metadata">Alle Metadaten</string>
+    <string name="exif_preset_privacy">Privatsphäre</string>
+    <string name="exif_preset_location_only">Nur Standort</string>
+    <string name="exif_preset_keep_date_copyright">Termine und Urheberrecht einhalten</string>
+    <string name="exif_tags_selected">%1$s • %2$d Tags</string>
+    <string name="duplicate_scan_mode">Scanmodus</string>
+    <string name="duplicate_scan_exact_only">Nur exakte Kopien</string>
+    <string name="duplicate_scan_exact_and_similar">Genau und ähnlich</string>
+    <string name="no_exact_duplicates_found_sub">Fügen Sie weitere Bilder hinzu oder fügen Sie optisch ähnliche Bilder hinzu</string>
+    <string name="unable_to_decode_image">%1$s kann nicht dekodiert werden</string>
+    <string name="implementation_sub_v2">Standardmäßig wird AES-256-GCM mit einer zufälligen 12-Byte-Nonce verwendet. Jede verschlüsselte Datei verfügt über einen versionierten Header, einen eindeutigen Zufallssalzwert und einen vom Kennwort mithilfe von PBKDF2-HMAC-SHA256 mit 210.000 Iterationen abgeleiteten Schlüssel. Sie können auch einen anderen verfügbaren Algorithmus auswählen.</string>
+    <string name="encrypted_file_detected">Verschlüsselte Datei erkannt</string>
+    <string name="encrypted_file_detected_sub">Der Verschlüsselungsalgorithmus und die Parameter werden automatisch aus der Datei gelesen</string>
+    <string name="file_already_encrypted">Diese Datei ist bereits verschlüsselt</string>
+    <string name="file_already_encrypted_sub">Durch erneute Verschlüsselung wird eine zusätzliche Verschlüsselungsebene erstellt</string>
+    <string name="decrypt_failed">Datei konnte nicht entschlüsselt werden: ungültiges Passwort oder beschädigte verschlüsselte Daten</string>
+    <string name="panorama">Panorama</string>
+    <string name="crop_stitched_image_sub">Beschneiden Sie das Ergebnis auf den größten Bereich ohne leere Bereiche</string>
+    <string name="seam_blending">Nahtmischung</string>
+    <string name="network_host_unreachable">Der Server konnte nicht erreicht werden. Überprüfen Sie Ihre Internetverbindung, Ihr VPN oder die Adresse und versuchen Sie es erneut</string>
+    <string name="network_timeout">Die Verbindung ist abgelaufen. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut</string>
+    <string name="network_connection_failed">Es konnte keine Verbindung zum Server hergestellt werden. Überprüfen Sie Ihre Verbindung oder versuchen Sie es später noch einmal</string>
+    <string name="network_connection_interrupted">Die Verbindung wurde unterbrochen. Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut</string>
 </resources>

@@ -261,7 +261,6 @@
     <string name="compatibility">Compatibilitate</string>
     <string name="cache">Cache</string>
     <string name="features_sub">Criptarea fișierelor pe bază de parolă. Fișierele procesate pot fi stocate în directorul selectat sau partajate. De asemenea, fișierele decriptate pot fi deschise direct.</string>
-    <string name="implementation_sub">AES-256, modul GCM, fără umplutură, IV-uri aleatoare de 12 octeți. Cheile sunt folosite ca hash-uri SHA-3 (256 de biți).</string>
     <string name="file_size_sub">Dimensiunea maximă a fișierului este restricționată de sistemul de operare Android și de memoria disponibilă, care depinde în mod evident de dispozitivul dvs. \nVă rugăm să rețineți: memoria nu este stocare.</string>
     <string name="image_size_warning">Încercarea de a salva imaginea cu lățimea și înălțimea date poate cauza o eroare OOM. Faceți acest lucru pe propriul risc și să nu spuneți că nu v-am avertizat!</string>
     <string name="found_s">S-a găsit %1$s</string>
@@ -3953,4 +3952,28 @@
     <string name="texture_category_space">Spaţiu</string>
     <string name="texture_category_patterns">Modele</string>
     <string name="texture_category_abstract">Abstract</string>
+    <string name="exif_removal_preset">Demontare prestabilită</string>
+    <string name="exif_preset_all_metadata">Toate metadatele</string>
+    <string name="exif_preset_privacy">Confidențialitate</string>
+    <string name="exif_preset_location_only">Doar locație</string>
+    <string name="exif_preset_keep_date_copyright">Păstrați datele și drepturile de autor</string>
+    <string name="exif_tags_selected">%1$s • %2$d etichete</string>
+    <string name="duplicate_scan_mode">Modul de scanare</string>
+    <string name="duplicate_scan_exact_only">Numai copii exacte</string>
+    <string name="duplicate_scan_exact_and_similar">Exact și asemănător</string>
+    <string name="no_exact_duplicates_found_sub">Încercați să adăugați mai multe imagini sau să includeți imagini similare vizual</string>
+    <string name="unable_to_decode_image">Nu se poate decoda %1$s</string>
+    <string name="implementation_sub_v2">AES-256-GCM cu un nonce aleatoriu de 12 octeți este utilizat în mod implicit. Fiecare fișier criptat are un antet versionat, o sare aleatorie unică și o cheie derivată din parolă folosind PBKDF2-HMAC-SHA256 cu 210.000 de iterații. De asemenea, puteți selecta un alt algoritm disponibil.</string>
+    <string name="encrypted_file_detected">Fișier criptat detectat</string>
+    <string name="encrypted_file_detected_sub">Algoritmul și parametrii de criptare vor fi citite automat din fișier</string>
+    <string name="file_already_encrypted">Acest fișier este deja criptat</string>
+    <string name="file_already_encrypted_sub">Criptarea acestuia din nou va crea un strat de criptare suplimentar</string>
+    <string name="decrypt_failed">Fișierul nu a fost decriptat: parolă nevalidă sau date criptate corupte</string>
+    <string name="panorama">Panoramă</string>
+    <string name="crop_stitched_image_sub">Decupați rezultatul la cea mai mare zonă fără regiuni goale</string>
+    <string name="seam_blending">Amestecarea cusăturilor</string>
+    <string name="network_host_unreachable">Nu s-a putut ajunge la server. Verificați conexiunea la internet, VPN-ul sau adresa și încercați din nou</string>
+    <string name="network_timeout">Conexiunea a expirat. Verificați conexiunea și încercați din nou</string>
+    <string name="network_connection_failed">Nu s-a putut conecta la server. Verificați conexiunea sau încercați din nou mai târziu</string>
+    <string name="network_connection_interrupted">Conexiunea a fost întreruptă. Verificați conexiunea și încercați din nou</string>
 </resources>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -292,7 +293,6 @@
     <string name="encryption">Шифрлау</string>
     <string name="file_proceed">Файл өңделді</string>
     <string name="store_file_desc">Бұл файлды құрылғыда сақтаңыз немесе оны қалаған жерге қою үшін бөлісу әрекетін пайдаланыңыз</string>
-    <string name="implementation_sub">AES-256, GCM режимі, толтыру жоқ, 12 байт кездейсоқ IV. Кілттер SHA-3 хэштері (256 бит) ретінде пайдаланылады.</string>
     <string name="file_size_sub">The maximum file size is restricted by the Android OS and available memory, which is device dependent. \nPlease note: memory is not storage.</string>
     <string name="compatibility_sub">Басқа файлды шифрлау бағдарламалық құралымен немесе қызметтерімен үйлесімділікке кепілдік берілмейтінін ескеріңіз. Сәл басқаша кілт өңдеуі немесе шифр конфигурациясы сәйкессіздікті тудыруы мүмкін.</string>
     <string name="randomize_filename_sub">Қосылған жағдайда шығыс файл атауы толығымен кездейсоқ болады</string>
@@ -3951,4 +3951,28 @@
     <string name="texture_category_space">Ғарыш</string>
     <string name="texture_category_patterns">Үлгілер</string>
     <string name="texture_category_abstract">Аннотация</string>
+    <string name="exif_removal_preset">Алдын ала орнату</string>
+    <string name="exif_preset_all_metadata">Барлық метадеректер</string>
+    <string name="exif_preset_privacy">Құпиялық</string>
+    <string name="exif_preset_location_only">Тек орналасқан жері</string>
+    <string name="exif_preset_keep_date_copyright">Күндерді және авторлық құқықты сақтаңыз</string>
+    <string name="exif_tags_selected">%1$s • %2$d тегтері</string>
+    <string name="duplicate_scan_mode">Сканерлеу режимі</string>
+    <string name="duplicate_scan_exact_only">Тек нақты көшірмелер</string>
+    <string name="duplicate_scan_exact_and_similar">Дәл және ұқсас</string>
+    <string name="no_exact_duplicates_found_sub">Қосымша кескіндерді қосып көріңіз немесе көрнекі түрде ұқсас кескіндерді қосыңыз</string>
+    <string name="unable_to_decode_image">%1$s кодты шешу мүмкін емес</string>
+    <string name="implementation_sub_v2">Кездейсоқ 12 байт нонспен AES-256-GCM әдепкі бойынша пайдаланылады. Әрбір шифрланған файлда нұсқаланған тақырып, бірегей кездейсоқ тұз және 210 000 итерациясы бар PBKDF2-HMAC-SHA256 көмегімен құпия сөзден алынған кілт болады. Сондай-ақ, басқа қол жетімді алгоритмді таңдауға болады.</string>
+    <string name="encrypted_file_detected">Шифрланған файл анықталды</string>
+    <string name="encrypted_file_detected_sub">Шифрлау алгоритмі мен параметрлері файлдан автоматты түрде оқылады</string>
+    <string name="file_already_encrypted">Бұл файл әлдеқашан шифрланған</string>
+    <string name="file_already_encrypted_sub">Оны қайтадан шифрлау қосымша шифрлау қабатын жасайды</string>
+    <string name="decrypt_failed">Файл шифрын ашу орындалмады: жарамсыз құпия сөз немесе бүлінген шифрланған деректер</string>
+    <string name="panorama">Панорама</string>
+    <string name="crop_stitched_image_sub">Нәтижені бос аймақтарсыз ең үлкен аумаққа кесіңіз</string>
+    <string name="seam_blending">Тігістерді араластыру</string>
+    <string name="network_host_unreachable">Серверге қол жеткізу мүмкін болмады. Интернет байланысын, VPN немесе мекенжайды тексеріп, әрекетті қайталаңыз</string>
+    <string name="network_timeout">Байланыс уақыты аяқталды. Байланысты тексеріп, әрекетті қайталаңыз</string>
+    <string name="network_connection_failed">Серверге қосылу мүмкін болмады. Байланысты тексеріңіз немесе әрекетті кейінірек қайталаңыз</string>
+    <string name="network_connection_interrupted">Байланыс үзілді. Байланысты тексеріп, әрекетті қайталаңыз</string>
 </resources>

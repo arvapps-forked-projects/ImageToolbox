@@ -301,7 +301,6 @@
     <string name="pick_file_to_start">Pumili ng file upang magsimula</string>
     <string name="decryption">Pag-decryption</string>
     <string name="encryption">Pag-encrypt</string>
-    <string name="implementation_sub">AES-256, GCM mode, walang padding, 12 bytes na random na IVs. Ang mga susi ay ginagamit bilang SHA-3 hash (256 bits).</string>
     <string name="file_size">Laki ng file</string>
     <string name="features_sub">Nakabatay sa password ang pag-encrypt ng mga file. Ang mga naituloy na file ay maaaring iimbak sa napiling direktoryo o ibinahagi. Ang mga decrypted na file ay maaari ding direktang mabuksan.</string>
     <string name="image_size_warning">Ang pagsisikap na i-save ang imahe na may ibinigay na lapad at taas ay maaaring magdulot ng isang error sa OOM, gawin ito sa iyong sariling peligro, at huwag sabihing hindi kita binalaan!</string>
@@ -3952,4 +3951,28 @@
     <string name="texture_category_space">kalawakan</string>
     <string name="texture_category_patterns">Mga pattern</string>
     <string name="texture_category_abstract">Abstract</string>
+    <string name="exif_removal_preset">Preset ng pag-alis</string>
+    <string name="exif_preset_all_metadata">Lahat ng metadata</string>
+    <string name="exif_preset_privacy">Pagkapribado</string>
+    <string name="exif_preset_location_only">Lokasyon lang</string>
+    <string name="exif_preset_keep_date_copyright">Panatilihin ang mga petsa at copyright</string>
+    <string name="exif_tags_selected">%1$s • %2$d tag</string>
+    <string name="duplicate_scan_mode">Scan mode</string>
+    <string name="duplicate_scan_exact_only">Mga eksaktong kopya lamang</string>
+    <string name="duplicate_scan_exact_and_similar">Eksaktong at katulad</string>
+    <string name="no_exact_duplicates_found_sub">Subukang magdagdag ng higit pang mga larawan o magsama ng mga visual na katulad na larawan</string>
+    <string name="unable_to_decode_image">Hindi ma-decode ang %1$s</string>
+    <string name="implementation_sub_v2">Ang AES-256-GCM na may random na 12-byte nonce ay ginagamit bilang default. Ang bawat naka-encrypt na file ay may bersyon na header, isang natatanging random na asin, at isang susi na hinango mula sa password gamit ang PBKDF2-HMAC-SHA256 na may 210,000 pag-ulit. Maaari ka ring pumili ng isa pang magagamit na algorithm.</string>
+    <string name="encrypted_file_detected">Nakita ang naka-encrypt na file</string>
+    <string name="encrypted_file_detected_sub">Ang algorithm ng pag-encrypt at mga parameter ay awtomatikong mababasa mula sa file</string>
+    <string name="file_already_encrypted">Ang file na ito ay naka-encrypt na</string>
+    <string name="file_already_encrypted_sub">Ang muling pag-encrypt nito ay lilikha ng karagdagang layer ng pag-encrypt</string>
+    <string name="decrypt_failed">Nabigong i-decrypt ang file: di-wastong password o sirang naka-encrypt na data</string>
+    <string name="panorama">Panorama</string>
+    <string name="crop_stitched_image_sub">I-crop ang resulta sa pinakamalaking lugar na walang walang laman na mga rehiyon</string>
+    <string name="seam_blending">Pinagsasamang Pinagtahian</string>
+    <string name="network_host_unreachable">Hindi maabot ang server. Suriin ang iyong koneksyon sa internet, VPN, o ang address at subukang muli</string>
+    <string name="network_timeout">Nag-time out ang koneksyon. Suriin ang iyong koneksyon at subukang muli</string>
+    <string name="network_connection_failed">Hindi makakonekta sa server. Suriin ang iyong koneksyon o subukang muli sa ibang pagkakataon</string>
+    <string name="network_connection_interrupted">Naputol ang koneksyon. Suriin ang iyong koneksyon at subukang muli</string>
 </resources>

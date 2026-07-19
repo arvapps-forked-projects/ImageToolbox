@@ -284,7 +284,6 @@
     <string name="features">Функции</string>
     <string name="implementation">Реализация</string>
     <string name="features_sub">Шифрование файлов на основе пароля. Полученные файлы могут храниться в выбранном каталоге. Расшифрованные файлы также могут быть открыты напрямую</string>
-    <string name="implementation_sub">AES-256, режим GCM, без заполнения, 12 байт случайных IV. (По умолчанию, но вы можете выбрать необходимый алгоритм) Ключи используются в виде хэшей SHA-3 (256 бит)</string>
     <string name="file_size">Размер файла</string>
     <string name="file_size_sub">Максимальный размер файла ограничен ОС Android и доступной памятью, которая зависит от устройства. \nОбратите внимание: память - не внутреннее хранилище</string>
     <string name="compatibility_sub">Обратите внимание, что совместимость с другим программным обеспечением или службами для шифрования файлов не гарантируется. Немного другая обработка ключа или конфигурация шифра могут быть причинами несовместимости</string>
@@ -815,6 +814,12 @@
     <string name="ring_blur">Размытие кольцами</string>
     <string name="circle_blur">Размытие кругами</string>
     <string name="tags_to_remove">Тэги для удаления</string>
+    <string name="exif_removal_preset">Пресет удаления</string>
+    <string name="exif_preset_all_metadata">Все метаданные</string>
+    <string name="exif_preset_privacy">Приватность</string>
+    <string name="exif_preset_location_only">Только геолокация</string>
+    <string name="exif_preset_keep_date_copyright">Оставить даты и авторские права</string>
+    <string name="exif_tags_selected">%1$s • %2$d тегов</string>
     <string name="apng_tools">APNG инструменты</string>
     <string name="select_apng_image_to_start">Выберите APNG, чтобы начать</string>
     <string name="apng_type_to_apng_sub">Конвертация изображений в файл APNG</string>
@@ -3725,13 +3730,18 @@
     <string name="search_keywords_duplicate_finder">Поиск дубликатов похожих изображений точные копии фотографий очистка хранилища dHash SHA-256</string>
     <string name="pick_images_for_duplicates">Выбирайте изображения, чтобы найти дубликаты</string>
     <string name="duplicate_finder_sensitivity">Чувствительность к сходству</string>
+    <string name="duplicate_scan_mode">Режим поиска</string>
+    <string name="duplicate_scan_exact_only">Только точные копии</string>
+    <string name="duplicate_scan_exact_and_similar">Точные и похожие</string>
     <string name="exact_copies">Точные копии</string>
     <string name="similar_images">Похожие изображения</string>
     <string name="select_all_duplicates">Выбрать все точные дубликаты</string>
     <string name="select_all_except_best">Выбрать все, кроме рекомендованных</string>
     <string name="no_duplicates_found">Дубликатов не обнаружено</string>
     <string name="no_duplicates_found_sub">Попробуйте добавить больше изображений или повысить чувствительность к сходству.</string>
+    <string name="no_exact_duplicates_found_sub">Добавьте больше изображений или включите поиск визуально похожих.</string>
     <string name="duplicate_analysis_errors">Не удалось прочитать %1$d изображений.</string>
+    <string name="unable_to_decode_image">Не удалось декодировать %1$s</string>
     <string name="duplicate_group_summary">%1$s • %2$s подлежит возврату</string>
     <string name="duplicate_groups_summary">%1$d групп • %2$s можно вернуть</string>
     <string name="duplicate_selected_summary">%1$d выбрано • %2$s</string>
@@ -3954,4 +3964,17 @@
     <string name="duplicate_keep_oldest">Самый старый</string>
     <string name="duplicate_keep_first_selected">Первый выбранный</string>
     <string name="keep">Держать</string>
+    <string name="network_host_unreachable">Не удалось связаться с сервером. Проверьте интернет, VPN или адрес и попробуйте снова</string>
+    <string name="network_timeout">Время ожидания соединения истекло. Проверьте подключение и попробуйте снова</string>
+    <string name="network_connection_failed">Не удалось подключиться к серверу. Проверьте соединение или повторите попытку позже</string>
+    <string name="network_connection_interrupted">Соединение было прервано. Проверьте подключение и попробуйте снова</string>
+    <string name="implementation_sub_v2">По умолчанию используется AES-256-GCM со случайным 12-байтовым одноразовым номером. Каждый зашифрованный файл имеет версионный заголовок, уникальную случайную соль и ключ, полученный из пароля с использованием PBKDF2-HMAC-SHA256 с 210 000 итераций. Вы также можете выбрать другой доступный алгоритм.</string>
+    <string name="encrypted_file_detected">Обнаружен зашифрованный файл</string>
+    <string name="encrypted_file_detected_sub">Алгоритм шифрования и параметры будут прочитаны из файла автоматически.</string>
+    <string name="file_already_encrypted">Этот файл уже зашифрован</string>
+    <string name="file_already_encrypted_sub">Повторное шифрование создаст дополнительный уровень шифрования.</string>
+    <string name="decrypt_failed">Не удалось расшифровать файл: неверный пароль или поврежденные зашифрованные данные.</string>
+    <string name="panorama">Панорама</string>
+    <string name="crop_stitched_image_sub">Обрезать результат до наибольшей площади без пустых областей</string>
+    <string name="seam_blending">Сглаживание швов</string>
 </resources>

@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -285,7 +286,6 @@
     <string name="implementation">Toteutus</string>
     <string name="compatibility">Yhteensopivuus</string>
     <string name="features_sub">Salasana pohjainen tiedostojen salaus. Valitut kansiot voidaan säilyttää valitussa hakemistossa tai jaettuna. Salaamattomat tiedostot voidaan avata suoraan</string>
-    <string name="implementation_sub">AE-256, GCM tila, ei täytettä, 12 bittinen satunnainen IVs oletuksena. Voit valita vaaditun algoritmin. Avaimia käytetään 256-bit SHA-3 hasheina</string>
     <string name="file_size">Tiedosto koko</string>
     <string name="file_size_sub">Suurin tiedosto koko on rajoitettu Android OS:än ja saatavilla olevan muistin mukaan, minkä laite on päättänyt\nHuomioi: Muisti ei ole tallennustila</string>
     <string name="compatibility_sub">Huomioi, että yhteensopivuus muiden tiedoston salaus sovellusten tai palvelujen kanssa ei ole taattu. Hieman erilainen avaimen käsittely tai salaus voi johtaa yhteensopimattomuuteen</string>
@@ -3951,4 +3951,28 @@
     <string name="texture_category_space">Avaruus</string>
     <string name="texture_category_patterns">kuvioita</string>
     <string name="texture_category_abstract">Abstrakti</string>
+    <string name="exif_removal_preset">Poiston esiasetus</string>
+    <string name="exif_preset_all_metadata">Kaikki metatiedot</string>
+    <string name="exif_preset_privacy">Yksityisyys</string>
+    <string name="exif_preset_location_only">Vain sijainti</string>
+    <string name="exif_preset_keep_date_copyright">Pidä päivämäärät ja tekijänoikeudet</string>
+    <string name="exif_tags_selected">%1$s • %2$d -tunnisteet</string>
+    <string name="duplicate_scan_mode">Skannaustila</string>
+    <string name="duplicate_scan_exact_only">Vain tarkat kopiot</string>
+    <string name="duplicate_scan_exact_and_similar">Tarkkaa ja vastaavaa</string>
+    <string name="no_exact_duplicates_found_sub">Yritä lisätä kuvia tai sisällyttää visuaalisesti samankaltaisia ​​kuvia</string>
+    <string name="unable_to_decode_image">Ei voida purkaa %1$s</string>
+    <string name="implementation_sub_v2">AES-256-GCM, jossa on satunnainen 12-tavuinen nonce, käytetään oletuksena. Jokaisella salatulla tiedostolla on versioitu otsikko, ainutlaatuinen satunnainen suola ja avain, joka on johdettu salasanasta käyttämällä PBKDF2-HMAC-SHA256:ta ja 210 000 iteraatiota. Voit myös valita toisen käytettävissä olevan algoritmin.</string>
+    <string name="encrypted_file_detected">Salattu tiedosto havaittu</string>
+    <string name="encrypted_file_detected_sub">Salausalgoritmi ja parametrit luetaan tiedostosta automaattisesti</string>
+    <string name="file_already_encrypted">Tämä tiedosto on jo salattu</string>
+    <string name="file_already_encrypted_sub">Sen salaaminen uudelleen luo ylimääräisen salauskerroksen</string>
+    <string name="decrypt_failed">Tiedoston salauksen purkaminen epäonnistui: virheellinen salasana tai vioittuneet salatut tiedot</string>
+    <string name="panorama">Panoraama</string>
+    <string name="crop_stitched_image_sub">Rajaa tulos suurimmalle alueelle ilman tyhjiä alueita</string>
+    <string name="seam_blending">Sauman sekoitus</string>
+    <string name="network_host_unreachable">Palvelimeen ei saada yhteyttä. Tarkista Internet-yhteytesi, VPN tai osoite ja yritä uudelleen</string>
+    <string name="network_timeout">Yhteys aikakatkaistiin. Tarkista yhteys ja yritä uudelleen</string>
+    <string name="network_connection_failed">Yhteyttä palvelimeen ei voitu muodostaa. Tarkista yhteys tai yritä myöhemmin uudelleen</string>
+    <string name="network_connection_interrupted">Yhteys katkesi. Tarkista yhteys ja yritä uudelleen</string>
 </resources>

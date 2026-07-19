@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -275,7 +276,6 @@
     <string name="background_color">Warna latar belakang</string>
     <string name="encrypt">Enkripsi</string>
     <string name="decrypt">Dekripsi</string>
-    <string name="implementation_sub">AES-256, mode GCM, tanpa padding, infus acak 12 byte. Kunci digunakan sebagai hash SHA-3 (256 bit).</string>
     <string name="compatibility">Kesesuaian</string>
     <string name="found_s">Ditemukan %1$s</string>
     <string name="tools">Peralatan</string>
@@ -3950,4 +3950,28 @@
     <string name="texture_category_space">Ruang angkasa</string>
     <string name="texture_category_patterns">Pola</string>
     <string name="texture_category_abstract">Abstrak</string>
+    <string name="exif_removal_preset">Prasetel penghapusan</string>
+    <string name="exif_preset_all_metadata">Semua metadata</string>
+    <string name="exif_preset_privacy">Pribadi</string>
+    <string name="exif_preset_location_only">Hanya lokasi</string>
+    <string name="exif_preset_keep_date_copyright">Catat tanggal dan hak cipta</string>
+    <string name="exif_tags_selected">%1$s • %2$d tag</string>
+    <string name="duplicate_scan_mode">Modus pemindaian</string>
+    <string name="duplicate_scan_exact_only">Hanya salinan persisnya</string>
+    <string name="duplicate_scan_exact_and_similar">Tepat dan serupa</string>
+    <string name="no_exact_duplicates_found_sub">Coba tambahkan lebih banyak gambar atau sertakan gambar yang serupa secara visual</string>
+    <string name="unable_to_decode_image">Tidak dapat memecahkan kode %1$s</string>
+    <string name="implementation_sub_v2">AES-256-GCM dengan nonce acak 12 byte digunakan secara default. Setiap file terenkripsi memiliki header berversi, garam acak unik, dan kunci yang berasal dari kata sandi menggunakan PBKDF2-HMAC-SHA256 dengan 210.000 iterasi. Anda juga dapat memilih algoritma lain yang tersedia.</string>
+    <string name="encrypted_file_detected">File terenkripsi terdeteksi</string>
+    <string name="encrypted_file_detected_sub">Algoritma dan parameter enkripsi akan dibaca dari file secara otomatis</string>
+    <string name="file_already_encrypted">File ini sudah dienkripsi</string>
+    <string name="file_already_encrypted_sub">Mengenkripsinya lagi akan membuat lapisan enkripsi tambahan</string>
+    <string name="decrypt_failed">Gagal mendekripsi file: kata sandi tidak valid atau data terenkripsi rusak</string>
+    <string name="panorama">Panorama</string>
+    <string name="crop_stitched_image_sub">Pangkas hasilnya ke area terluas tanpa area kosong</string>
+    <string name="seam_blending">Pencampuran Jahitan</string>
+    <string name="network_host_unreachable">Tidak dapat menjangkau server. Periksa koneksi internet, VPN, atau alamat Anda dan coba lagi</string>
+    <string name="network_timeout">Waktu koneksi habis. Periksa koneksi Anda dan coba lagi</string>
+    <string name="network_connection_failed">Tidak dapat terhubung ke server. Periksa koneksi Anda atau coba lagi nanti</string>
+    <string name="network_connection_interrupted">Koneksi terputus. Periksa koneksi Anda dan coba lagi</string>
 </resources>

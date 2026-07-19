@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -282,7 +283,6 @@
     <string name="store_file_desc">Збережіть цей файл на своєму пристрої або скористайтеся \"Поділитися\", щоб розмістити його де завгодно</string>
     <string name="implementation">Реалізація</string>
     <string name="features_sub">Шифрування файлів на основі пароля. Отримані файли можна зберігати у вибраному каталозі або надавати спільний доступ. Розшифровані файли також можна безпосередньо відкрити.</string>
-    <string name="implementation_sub">AES-256, режим GCM, без доповнення, 12 байт випадкових IV за замовчуванням. Ви можете вибрати потрібний алгоритм. Ключі використовуються як 256-бітні SHA-3 хеші.</string>
     <string name="encrypt">Шифрувати</string>
     <string name="file_proceed">Файл оброблено</string>
     <string name="file_size">Розмір файлу</string>
@@ -3953,4 +3953,28 @@
     <string name="texture_category_space">космос</string>
     <string name="texture_category_patterns">Візерунки</string>
     <string name="texture_category_abstract">Анотація</string>
+    <string name="exif_removal_preset">Попереднє налаштування видалення</string>
+    <string name="exif_preset_all_metadata">Усі метадані</string>
+    <string name="exif_preset_privacy">Конфіденційність</string>
+    <string name="exif_preset_location_only">Лише розташування</string>
+    <string name="exif_preset_keep_date_copyright">Зберігайте дати та авторські права</string>
+    <string name="exif_tags_selected">%1$s • %2$d тегів</string>
+    <string name="duplicate_scan_mode">Режим сканування</string>
+    <string name="duplicate_scan_exact_only">Тільки точні копії</string>
+    <string name="duplicate_scan_exact_and_similar">Точно і схоже</string>
+    <string name="no_exact_duplicates_found_sub">Спробуйте додати більше зображень або додайте візуально схожі зображення</string>
+    <string name="unable_to_decode_image">Неможливо декодувати %1$s</string>
+    <string name="implementation_sub_v2">За замовчуванням використовується AES-256-GCM із випадковим 12-байтовим nonce. Кожен зашифрований файл має версії заголовка, унікальну випадкову сіль і ключ, отриманий з пароля за допомогою PBKDF2-HMAC-SHA256 з 210 000 ітерацій. Ви також можете вибрати інший доступний алгоритм.</string>
+    <string name="encrypted_file_detected">Виявлено зашифрований файл</string>
+    <string name="encrypted_file_detected_sub">Алгоритм шифрування та параметри будуть зчитані з файлу автоматично</string>
+    <string name="file_already_encrypted">Цей файл уже зашифровано</string>
+    <string name="file_already_encrypted_sub">Повторне шифрування створить додатковий рівень шифрування</string>
+    <string name="decrypt_failed">Не вдалося розшифрувати файл: недійсний пароль або пошкоджені зашифровані дані</string>
+    <string name="panorama">Панорама</string>
+    <string name="crop_stitched_image_sub">Обріжте результат до найбільшої області без порожніх областей</string>
+    <string name="seam_blending">Змішування швів</string>
+    <string name="network_host_unreachable">Не вдалося підключитися до сервера. Перевірте підключення до Інтернету, VPN або адресу та повторіть спробу</string>
+    <string name="network_timeout">Час очікування підключення минув. Перевірте підключення та повторіть спробу</string>
+    <string name="network_connection_failed">Не вдалося підключитися до сервера. Перевірте підключення або повторіть спробу пізніше</string>
+    <string name="network_connection_interrupted">З\'єднання було перервано. Перевірте підключення та повторіть спробу</string>
 </resources>

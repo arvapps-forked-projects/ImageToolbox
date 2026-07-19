@@ -293,7 +293,6 @@
     <string name="features">లక్షణాలు</string>
     <string name="implementation">అమలు</string>
     <string name="compatibility">అనుకూలత</string>
-    <string name="implementation_sub">AES-256, GCM మోడ్, పాడింగ్ లేదు, 12 బైట్‌లు యాదృచ్ఛిక IVలు. కీలు SHA-3 హాష్‌లుగా ఉపయోగించబడతాయి (256 బిట్‌లు).</string>
     <string name="file_size">ఫైల్ పరిమాణం</string>
     <string name="file_size_sub">The maximum file size is restricted by the Android OS and available memory, which is device dependent. \nPlease note: memory is not storage.</string>
     <string name="compatibility_sub">ఇతర ఫైల్ ఎన్‌క్రిప్షన్ సాఫ్ట్‌వేర్ లేదా సేవలకు అనుకూలత హామీ ఇవ్వబడదని దయచేసి గమనించండి. కొద్దిగా భిన్నమైన కీ చికిత్స లేదా సాంకేతికలిపి కాన్ఫిగరేషన్ అననుకూలతకు కారణం కావచ్చు.</string>
@@ -3952,4 +3951,28 @@
     <string name="texture_category_space">స్పేస్</string>
     <string name="texture_category_patterns">నమూనాలు</string>
     <string name="texture_category_abstract">వియుక్త</string>
+    <string name="exif_removal_preset">తొలగింపు ప్రీసెట్</string>
+    <string name="exif_preset_all_metadata">మొత్తం మెటాడేటా</string>
+    <string name="exif_preset_privacy">గోప్యత</string>
+    <string name="exif_preset_location_only">స్థానం మాత్రమే</string>
+    <string name="exif_preset_keep_date_copyright">తేదీలు మరియు కాపీరైట్ ఉంచండి</string>
+    <string name="exif_tags_selected">%1$s • %2$d ట్యాగ్‌లు</string>
+    <string name="duplicate_scan_mode">స్కాన్ మోడ్</string>
+    <string name="duplicate_scan_exact_only">ఖచ్చితమైన కాపీలు మాత్రమే</string>
+    <string name="duplicate_scan_exact_and_similar">ఖచ్చితమైన మరియు సారూప్యమైనది</string>
+    <string name="no_exact_duplicates_found_sub">మరిన్ని చిత్రాలను జోడించడానికి ప్రయత్నించండి లేదా దృశ్యమానంగా సారూప్య చిత్రాలను చేర్చండి</string>
+    <string name="unable_to_decode_image">%1$s డీకోడ్ చేయడం సాధ్యపడలేదు</string>
+    <string name="implementation_sub_v2">యాదృచ్ఛిక 12-బైట్ నాన్స్‌తో AES-256-GCM డిఫాల్ట్‌గా ఉపయోగించబడుతుంది. ప్రతి ఎన్‌క్రిప్టెడ్ ఫైల్‌లో 210,000 పునరావృతాలతో PBKDF2-HMAC-SHA256ని ఉపయోగించి పాస్‌వర్డ్ నుండి పొందబడిన సంస్కరణ హెడర్, ప్రత్యేకమైన యాదృచ్ఛిక ఉప్పు మరియు కీ ఉంటుంది. మీరు అందుబాటులో ఉన్న మరొక అల్గారిథమ్‌ను కూడా ఎంచుకోవచ్చు.</string>
+    <string name="encrypted_file_detected">గుప్తీకరించిన ఫైల్ కనుగొనబడింది</string>
+    <string name="encrypted_file_detected_sub">ఎన్‌క్రిప్షన్ అల్గోరిథం మరియు పారామీటర్‌లు ఫైల్ నుండి స్వయంచాలకంగా చదవబడతాయి</string>
+    <string name="file_already_encrypted">ఈ ఫైల్ ఇప్పటికే ఎన్‌క్రిప్ట్ చేయబడింది</string>
+    <string name="file_already_encrypted_sub">దాన్ని మళ్లీ ఎన్‌క్రిప్ట్ చేయడం వల్ల అదనపు ఎన్‌క్రిప్షన్ లేయర్‌ను క్రియేట్ చేస్తుంది</string>
+    <string name="decrypt_failed">ఫైల్‌ని డీక్రిప్ట్ చేయడంలో విఫలమైంది: చెల్లని పాస్‌వర్డ్ లేదా పాడైన ఎన్‌క్రిప్టెడ్ డేటా</string>
+    <string name="panorama">పనోరమా</string>
+    <string name="crop_stitched_image_sub">ఫలితాన్ని ఖాళీ ప్రాంతాలు లేకుండా అతిపెద్ద ప్రాంతానికి కత్తిరించండి</string>
+    <string name="seam_blending">సీమ్ బ్లెండింగ్</string>
+    <string name="network_host_unreachable">సర్వర్‌ని చేరుకోవడం సాధ్యపడలేదు. మీ ఇంటర్నెట్ కనెక్షన్, VPN లేదా చిరునామాను తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి</string>
+    <string name="network_timeout">కనెక్షన్ సమయం ముగిసింది. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి</string>
+    <string name="network_connection_failed">సర్వర్‌కి కనెక్ట్ చేయడం సాధ్యపడలేదు. మీ కనెక్షన్‌ని తనిఖీ చేయండి లేదా తర్వాత మళ్లీ ప్రయత్నించండి</string>
+    <string name="network_connection_interrupted">కనెక్షన్ అంతరాయం కలిగింది. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి</string>
 </resources>

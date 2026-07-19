@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -295,7 +296,6 @@
     <string name="compatibility">Zgodność</string>
     <string name="compatibility_sub">Należy pamiętać, że zgodność z innym oprogramowaniem lub usługami do szyfrowania plików nie jest gwarantowana. Przyczyną niezgodności może być nieco inna obróbka klucza lub konfiguracja szyfru.</string>
     <string name="cannot_change_arrangement_while_options_grouping_enabled">Nie można zmienić układu, gdy włączone jest grupowanie opcji</string>
-    <string name="implementation_sub">AES-256, tryb GCM, brak wypełnienia, domyślnie 12 bajtów losowych IV. Można wybrać odpowiedni algorytm. Klucze są używane jako 256-bitowe skróty SHA-3</string>
     <string name="cipher">Szyfr</string>
     <string name="cipher_sub">Szyfrowanie i deszyfrowanie dowolnego pliku (nie tylko obrazu) w oparciu o różne dostępne algorytmy kryptograficzne.</string>
     <string name="pick_file">Wybierz plik</string>
@@ -3953,4 +3953,28 @@
     <string name="texture_category_space">Przestrzeń</string>
     <string name="texture_category_patterns">Wzory</string>
     <string name="texture_category_abstract">Abstrakcyjny</string>
+    <string name="exif_removal_preset">Wstępne ustawienie usuwania</string>
+    <string name="exif_preset_all_metadata">Wszystkie metadane</string>
+    <string name="exif_preset_privacy">Prywatność</string>
+    <string name="exif_preset_location_only">Tylko lokalizacja</string>
+    <string name="exif_preset_keep_date_copyright">Zachowaj daty i prawa autorskie</string>
+    <string name="exif_tags_selected">%1$s • %2$d tagi</string>
+    <string name="duplicate_scan_mode">Tryb skanowania</string>
+    <string name="duplicate_scan_exact_only">Tylko dokładne kopie</string>
+    <string name="duplicate_scan_exact_and_similar">Dokładne i podobne</string>
+    <string name="no_exact_duplicates_found_sub">Spróbuj dodać więcej obrazów lub dołącz obrazy podobne wizualnie</string>
+    <string name="unable_to_decode_image">Nie można rozszyfrować %1$s</string>
+    <string name="implementation_sub_v2">Domyślnie używany jest algorytm AES-256-GCM z losową 12-bajtową wartością jednorazową. Każdy zaszyfrowany plik ma wersjonowany nagłówek, unikalną losową sól i klucz wyprowadzony z hasła przy użyciu PBKDF2-HMAC-SHA256 z 210 000 iteracji. Możesz także wybrać inny dostępny algorytm.</string>
+    <string name="encrypted_file_detected">Wykryto zaszyfrowany plik</string>
+    <string name="encrypted_file_detected_sub">Algorytm szyfrowania i parametry zostaną odczytane z pliku automatycznie</string>
+    <string name="file_already_encrypted">Ten plik jest już zaszyfrowany</string>
+    <string name="file_already_encrypted_sub">Ponowne zaszyfrowanie spowoduje utworzenie dodatkowej warstwy szyfrowania</string>
+    <string name="decrypt_failed">Nie udało się odszyfrować pliku: nieprawidłowe hasło lub uszkodzone zaszyfrowane dane</string>
+    <string name="panorama">Panorama</string>
+    <string name="crop_stitched_image_sub">Przytnij wynik do największego obszaru bez pustych regionów</string>
+    <string name="seam_blending">Mieszanie szwów</string>
+    <string name="network_host_unreachable">Nie udało się połączyć z serwerem. Sprawdź swoje połączenie internetowe, VPN lub adres i spróbuj ponownie</string>
+    <string name="network_timeout">Upłynął limit czasu połączenia. Sprawdź połączenie i spróbuj ponownie</string>
+    <string name="network_connection_failed">Nie można połączyć się z serwerem. Sprawdź połączenie lub spróbuj ponownie później</string>
+    <string name="network_connection_interrupted">Połączenie zostało przerwane. Sprawdź połączenie i spróbuj ponownie</string>
 </resources>

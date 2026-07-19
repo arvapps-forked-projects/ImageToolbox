@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -303,7 +304,6 @@
     <string name="decrypt">복호화</string>
     <string name="pick_file_to_start">시작할 파일 선택</string>
     <string name="features_sub">암호 기반 파일 암호화. 진행된 파일은 선택한 디렉토리에 저장하거나 공유할 수 있습니다. 해독된 파일을 직접 열 수도 있습니다.</string>
-    <string name="implementation_sub">AES-256, GCM 모드, 패딩 없음, 12바이트 임의 IV. 키는 SHA-3 해시(256비트)로 사용됩니다.</string>
     <string name="file_size">파일 크기</string>
     <string name="create">만들기</string>
     <string name="enhanced_pixelation">향상된 픽셀화</string>
@@ -3950,4 +3950,28 @@
     <string name="texture_category_space">공간</string>
     <string name="texture_category_patterns">패턴</string>
     <string name="texture_category_abstract">추상적인</string>
+    <string name="exif_removal_preset">제거 사전 설정</string>
+    <string name="exif_preset_all_metadata">모든 메타데이터</string>
+    <string name="exif_preset_privacy">은둔</string>
+    <string name="exif_preset_location_only">위치만</string>
+    <string name="exif_preset_keep_date_copyright">날짜와 저작권을 유지하세요</string>
+    <string name="exif_tags_selected">%1$s • %2$d 태그</string>
+    <string name="duplicate_scan_mode">스캔 모드</string>
+    <string name="duplicate_scan_exact_only">정확한 사본만</string>
+    <string name="duplicate_scan_exact_and_similar">정확하고 유사함</string>
+    <string name="no_exact_duplicates_found_sub">더 많은 이미지를 추가하거나 시각적으로 유사한 이미지를 포함해 보세요.</string>
+    <string name="unable_to_decode_image">%1$s을(를) 디코딩할 수 없습니다.</string>
+    <string name="implementation_sub_v2">기본적으로 임의의 12바이트 nonce가 있는 AES-256-GCM이 사용됩니다. 모든 암호화된 파일에는 버전이 지정된 헤더, 고유한 임의 솔트, 210,000회 반복되는 PBKDF2-HMAC-SHA256을 사용하는 비밀번호에서 파생된 키가 있습니다. 사용 가능한 다른 알고리즘을 선택할 수도 있습니다.</string>
+    <string name="encrypted_file_detected">암호화된 파일이 감지되었습니다</string>
+    <string name="encrypted_file_detected_sub">암호화 알고리즘과 매개변수는 파일에서 자동으로 읽혀집니다.</string>
+    <string name="file_already_encrypted">이 파일은 이미 암호화되어 있습니다.</string>
+    <string name="file_already_encrypted_sub">다시 암호화하면 추가 암호화 레이어가 생성됩니다.</string>
+    <string name="decrypt_failed">파일 암호 해독 실패: 비밀번호가 잘못되었거나 암호화된 데이터가 손상되었습니다.</string>
+    <string name="panorama">파노라마</string>
+    <string name="crop_stitched_image_sub">빈 영역 없이 가장 큰 영역으로 결과 자르기</string>
+    <string name="seam_blending">심 블렌딩</string>
+    <string name="network_host_unreachable">서버에 연결할 수 없습니다. 인터넷 연결, VPN 또는 주소를 확인하고 다시 시도하세요.</string>
+    <string name="network_timeout">연결 시간이 초과되었습니다. 연결을 확인하고 다시 시도하세요.</string>
+    <string name="network_connection_failed">서버에 연결할 수 없습니다. 연결을 확인하거나 나중에 다시 시도하세요.</string>
+    <string name="network_connection_interrupted">연결이 중단되었습니다. 연결을 확인하고 다시 시도하세요.</string>
 </resources>

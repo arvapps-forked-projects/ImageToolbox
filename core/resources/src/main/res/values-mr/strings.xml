@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -293,7 +294,6 @@
     <string name="implementation">अंमलबजावणी</string>
     <string name="compatibility">सुसंगतता</string>
     <string name="features_sub">फाइल्सचे पासवर्ड-आधारित एनक्रिप्शन. पुढे केलेल्या फायली निवडलेल्या निर्देशिकेत संग्रहित केल्या जाऊ शकतात किंवा सामायिक केल्या जाऊ शकतात. डिक्रिप्ट केलेल्या फायली थेट उघडल्या जाऊ शकतात.</string>
-    <string name="implementation_sub">AES-256, GCM मोड, कोणतेही पॅडिंग नाही, 12 बाइट यादृच्छिक IV डीफॉल्टनुसार. आपण आवश्यक अल्गोरिदम निवडू शकता. की 256-बिट SHA-3 हॅश म्हणून वापरल्या जातात</string>
     <string name="file_size">फाइल आकार</string>
     <string name="file_size_sub">जास्तीत जास्त फाइल आकार Android OS आणि उपलब्ध मेमरीद्वारे प्रतिबंधित आहे, जी डिव्हाइसवर अवलंबून आहे. \nकृपया लक्षात ठेवा: मेमरी ही स्टोरेज नाही.</string>
     <string name="compatibility_sub">कृपया लक्षात घ्या की इतर फाइल एन्क्रिप्शन सॉफ्टवेअर किंवा सेवांच्या सुसंगततेची हमी दिलेली नाही. किंचित भिन्न की उपचार किंवा सायफर कॉन्फिगरेशनमुळे विसंगतता येऊ शकते.</string>
@@ -3951,4 +3951,28 @@
     <string name="texture_category_space">जागा</string>
     <string name="texture_category_patterns">नमुने</string>
     <string name="texture_category_abstract">गोषवारा</string>
+    <string name="exif_removal_preset">काढणे प्रीसेट</string>
+    <string name="exif_preset_all_metadata">सर्व मेटाडेटा</string>
+    <string name="exif_preset_privacy">गोपनीयता</string>
+    <string name="exif_preset_location_only">फक्त स्थान</string>
+    <string name="exif_preset_keep_date_copyright">तारखा आणि कॉपीराइट ठेवा</string>
+    <string name="exif_tags_selected">%1$s • %2$d टॅग</string>
+    <string name="duplicate_scan_mode">स्कॅन मोड</string>
+    <string name="duplicate_scan_exact_only">फक्त अचूक प्रती</string>
+    <string name="duplicate_scan_exact_and_similar">अचूक आणि समान</string>
+    <string name="no_exact_duplicates_found_sub">अधिक प्रतिमा जोडण्याचा प्रयत्न करा किंवा दृष्यदृष्ट्या समान प्रतिमा समाविष्ट करा</string>
+    <string name="unable_to_decode_image">%1$s डीकोड करण्यात अक्षम</string>
+    <string name="implementation_sub_v2">यादृच्छिक 12-बाइट नॉन्ससह AES-256-GCM डीफॉल्टनुसार वापरले जाते. प्रत्येक कूटबद्ध फाइलमध्ये आवृत्तीत शीर्षलेख, एक अद्वितीय यादृच्छिक मीठ आणि PBKDF2-HMAC-SHA256 वापरून 210,000 पुनरावृत्त्यांसह पासवर्डमधून प्राप्त केलेली की असते. तुम्ही दुसरा उपलब्ध अल्गोरिदम देखील निवडू शकता.</string>
+    <string name="encrypted_file_detected">एनक्रिप्टेड फाइल आढळली</string>
+    <string name="encrypted_file_detected_sub">एन्क्रिप्शन अल्गोरिदम आणि पॅरामीटर्स फाइलमधून आपोआप वाचले जातील</string>
+    <string name="file_already_encrypted">ही फाइल आधीच कूटबद्ध केलेली आहे</string>
+    <string name="file_already_encrypted_sub">ते पुन्हा कूटबद्ध केल्याने अतिरिक्त एन्क्रिप्शन स्तर तयार होईल</string>
+    <string name="decrypt_failed">फाइल डिक्रिप्ट करण्यात अयशस्वी: अवैध पासवर्ड किंवा दूषित एनक्रिप्टेड डेटा</string>
+    <string name="panorama">पॅनोरामा</string>
+    <string name="crop_stitched_image_sub">रिकाम्या प्रदेशांशिवाय सर्वात मोठ्या क्षेत्रावर परिणाम क्रॉप करा</string>
+    <string name="seam_blending">शिवण मिश्रण</string>
+    <string name="network_host_unreachable">सर्व्हरपर्यंत पोहोचू शकलो नाही. तुमचे इंटरनेट कनेक्शन, VPN किंवा पत्ता तपासा आणि पुन्हा प्रयत्न करा</string>
+    <string name="network_timeout">कनेक्शन कालबाह्य झाले. तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा</string>
+    <string name="network_connection_failed">सर्व्हरशी कनेक्ट करू शकलो नाही. तुमचे कनेक्शन तपासा किंवा नंतर पुन्हा प्रयत्न करा</string>
+    <string name="network_connection_interrupted">कनेक्शनमध्ये व्यत्यय आला. तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा</string>
 </resources>

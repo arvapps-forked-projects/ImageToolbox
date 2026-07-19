@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -302,7 +303,6 @@
     <string name="implementation">پیاده‌سازی</string>
     <string name="compatibility">سازگاری</string>
     <string name="features_sub">رمزگذاری فایل ها بر اساس رمز عبور فایل های ادامه یافته را می توان در فهرست انتخابی ذخیره کرد یا به اشتراک گذاشت. فایل های رمزگشایی شده نیز می توانند مستقیما باز شوند.</string>
-    <string name="implementation_sub">AES-256 با حالت GCM، بدون padding، IV تصادفی ۱۲ بایتی (به صورت پیش‌فرض، اما می‌توانید الگوریتم مورد نظر را انتخاب کنید). کلیدها به صورت هش SHA-3 با طول ۲۵۶ بیت استفاده می‌شوند.</string>
     <string name="file_size">اندازه پرونده</string>
     <string name="file_size_sub">The maximum file size is restricted by the Android OS and available memory, which is device dependent. \nPlease note: memory is not storage.</string>
     <string name="compatibility_sub">لطفاً توجه داشته باشید که سازگاری با سایر نرم افزارها یا خدمات رمزگذاری فایل تضمین نمی شود. یک درمان کلیدی یا پیکربندی رمز کمی متفاوت ممکن است باعث ناسازگاری شود.</string>
@@ -3951,4 +3951,28 @@
     <string name="texture_category_space">فضا</string>
     <string name="texture_category_patterns">الگوها</string>
     <string name="texture_category_abstract">چکیده</string>
+    <string name="exif_removal_preset">از پیش تعیین شده حذف</string>
+    <string name="exif_preset_all_metadata">همه ابرداده ها</string>
+    <string name="exif_preset_privacy">حریم خصوصی</string>
+    <string name="exif_preset_location_only">فقط مکان</string>
+    <string name="exif_preset_keep_date_copyright">تاریخ ها و حق چاپ را حفظ کنید</string>
+    <string name="exif_tags_selected">%1$s • برچسب های %2$d</string>
+    <string name="duplicate_scan_mode">حالت اسکن</string>
+    <string name="duplicate_scan_exact_only">فقط کپی های دقیق</string>
+    <string name="duplicate_scan_exact_and_similar">دقیق و مشابه</string>
+    <string name="no_exact_duplicates_found_sub">سعی کنید تصاویر بیشتری اضافه کنید یا تصاویر مشابه بصری را اضافه کنید</string>
+    <string name="unable_to_decode_image">رمزگشایی %1$s ممکن نیست</string>
+    <string name="implementation_sub_v2">AES-256-GCM با nonce تصادفی 12 بایتی به طور پیش فرض استفاده می شود. هر فایل رمزگذاری شده دارای یک هدر نسخه شده، یک نمک تصادفی منحصر به فرد و یک کلید است که از رمز عبور با استفاده از PBKDF2-HMAC-SHA256 با 210000 تکرار مشتق شده است. همچنین می توانید الگوریتم موجود دیگری را انتخاب کنید.</string>
+    <string name="encrypted_file_detected">فایل رمزگذاری شده شناسایی شد</string>
+    <string name="encrypted_file_detected_sub">الگوریتم رمزگذاری و پارامترها به طور خودکار از فایل خوانده می شود</string>
+    <string name="file_already_encrypted">این فایل قبلاً رمزگذاری شده است</string>
+    <string name="file_already_encrypted_sub">رمزگذاری مجدد آن یک لایه رمزگذاری اضافی ایجاد می کند</string>
+    <string name="decrypt_failed">رمزگشایی فایل انجام نشد: رمز عبور نامعتبر یا داده های رمزگذاری شده خراب</string>
+    <string name="panorama">پانوراما</string>
+    <string name="crop_stitched_image_sub">نتیجه را به بزرگترین منطقه بدون مناطق خالی برش دهید</string>
+    <string name="seam_blending">ترکیب درز</string>
+    <string name="network_host_unreachable">دسترسی به سرور امکان پذیر نیست. اتصال اینترنت، VPN یا آدرس خود را بررسی کنید و دوباره امتحان کنید</string>
+    <string name="network_timeout">زمان اتصال تمام شد. اتصال خود را بررسی کنید و دوباره امتحان کنید</string>
+    <string name="network_connection_failed">نمی توان به سرور متصل شد. اتصال خود را بررسی کنید یا بعداً دوباره امتحان کنید</string>
+    <string name="network_connection_interrupted">ارتباط قطع شد. اتصال خود را بررسی کنید و دوباره امتحان کنید</string>
 </resources>
