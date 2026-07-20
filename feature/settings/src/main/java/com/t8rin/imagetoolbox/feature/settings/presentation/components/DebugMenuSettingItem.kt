@@ -17,8 +17,14 @@
 
 package com.t8rin.imagetoolbox.feature.settings.presentation.components
 
+import android.content.ActivityNotFoundException
+import android.os.TransactionTooLargeException
+import android.system.ErrnoException
+import android.system.OsConstants
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -31,18 +37,41 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.t8rin.imagetoolbox.core.domain.model.WrongKeyException
 import com.t8rin.imagetoolbox.core.resources.Icons
 import com.t8rin.imagetoolbox.core.resources.R
 import com.t8rin.imagetoolbox.core.resources.icons.BugReport
 import com.t8rin.imagetoolbox.core.settings.presentation.provider.LocalSettingsState
 import com.t8rin.imagetoolbox.core.ui.theme.ImageToolboxThemeForPreview
 import com.t8rin.imagetoolbox.core.ui.theme.blend
+import com.t8rin.imagetoolbox.core.ui.utils.helper.AppToastHost
 import com.t8rin.imagetoolbox.core.ui.utils.helper.EnPreview
 import com.t8rin.imagetoolbox.core.ui.widget.enhanced.EnhancedButton
 import com.t8rin.imagetoolbox.core.ui.widget.modifier.ShapeDefaults
 import com.t8rin.imagetoolbox.core.ui.widget.preferences.PreferenceItem
 import com.t8rin.imagetoolbox.feature.settings.presentation.components.additional.AnimatedGradientBox
 import com.t8rin.imagetoolbox.feature.settings.presentation.components.additional.FullscreenDebugMenu
+import io.ktor.client.call.HttpClientCall
+import io.ktor.client.plugins.ResponseException
+import io.ktor.client.statement.HttpResponse
+import io.ktor.http.Headers
+import io.ktor.http.HttpProtocolVersion
+import io.ktor.http.HttpStatusCode
+import io.ktor.util.date.GMTDate
+import io.ktor.utils.io.ByteReadChannel
+import io.ktor.utils.io.InternalAPI
+import java.io.EOFException
+import java.io.FileNotFoundException
+import java.net.ConnectException
+import java.net.ProtocolException
+import java.net.SocketException
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
+import java.util.concurrent.TimeoutException
+import java.util.zip.ZipException
+import javax.net.ssl.SSLException
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.EmptyCoroutineContext
 
 @Composable
 fun DebugMenuSettingItem(
@@ -105,6 +134,7 @@ fun DebugMenuSettingItem(
     FullscreenDebugMenu(
         showMenuState = showMenu
     ) {
+        Text("Test crashes")
         EnhancedButton(
             onClick = {
                 throw OutOfMemoryError("TEST")
@@ -129,8 +159,134 @@ fun DebugMenuSettingItem(
         ) {
             Text("Trigger regular crash")
         }
+
+        Spacer(Modifier.height(24.dp))
+
+        FailureToastDebugButtons()
     }
 }
+
+@Composable
+private fun FailureToastDebugButtons() {
+    val cases = listOf(
+        FailureToastDebugCase("WrongKeyException") {
+            AppToastHost.showFailureToast(WrongKeyException())
+        },
+        FailureToastDebugCase("Out of memory") {
+            AppToastHost.showFailureToast(OutOfMemoryError("TEST"))
+        },
+        FailureToastDebugCase("Host unreachable") {
+            AppToastHost.showFailureToast(UnknownHostException("TEST"))
+        },
+        FailureToastDebugCase("Connection timeout") {
+            AppToastHost.showFailureToast(SocketTimeoutException("TEST"))
+        },
+        FailureToastDebugCase("Connection failed") {
+            AppToastHost.showFailureToast(ConnectException("TEST"))
+        },
+        FailureToastDebugCase("Connection interrupted") {
+            AppToastHost.showFailureToast(SocketException("TEST"))
+        },
+        FailureToastDebugCase("Secure connection failed") {
+            AppToastHost.showFailureToast(SSLException("TEST"))
+        },
+        FailureToastDebugCase("File not found") {
+            AppToastHost.showFailureToast(FileNotFoundException("TEST"))
+        },
+        FailureToastDebugCase("Permission not granted") {
+            AppToastHost.showFailureToast(SecurityException("TEST"))
+        },
+        FailureToastDebugCase("Activity not found") {
+            AppToastHost.showFailureToast(ActivityNotFoundException("TEST"))
+        },
+        FailureToastDebugCase("Storage is full") {
+            AppToastHost.showFailureToast(ErrnoException("TEST", OsConstants.ENOSPC))
+        },
+        FailureToastDebugCase("Storage is read-only") {
+            AppToastHost.showFailureToast(ErrnoException("TEST", OsConstants.EROFS))
+        },
+        FailureToastDebugCase("File is too large") {
+            AppToastHost.showFailureToast(ErrnoException("TEST", OsConstants.EFBIG))
+        },
+        FailureToastDebugCase("File I/O error") {
+            AppToastHost.showFailureToast(ErrnoException("TEST", OsConstants.EIO))
+        },
+        FailureToastDebugCase("Corrupted archive") {
+            AppToastHost.showFailureToast(ZipException("TEST"))
+        },
+        FailureToastDebugCase("Corrupted or incomplete file") {
+            AppToastHost.showFailureToast(EOFException("TEST"))
+        },
+        FailureToastDebugCase("Operation timeout") {
+            AppToastHost.showFailureToast(TimeoutException("TEST"))
+        },
+        FailureToastDebugCase("Invalid server response") {
+            AppToastHost.showFailureToast(ProtocolException("TEST"))
+        },
+        FailureToastDebugCase("Data is too large") {
+            AppToastHost.showFailureToast(TransactionTooLargeException("TEST"))
+        },
+        FailureToastDebugCase("HTTP 401 / 403") {
+            AppToastHost.showFailureToast(httpResponseException(401))
+        },
+        FailureToastDebugCase("HTTP 404") {
+            AppToastHost.showFailureToast(httpResponseException(404))
+        },
+        FailureToastDebugCase("HTTP 429") {
+            AppToastHost.showFailureToast(httpResponseException(429))
+        },
+        FailureToastDebugCase("HTTP 413") {
+            AppToastHost.showFailureToast(httpResponseException(413))
+        },
+        FailureToastDebugCase("HTTP 415") {
+            AppToastHost.showFailureToast(httpResponseException(415))
+        },
+        FailureToastDebugCase("HTTP 5xx") {
+            AppToastHost.showFailureToast(httpResponseException(500))
+        },
+        FailureToastDebugCase("Unknown failure") {
+            AppToastHost.showFailureToast(Throwable("TEST"))
+        }
+    )
+
+    Text(
+        text = "Failure toasts",
+        style = MaterialTheme.typography.titleMedium
+    )
+
+    cases.forEach { case ->
+        EnhancedButton(
+            onClick = case.onClick,
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(case.title)
+        }
+    }
+}
+
+private data class FailureToastDebugCase(
+    val title: String,
+    val onClick: () -> Unit
+)
+
+@OptIn(InternalAPI::class)
+private fun httpResponseException(statusCode: Int): Throwable = ResponseException(
+    response = object : HttpResponse() {
+        override val call: HttpClientCall
+            get() = error("Not available in debug response")
+        override val status: HttpStatusCode = HttpStatusCode.fromValue(statusCode)
+        override val version: HttpProtocolVersion = HttpProtocolVersion.HTTP_1_1
+        override val requestTime: GMTDate = GMTDate.START
+        override val responseTime: GMTDate = GMTDate.START
+        override val rawContent: ByteReadChannel = ByteReadChannel.Empty
+        override val headers: Headers = Headers.Empty
+        override val coroutineContext: CoroutineContext = EmptyCoroutineContext
+
+        override fun toString(): String = "DebugHttpResponse[$status]"
+    },
+    cachedResponseText = "TEST"
+)
 
 @Composable
 private fun PreviewContent(isDarkTheme: Boolean) = ImageToolboxThemeForPreview(isDarkTheme) {

@@ -3968,6 +3968,20 @@
     <string name="network_timeout">Время ожидания соединения истекло. Проверьте подключение и попробуйте снова</string>
     <string name="network_connection_failed">Не удалось подключиться к серверу. Проверьте соединение или повторите попытку позже</string>
     <string name="network_connection_interrupted">Соединение было прервано. Проверьте подключение и попробуйте снова</string>
+    <string name="network_secure_connection_failed">Не удалось установить защищённое соединение. Проверьте дату и время, VPN или настройки сети и повторите попытку</string>
+    <string name="file_not_found">Не удалось найти файл. Возможно, он был перемещён, удалён или больше недоступен</string>
+    <string name="storage_is_full">Недостаточно свободного места для выполнения действия. Освободите место и повторите попытку</string>
+    <string name="network_request_rejected">Сервер отклонил запрос. Проверьте права доступа или данные для входа и повторите попытку</string>
+    <string name="network_resource_not_found">Запрошенный ресурс не найден на сервере</string>
+    <string name="network_too_many_requests">Отправлено слишком много запросов. Немного подождите и повторите попытку</string>
+    <string name="network_server_error">На сервере произошла ошибка. Повторите попытку позже</string>
+    <string name="network_invalid_response">Сервер вернул некорректный ответ. Повторите попытку позже</string>
+    <string name="archive_is_corrupted">Архив повреждён или загружен не полностью, поэтому его не удалось открыть</string>
+    <string name="file_is_corrupted_or_unsupported">Файл повреждён, загружен не полностью или его формат не поддерживается</string>
+    <string name="data_is_too_large">Слишком большой объём данных для выполнения этого действия</string>
+    <string name="storage_is_read_only">Это хранилище доступно только для чтения. Выберите другое место и повторите попытку</string>
+    <string name="file_is_too_large">Файл слишком велик для выбранного хранилища или действия</string>
+    <string name="file_io_error">Не удалось прочитать или записать файл. Переподключите хранилище и повторите попытку</string>
     <string name="implementation_sub_v2">По умолчанию используется AES-256-GCM со случайным 12-байтовым одноразовым номером. Каждый зашифрованный файл имеет версионный заголовок, уникальную случайную соль и ключ, полученный из пароля с использованием PBKDF2-HMAC-SHA256 с 210 000 итераций. Вы также можете выбрать другой доступный алгоритм.</string>
     <string name="encrypted_file_detected">Обнаружен зашифрованный файл</string>
     <string name="encrypted_file_detected_sub">Алгоритм шифрования и параметры будут прочитаны из файла автоматически.</string>
@@ -3977,4 +3991,5 @@
     <string name="panorama">Панорама</string>
     <string name="crop_stitched_image_sub">Обрезать результат до наибольшей площади без пустых областей</string>
     <string name="seam_blending">Сглаживание швов</string>
+    <string name="results_preview">Предварительный просмотр результатов</string>
 </resources>

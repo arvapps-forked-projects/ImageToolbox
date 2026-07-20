@@ -123,11 +123,11 @@ data object AppToastHost {
         }
     }
 
-    fun showNoConnection(message: String = appContext.getString(R.string.no_connection)) {
+    fun showNoConnection(message: String = appContext.getString(R.string.network_host_unreachable)) {
         showToast(
             message = message,
             icon = Icons.Rounded.WifiTetheringError,
-            duration = ToastDuration.Long
+            duration = ToastDuration.Medium
         )
     }
 
@@ -137,7 +137,7 @@ data object AppToastHost {
         showToast(
             message = appContext.getString(R.string.activate_files),
             icon = Icons.Outlined.FolderOff,
-            duration = ToastDuration.Long
+            duration = ToastDuration.Medium
         )
     }
 

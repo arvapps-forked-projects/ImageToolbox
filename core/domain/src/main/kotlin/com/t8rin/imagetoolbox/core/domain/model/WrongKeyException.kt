@@ -15,25 +15,6 @@
  * along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
  */
 
-package com.t8rin.imagetoolbox.core.ui.di
+package com.t8rin.imagetoolbox.core.domain.model
 
-import com.t8rin.imagetoolbox.core.domain.saving.FailureNotifier
-import com.t8rin.imagetoolbox.core.ui.utils.helper.AppToastHost
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
-
-@Module
-@InstallIn(SingletonComponent::class)
-object FailureNotifierModule {
-
-    @Provides
-    @Singleton
-    fun notifier(): FailureNotifier = object : FailureNotifier {
-        override fun send(error: Throwable) = AppToastHost.showFailureToast(error)
-        override fun sendNoConnection() = AppToastHost.showNoConnection()
-    }
-
-}
+class WrongKeyException : Throwable()
