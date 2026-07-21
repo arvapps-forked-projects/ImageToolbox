@@ -781,4 +781,58 @@ sealed class Setting(
         subtitle = R.string.cache_auto_clear_interval_sub
     )
 
+    @Serializable
+    data object RawWhiteBalance : Setting(
+        title = R.string.white_balance,
+        subtitle = null
+    )
+
+    @Serializable
+    data object RawOutputColorSpace : Setting(
+        title = R.string.raw_output_color_space,
+        subtitle = null
+    )
+
+    @Serializable
+    data object RawHighlightRecovery : Setting(
+        title = R.string.raw_highlight_recovery,
+        subtitle = null
+    )
+
+    @Serializable
+    data object RawExposureCompensation : Setting(
+        title = R.string.raw_exposure_compensation,
+        subtitle = null
+    )
+
+    @Serializable
+    data object RawHighlightPreservation : Setting(
+        title = R.string.raw_highlight_preservation,
+        subtitle = null
+    )
+
+    @Serializable
+    data object RawAutoBrightness : Setting(
+        title = R.string.raw_auto_brightness,
+        subtitle = R.string.raw_auto_brightness_sub
+    )
+
+    @Serializable
+    data object RawDemosaicQuality : Setting(
+        title = R.string.raw_demosaic_quality,
+        subtitle = R.string.raw_demosaic_quality_sub
+    )
+
+    @Serializable
+    data object RawHalfSize : Setting(
+        title = R.string.raw_half_size,
+        subtitle = R.string.raw_half_size_sub
+    )
+
+    @Serializable
+    data object RawApplyOrientation : Setting(
+        title = R.string.raw_apply_orientation,
+        subtitle = R.string.raw_apply_orientation_sub
+    )
+
 }

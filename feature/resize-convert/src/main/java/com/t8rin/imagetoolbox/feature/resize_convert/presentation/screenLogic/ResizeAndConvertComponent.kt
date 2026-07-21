@@ -543,6 +543,30 @@ class ResizeAndConvertComponent @AssistedInject internal constructor(
         }.onFailure(AppToastHost::showFailureToast)
     }
 
+    fun calculatePreview() {
+        val uri = selectedUri ?: return
+
+        job = componentScope.launch {
+            _isImageLoading.update { true }
+            imageGetter.getImage(
+                uri = uri.toString(),
+                originalSize = true
+            )?.image?.let { bitmap ->
+                val size = IntegerSize(bitmap.width, bitmap.height)
+                _originalSize.update { size }
+                _imageInfo.update {
+                    it.copy(
+                        width = size.width,
+                        height = size.height
+                    )
+                }
+                _bitmap.update { imageScaler.scaleUntilCanShow(bitmap) }
+                checkBitmapAndUpdate()
+            }
+            _isImageLoading.update { false }
+        }
+    }
+
     override fun updateProfile(profile: Preset) {
         componentScope.launch {
             finalizePendingHistoryTransaction()
@@ -550,16 +574,17 @@ class ResizeAndConvertComponent @AssistedInject internal constructor(
             if (profile is Preset.AspectRatio && profile.ratio != 1f) {
                 _imageInfo.update { it.copy(rotationDegrees = 0f) }
             }
+            _presetSelected.update { profile }
             setBitmapInfo(
                 imageTransformer.applyPresetBy(
                     image = bitmap,
                     preset = profile,
                     currentInfo = imageInfo.copy(
                         originalUri = selectedUri?.toString()
-                    )
+                    ),
+                    originalSize = originalSize
                 )
             )
-            _presetSelected.update { profile }
             commitHistoryFrom(beforeSnapshot)
         }
     }
@@ -594,7 +619,8 @@ class ResizeAndConvertComponent @AssistedInject internal constructor(
                     imageTransformer.applyPresetBy(
                         image = bitmap,
                         preset = profile.preset,
-                        currentInfo = restoredInfo
+                        currentInfo = restoredInfo,
+                        originalSize = originalSize
                     )
                 )
             )

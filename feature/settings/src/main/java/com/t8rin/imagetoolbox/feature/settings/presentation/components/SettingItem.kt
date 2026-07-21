@@ -707,6 +707,61 @@ internal fun SettingItem(
                     onValueChange = component::setCacheAutoClearInterval
                 )
             }
+
+            Setting.RawWhiteBalance -> {
+                RawWhiteBalanceSettingItem(
+                    onValueChange = component::setRawWhiteBalance
+                )
+            }
+
+            Setting.RawOutputColorSpace -> {
+                RawOutputColorSpaceSettingItem(
+                    onValueChange = component::setRawOutputColorSpace
+                )
+            }
+
+            Setting.RawHighlightRecovery -> {
+                RawHighlightRecoverySettingItem(
+                    onValueChange = component::setRawHighlightRecovery
+                )
+            }
+
+            Setting.RawExposureCompensation -> {
+                RawExposureCompensationSettingItem(
+                    onValueChange = component::setRawExposureCompensation
+                )
+            }
+
+            Setting.RawHighlightPreservation -> {
+                RawHighlightPreservationSettingItem(
+                    onValueChange = component::setRawHighlightPreservation
+                )
+            }
+
+            Setting.RawAutoBrightness -> {
+                RawAutoBrightnessSettingItem(
+                    onClick = component::toggleRawAutoBrightness,
+                    onValueChange = component::setRawBrightness
+                )
+            }
+
+            Setting.RawDemosaicQuality -> {
+                RawDemosaicQualitySettingItem(
+                    onValueChange = component::setRawDemosaicQuality
+                )
+            }
+
+            Setting.RawHalfSize -> {
+                RawHalfSizeSettingItem(
+                    onClick = component::toggleRawHalfSize
+                )
+            }
+
+            Setting.RawApplyOrientation -> {
+                RawApplyOrientationSettingItem(
+                    onClick = component::toggleRawApplyOrientation
+                )
+            }
         }
     }
 }
