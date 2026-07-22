@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -4427,4 +4428,6 @@
     <string name="gmic_param_particle_size">Osakeste suurus</string>
     <string name="gmic_param_particle_thickness">Osakeste paksus</string>
     <string name="gmic_param_quantized_orientations">Kvantiseeritud orientatsioonid</string>
-</resources>
+    <string name="sheet_nested_scroll">Lehe pesastatud kerimine</string>
+    <string name="sheet_nested_scroll_sub">Lubage lehe sisus olevatel žestidel lehte lohistada ja sellest loobuda</string>
+<string name="save_if_smaller">Säästa, kui väiksem</string><string name="save_if_smaller_sub">Kui see on keelatud, jäetakse nõutud maksimaalsest suurusest väiksemad failid vahele</string></resources>

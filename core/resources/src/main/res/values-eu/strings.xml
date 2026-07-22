@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -4427,4 +4428,6 @@
     <string name="gmic_param_particle_size">Partikulen Tamaina</string>
     <string name="gmic_param_particle_thickness">Partikulen Lodiera</string>
     <string name="gmic_param_quantized_orientations">Orientazio kuantizatuak</string>
-</resources>
+    <string name="sheet_nested_scroll">Orri-orri habiaratua</string>
+    <string name="sheet_nested_scroll_sub">Onartu orri-edukiko keinuei orria arrastatu eta baztertzeko</string>
+<string name="save_if_smaller">Gorde txikiagoa bada</string><string name="save_if_smaller_sub">Desgaituta badago, eskatutako gehienezko tamaina baino txikiagoak diren fitxategiak saltatu egingo dira</string></resources>

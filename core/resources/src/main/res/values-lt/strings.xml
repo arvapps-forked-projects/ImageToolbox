@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -4429,4 +4430,6 @@
     <string name="gmic_param_particle_size">Dalelių dydis</string>
     <string name="gmic_param_particle_thickness">Dalelių storis</string>
     <string name="gmic_param_quantized_orientations">Kvantuotos orientacijos</string>
-</resources>
+    <string name="sheet_nested_scroll">Lapo įdėtas slinkimas</string>
+    <string name="sheet_nested_scroll_sub" />
+<string name="save_if_smaller">Išsaugokite, jei mažesnis</string><string name="save_if_smaller_sub">Jei išjungta, failai, mažesni už prašomą maksimalų dydį, bus praleisti</string></resources>

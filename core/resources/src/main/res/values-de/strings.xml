@@ -4428,4 +4428,6 @@
     <string name="gmic_param_particle_size">Partikelgröße</string>
     <string name="gmic_param_particle_thickness">Partikeldicke</string>
     <string name="gmic_param_quantized_orientations">Quantisierte Orientierungen</string>
-</resources>
+    <string name="sheet_nested_scroll">Blattverschachtelte Schriftrolle</string>
+    <string name="sheet_nested_scroll_sub">Gesten im Blattinhalt zulassen, um das Blatt zu ziehen und zu schließen</string>
+<string name="save_if_smaller">Sparen Sie, wenn es kleiner ist</string><string name="save_if_smaller_sub">Wenn diese Option deaktiviert ist, werden Dateien, die kleiner als die angeforderte Maximalgröße sind, übersprungen</string></resources>

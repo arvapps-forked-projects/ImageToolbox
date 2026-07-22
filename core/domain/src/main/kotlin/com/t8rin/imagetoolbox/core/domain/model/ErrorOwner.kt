@@ -15,21 +15,11 @@
  * along with this program.  If not, see <http://www.apache.org/licenses/LICENSE-2.0>.
  */
 
-package com.t8rin.imagetoolbox.feature.weight_resize.domain
+package com.t8rin.imagetoolbox.core.domain.model
 
-import com.t8rin.imagetoolbox.core.domain.image.ImageScaler
-import com.t8rin.imagetoolbox.core.domain.image.model.ImageFormat
-import com.t8rin.imagetoolbox.core.domain.image.model.ImageInfo
-import com.t8rin.imagetoolbox.core.domain.image.model.ImageScaleMode
+interface ErrorOwner {
+    val error: String
+        get() = ""
 
-interface WeightImageScaler<I> : ImageScaler<I> {
-
-    suspend fun scaleByMaxBytes(
-        image: I,
-        imageFormat: ImageFormat,
-        imageScaleMode: ImageScaleMode,
-        maxBytes: Long,
-        saveIfSmaller: Boolean
-    ): Pair<ByteArray, ImageInfo>?
-
+    fun pushError(error: String) = Unit
 }

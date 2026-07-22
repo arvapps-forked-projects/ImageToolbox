@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ ImageToolbox is an image editor for android
   ~ Copyright (c) 2026 T8RIN (Malik Mukhametzyanov)
   ~
@@ -4427,4 +4428,6 @@
     <string name="gmic_param_particle_size">අංශු ප්රමාණය</string>
     <string name="gmic_param_particle_thickness">අංශු ඝණකම</string>
     <string name="gmic_param_quantized_orientations">ප්‍රමාණාත්මක දිශානතිය</string>
-</resources>
+    <string name="sheet_nested_scroll">ෂීට් කැදලි අනුචලනය</string>
+    <string name="sheet_nested_scroll_sub">පත්‍රය ඇදගෙන ඉවත් කිරීමට පත්‍ර අන්තර්ගතයේ අභිනයන්ට ඉඩ දෙන්න</string>
+<string name="save_if_smaller">කුඩා නම් ඉතිරි කරන්න</string><string name="save_if_smaller_sub">අබල කළහොත්, ඉල්ලූ උපරිම ප්‍රමාණයට වඩා කුඩා ගොනු මඟ හරිනු ඇත</string></resources>
