@@ -19,6 +19,12 @@ package com.t8rin.imagetoolbox.feature.compare.presentation.components
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
+import androidx.compose.animation.togetherWith
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
@@ -38,6 +44,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.BottomAppBar
@@ -74,6 +81,9 @@ import com.t8rin.imagetoolbox.core.resources.icons.Highlight
 import com.t8rin.imagetoolbox.core.resources.icons.Pix
 import com.t8rin.imagetoolbox.core.resources.icons.Tune
 import com.t8rin.imagetoolbox.core.settings.presentation.provider.LocalSettingsState
+import com.t8rin.imagetoolbox.core.ui.theme.blend
+import com.t8rin.imagetoolbox.core.ui.theme.onPrimaryContainerFixed
+import com.t8rin.imagetoolbox.core.ui.theme.primaryContainerFixed
 import com.t8rin.imagetoolbox.core.ui.utils.content_pickers.ImagePicker
 import com.t8rin.imagetoolbox.core.ui.utils.content_pickers.Picker
 import com.t8rin.imagetoolbox.core.ui.utils.provider.LocalScreenSize
@@ -81,6 +91,7 @@ import com.t8rin.imagetoolbox.core.ui.widget.controls.selection.ColorRowSelector
 import com.t8rin.imagetoolbox.core.ui.widget.controls.selection.DataSelector
 import com.t8rin.imagetoolbox.core.ui.widget.dialogs.OneTimeImagePickingDialog
 import com.t8rin.imagetoolbox.core.ui.widget.enhanced.EnhancedButton
+import com.t8rin.imagetoolbox.core.ui.widget.enhanced.EnhancedCircularProgressIndicator
 import com.t8rin.imagetoolbox.core.ui.widget.enhanced.EnhancedFloatingActionButton
 import com.t8rin.imagetoolbox.core.ui.widget.enhanced.EnhancedIconButton
 import com.t8rin.imagetoolbox.core.ui.widget.enhanced.EnhancedModalBottomSheet
@@ -150,7 +161,9 @@ internal fun CompareScreenContent(
             val tuneButton: @Composable BoxScope.() -> Unit = {
                 BoxAnimatedVisibility(
                     visible = compareType == CompareType.PixelByPixel,
-                    modifier = Modifier.align(Alignment.BottomEnd)
+                    modifier = Modifier.align(Alignment.BottomEnd),
+                    enter = scaleIn() + fadeIn(),
+                    exit = scaleOut() + fadeOut()
                 ) {
                     var openTuneMenu by rememberSaveable {
                         mutableStateOf(false)
@@ -232,6 +245,58 @@ internal fun CompareScreenContent(
                 }
             }
 
+            val scoreBadge: @Composable BoxScope.() -> Unit = {
+                BoxAnimatedVisibility(
+                    visible = compareType == CompareType.PixelByPixel,
+                    modifier = Modifier
+                        .align(Alignment.TopStart)
+                        .padding(8.dp),
+                    enter = scaleIn() + fadeIn(),
+                    exit = scaleOut() + fadeOut()
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .background(
+                                color = MaterialTheme.colorScheme.primaryContainerFixed
+                                    .blend(Color.Black),
+                                shape = ShapeDefaults.extraSmall
+                            )
+                            .padding(horizontal = 8.dp, vertical = 4.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        val firstPart =
+                            "${pixelByPixelCompareState.comparisonType} ${stringResource(R.string.score)}"
+                        AnimatedContent(
+                            targetState = pixelByPixelCompareState.score?.let { ": $it" },
+                            transitionSpec = { fadeIn() togetherWith fadeOut() },
+                            modifier = Modifier.weight(1f, false)
+                        ) { score ->
+                            if (score.isNullOrEmpty()) {
+                                Text(
+                                    text = firstPart,
+                                    style = MaterialTheme.typography.labelLarge,
+                                    color = MaterialTheme.colorScheme.onPrimaryContainerFixed
+                                )
+                            } else {
+                                Text(
+                                    text = "$firstPart$score",
+                                    style = MaterialTheme.typography.labelLarge,
+                                    color = MaterialTheme.colorScheme.onPrimaryContainerFixed
+                                )
+                            }
+                        }
+                        AnimatedVisibility(pixelByPixelCompareState.score == null) {
+                            EnhancedCircularProgressIndicator(
+                                trackColor = MaterialTheme.colorScheme.onPrimaryContainerFixed,
+                                strokeWidth = 2.dp,
+                                modifier = Modifier.size(16.dp)
+                            )
+                        }
+                    }
+                }
+            }
+
             if (isPortrait) {
                 Column {
                     Box(
@@ -259,6 +324,7 @@ internal fun CompareScreenContent(
                         }
 
                         tuneButton()
+                        scoreBadge()
                     }
 
                     val showButtonsAtTheTop =
@@ -375,6 +441,7 @@ internal fun CompareScreenContent(
                         }
 
                         tuneButton()
+                        scoreBadge()
                     }
 
                     val showButtonsAtTheStart =

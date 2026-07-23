@@ -2340,6 +2340,12 @@
     <string name="open_source_licenses_sub">View licenses of open source libraries used in this app</string>
     <string name="area">Area</string>
     <string name="area_sub">Resampling using pixel area relation. It may be a preferred method for image decimation, as it gives moire\'-free results. But when the image is zoomed, it is similar to the \"Nearest\" method.</string>
+    <string name="magic_kernel">Magic Kernel</string>
+    <string name="magic_kernel_sub">A smooth, non-ringing resampling filter with strong antialiasing, but a softer result</string>
+    <string name="magic_kernel_sharp_2013">Magic Kernel Sharp 2013</string>
+    <string name="magic_kernel_sharp_2013_sub">The original, efficient Magic Kernel Sharp variant, with a subtly sharper result and strong antialiasing</string>
+    <string name="magic_kernel_sharp_2021">Magic Kernel Sharp 2021</string>
+    <string name="magic_kernel_sharp_2021_sub">A spectrally flat refinement that avoids appreciable sharpening, at the cost of more ringing around sharp edges</string>
     <string name="enable_tonemapping">Enable Tonemapping</string>
     <string name="enter_percent">Enter %</string>
     <string name="unknown_host">Cannot access the site, try using VPN or check if the url correct</string>
@@ -4043,6 +4049,8 @@
     <string name="raw_half_size_sub">Develop RAW images at half width and height for faster decoding</string>
     <string name="raw_apply_orientation">Apply orientation</string>
     <string name="raw_apply_orientation_sub">Rotate or mirror the developed image using its metadata</string>
+    <string name="raw_use_embedded_preview">Use embedded Preview</string>
+    <string name="raw_use_embedded_preview_sub">Use the preview embedded in the RAW image instead of developing it</string>
     <string name="raw_color_space_adobe_rgb">Adobe RGB</string>
     <string name="raw_color_space_wide_gamut_rgb">Wide Gamut RGB</string>
     <string name="raw_color_space_pro_photo_rgb">ProPhoto RGB</string>
@@ -4458,4 +4466,5 @@
     <string name="gmic_param_particle_size">Particle Size</string>
     <string name="gmic_param_particle_thickness">Particle Thickness</string>
     <string name="gmic_param_quantized_orientations">Quantized Orientations</string>
+    <string name="score">Score</string>
 </resources>
