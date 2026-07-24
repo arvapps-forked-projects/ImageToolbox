@@ -28,6 +28,8 @@ import androidx.datastore.preferences.core.stringSetPreferencesKey
 internal val SAVE_FOLDER_URI = stringPreferencesKey("saveFolder")
 internal val SAVE_TO_ORIGINAL_FOLDER = booleanPreferencesKey("SAVE_TO_ORIGINAL_FOLDER")
 internal val DELETE_ORIGINALS_AFTER_SAVE = booleanPreferencesKey("DELETE_ORIGINALS_AFTER_SAVE")
+internal val RETURN_TO_EXTERNAL_APP_AFTER_SAVE =
+    booleanPreferencesKey("RETURN_TO_EXTERNAL_APP_AFTER_SAVE")
 internal val NIGHT_MODE = intPreferencesKey("nightMode")
 internal val DYNAMIC_COLORS = booleanPreferencesKey("dynamicColors")
 internal val ALLOW_IMAGE_MONET = booleanPreferencesKey("imageMonet")
@@ -155,6 +157,8 @@ internal val KEEP_DATE_TIME =
     booleanPreferencesKey("KEEP_DATE_TIME")
 internal val ALWAYS_CLEAR_EXIF =
     booleanPreferencesKey("ALWAYS_CLEAR_EXIF")
+internal val ADD_IMAGETOOLBOX_METADATA =
+    booleanPreferencesKey("ADD_IMAGETOOLBOX_METADATA")
 internal val ENABLE_BACKGROUND_COLOR_FOR_ALPHA_FORMATS =
     booleanPreferencesKey("ENABLE_BACKGROUND_COLOR_FOR_ALPHA_FORMATS")
 internal val PERFORMANCE_VERSION = intPreferencesKey("PERFORMANCE_VERSION")

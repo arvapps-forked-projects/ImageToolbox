@@ -217,7 +217,8 @@ sealed class SettingsGroup(
         settingsList = listOf(
             Setting.AlwaysClearExif,
             Setting.ExifWidgetInitialState,
-            Setting.KeepDateTime
+            Setting.KeepDateTime,
+            Setting.AddImageToolboxMetadata
         ),
         initialState = false
     )
@@ -403,6 +404,7 @@ sealed class SettingsGroup(
         titleId = R.string.behavior,
         settingsList = listOf(
             Setting.SkipFilePicking,
+            Setting.ReturnToExternalAppAfterSave,
             Setting.AllowSkipIfLarger,
             Setting.ToolsHiddenForShare,
             Setting.EnableToolExitConfirmation,

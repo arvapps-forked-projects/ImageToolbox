@@ -4441,4 +4441,8 @@
     <string name="raw_use_embedded_preview">Usar visualização incorporada</string>
     <string name="raw_use_embedded_preview_sub">Use a visualização incorporada na imagem RAW em vez de revelá-la</string>
     <string name="score">Pontuação</string>
+    <string name="return_to_external_app_after_save">Retornar após salvar edições externas</string>
+    <string name="return_to_external_app_after_save_sub">Feche o Image Toolbox depois de salvar uma imagem aberta para edição em outro aplicativo</string>
+    <string name="add_imagetoolbox_metadata">Adicionar metadados do ImageToolbox</string>
+    <string name="add_imagetoolbox_metadata_sub">Escreva a versão do aplicativo e os parâmetros de imagem configurados em EXIF ​​ao salvar</string>
 </resources>

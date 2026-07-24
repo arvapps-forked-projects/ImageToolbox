@@ -68,6 +68,7 @@ import com.t8rin.imagetoolbox.core.utils.createZip
 import com.t8rin.imagetoolbox.core.utils.filename
 import com.t8rin.imagetoolbox.core.utils.makeLog
 import com.t8rin.imagetoolbox.core.utils.putEntry
+import com.t8rin.imagetoolbox.feature.settings.data.keys.ADD_IMAGETOOLBOX_METADATA
 import com.t8rin.imagetoolbox.feature.settings.data.keys.ADD_ORIGINAL_NAME_TO_FILENAME
 import com.t8rin.imagetoolbox.feature.settings.data.keys.ADD_PRESET_TO_FILENAME
 import com.t8rin.imagetoolbox.feature.settings.data.keys.ADD_SCALE_MODE_TO_FILENAME
@@ -178,6 +179,7 @@ import com.t8rin.imagetoolbox.feature.settings.data.keys.RAW_WHITE_BALANCE_GREEN
 import com.t8rin.imagetoolbox.feature.settings.data.keys.RAW_WHITE_BALANCE_RED
 import com.t8rin.imagetoolbox.feature.settings.data.keys.RAW_WHITE_BALANCE_SECOND_GREEN
 import com.t8rin.imagetoolbox.feature.settings.data.keys.RECENT_COLORS
+import com.t8rin.imagetoolbox.feature.settings.data.keys.RETURN_TO_EXTERNAL_APP_AFTER_SAVE
 import com.t8rin.imagetoolbox.feature.settings.data.keys.SAVE_FOLDER_URI
 import com.t8rin.imagetoolbox.feature.settings.data.keys.SAVE_TO_ORIGINAL_FOLDER
 import com.t8rin.imagetoolbox.feature.settings.data.keys.SCREENS_WITH_BRIGHTNESS_ENFORCEMENT
@@ -1106,6 +1108,11 @@ internal class AndroidSettingsManager @Inject constructor(
         defaultValue = default.enableToolExitConfirmation
     )
 
+    override suspend fun toggleReturnToExternalAppAfterSave() = toggle(
+        key = RETURN_TO_EXTERNAL_APP_AFTER_SAVE,
+        defaultValue = default.returnToExternalAppAfterSave
+    )
+
     override suspend fun toggleCustomAsciiGradient(gradient: String) = edit {
         it[ASCII_CUSTOM_GRADIENTS] = (it[ASCII_CUSTOM_GRADIENTS] ?: emptySet()).toggle(gradient)
     }
@@ -1158,6 +1165,11 @@ internal class AndroidSettingsManager @Inject constructor(
     override suspend fun toggleAlwaysClearExif() = toggle(
         key = ALWAYS_CLEAR_EXIF,
         defaultValue = default.isAlwaysClearExif
+    )
+
+    override suspend fun toggleAddImageToolboxMetadata() = toggle(
+        key = ADD_IMAGETOOLBOX_METADATA,
+        defaultValue = default.addImageToolboxMetadata
     )
 
     override suspend fun toggleEnableBackgroundColorForAlphaFormats() = toggle(

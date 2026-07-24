@@ -4442,4 +4442,8 @@
     <string name="raw_use_embedded_preview">Utilizați Previzualizarea încorporată</string>
     <string name="raw_use_embedded_preview_sub">Utilizați previzualizarea încorporată în imaginea RAW în loc să o dezvoltați</string>
     <string name="score">Scor</string>
+    <string name="return_to_external_app_after_save">Reveniți după salvarea editărilor externe</string>
+    <string name="return_to_external_app_after_save_sub">Închideți Caseta de instrumente pentru imagini după ce ați salvat o imagine deschisă pentru editare dintr-o altă aplicație</string>
+    <string name="add_imagetoolbox_metadata">Adăugați metadate ImageToolbox</string>
+    <string name="add_imagetoolbox_metadata_sub">Scrieți versiunea aplicației și parametrii de imagine configurați în EXIF ​​atunci când salvați</string>
 </resources>

@@ -2222,6 +2222,8 @@
     <string name="keep_date_time_sub">Всегда сохранять теги exif, связанные с датой и временем, работает независимо от опции сохранения exif.</string>
     <string name="always_clear_exif">Всегда очищать EXIF</string>
     <string name="always_clear_exif_sub">Удалять EXIF данные изображения при сохранении, даже если инструмент запрашивает сохранение метаданных</string>
+    <string name="add_imagetoolbox_metadata">Добавлять метаданные ImageToolbox</string>
+    <string name="add_imagetoolbox_metadata_sub">Записывать версию приложения и настроенные параметры изображения в EXIF при сохранении</string>
     <string name="background_color_for_alpha_formats">Цвет фона для альфа-форматов</string>
     <string name="background_color_for_alpha_formats_sub">Добавляет возможность устанавливать цвет фона для каждого формата изображения с поддержкой альфа-канала, при отключении это доступно только для не-альфа-форматов.</string>
     <string name="open_markup_project">Открыть проект</string>
@@ -4443,4 +4445,6 @@
     <string name="raw_use_embedded_preview">Использовать встроенный предварительный просмотр</string>
     <string name="raw_use_embedded_preview_sub">Используйте предварительный просмотр, встроенный в изображение RAW, вместо его обработки.</string>
     <string name="score">Счет</string>
+    <string name="return_to_external_app_after_save">Возврат после сохранения внешних изменений</string>
+    <string name="return_to_external_app_after_save_sub">Закройте панель инструментов изображения после сохранения изображения, открытого для редактирования из другого приложения.</string>
 </resources>

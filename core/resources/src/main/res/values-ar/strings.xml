@@ -4445,4 +4445,8 @@
     <string name="raw_use_embedded_preview">استخدم المعاينة المضمنة</string>
     <string name="raw_use_embedded_preview_sub">استخدم المعاينة المضمنة في صورة RAW بدلاً من تطويرها</string>
     <string name="score">نتيجة</string>
+    <string name="return_to_external_app_after_save">العودة بعد حفظ التعديلات الخارجية</string>
+    <string name="return_to_external_app_after_save_sub">أغلق Image Toolbox بعد حفظ الصورة المفتوحة للتحرير من تطبيق آخر</string>
+    <string name="add_imagetoolbox_metadata">إضافة البيانات الوصفية لـ ImageToolbox</string>
+    <string name="add_imagetoolbox_metadata_sub">اكتب إصدار التطبيق ومعلمات الصورة التي تم تكوينها إلى EXIF ​​عند الحفظ</string>
 </resources>

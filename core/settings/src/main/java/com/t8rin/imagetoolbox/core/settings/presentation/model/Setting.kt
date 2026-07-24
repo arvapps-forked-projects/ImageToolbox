@@ -314,6 +314,12 @@ sealed class Setting(
     )
 
     @Serializable
+    data object ReturnToExternalAppAfterSave : Setting(
+        title = R.string.return_to_external_app_after_save,
+        subtitle = R.string.return_to_external_app_after_save_sub
+    )
+
+    @Serializable
     data object ScreenOrder : Setting(
         title = R.string.order,
         subtitle = R.string.order_sub
@@ -755,6 +761,12 @@ sealed class Setting(
     data object AlwaysClearExif : Setting(
         title = R.string.always_clear_exif,
         subtitle = R.string.always_clear_exif_sub
+    )
+
+    @Serializable
+    data object AddImageToolboxMetadata : Setting(
+        title = R.string.add_imagetoolbox_metadata,
+        subtitle = R.string.add_imagetoolbox_metadata_sub
     )
 
     @Serializable

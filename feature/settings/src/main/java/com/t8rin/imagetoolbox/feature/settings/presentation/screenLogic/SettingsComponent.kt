@@ -413,6 +413,9 @@ class SettingsComponent @AssistedInject internal constructor(
 
     fun toggleDeleteOriginalsAfterSave() = settingsScope { toggleDeleteOriginalsAfterSave() }
 
+    fun toggleReturnToExternalAppAfterSave() =
+        settingsScope { toggleReturnToExternalAppAfterSave() }
+
     fun setDefaultImageScaleMode(imageScaleMode: ImageScaleMode) =
         settingsScope { setDefaultImageScaleMode(imageScaleMode) }
 
@@ -583,6 +586,9 @@ class SettingsComponent @AssistedInject internal constructor(
 
     fun toggleAlwaysClearExif() =
         settingsScope { toggleAlwaysClearExif() }
+
+    fun toggleAddImageToolboxMetadata() =
+        settingsScope { toggleAddImageToolboxMetadata() }
 
     fun toggleEnableBackgroundColorForAlphaFormats() =
         settingsScope { toggleEnableBackgroundColorForAlphaFormats() }

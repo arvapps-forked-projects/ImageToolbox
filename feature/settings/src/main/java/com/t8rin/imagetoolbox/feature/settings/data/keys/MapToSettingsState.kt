@@ -80,6 +80,8 @@ internal fun Preferences.toSettingsState(
     saveToOriginalFolder = this[SAVE_TO_ORIGINAL_FOLDER] ?: default.saveToOriginalFolder,
     deleteOriginalsAfterSave = this[DELETE_ORIGINALS_AFTER_SAVE]
         ?: default.deleteOriginalsAfterSave,
+    returnToExternalAppAfterSave = this[RETURN_TO_EXTERNAL_APP_AFTER_SAVE]
+        ?: default.returnToExternalAppAfterSave,
     presets = Preset.createListFromInts(this[PRESETS]) ?: default.presets,
     colorTupleList = this[COLOR_TUPLES],
     allowChangeColorByImage = this[ALLOW_IMAGE_MONET] ?: default.allowChangeColorByImage,
@@ -276,6 +278,8 @@ internal fun Preferences.toSettingsState(
     } ?: default.hiddenForShareScreens,
     keepDateTime = this[KEEP_DATE_TIME] ?: default.keepDateTime,
     isAlwaysClearExif = this[ALWAYS_CLEAR_EXIF] ?: default.isAlwaysClearExif,
+    addImageToolboxMetadata = this[ADD_IMAGETOOLBOX_METADATA]
+        ?: default.addImageToolboxMetadata,
     enableBackgroundColorForAlphaFormats = this[ENABLE_BACKGROUND_COLOR_FOR_ALPHA_FORMATS]
         ?: default.enableBackgroundColorForAlphaFormats,
     showToolsHistory = this[SHOW_TOOLS_HISTORY] ?: default.showToolsHistory,

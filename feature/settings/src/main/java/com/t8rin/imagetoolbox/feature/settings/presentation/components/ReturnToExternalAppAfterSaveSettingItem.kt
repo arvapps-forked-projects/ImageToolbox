@@ -25,28 +25,27 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.t8rin.imagetoolbox.core.resources.Icons
 import com.t8rin.imagetoolbox.core.resources.R
-import com.t8rin.imagetoolbox.core.resources.icons.AccessTime
+import com.t8rin.imagetoolbox.core.resources.icons.DoorBack
 import com.t8rin.imagetoolbox.core.settings.presentation.provider.LocalSettingsState
 import com.t8rin.imagetoolbox.core.ui.widget.modifier.ShapeDefaults
 import com.t8rin.imagetoolbox.core.ui.widget.preferences.PreferenceRowSwitch
 
 @Composable
-fun KeepDateTimeSettingItem(
+fun ReturnToExternalAppAfterSaveSettingItem(
     onClick: () -> Unit,
     shape: Shape = ShapeDefaults.center,
     modifier: Modifier = Modifier.padding(horizontal = 8.dp)
 ) {
     val settingsState = LocalSettingsState.current
     PreferenceRowSwitch(
-        modifier = modifier,
         shape = shape,
-        title = stringResource(R.string.keep_date_time),
-        subtitle = stringResource(R.string.keep_date_time_sub),
-        checked = settingsState.keepDateTime,
-        enabled = !settingsState.isAlwaysClearExif,
+        modifier = modifier,
         onClick = {
             onClick()
         },
-        startIcon = Icons.Outlined.AccessTime
+        title = stringResource(R.string.return_to_external_app_after_save),
+        subtitle = stringResource(R.string.return_to_external_app_after_save_sub),
+        checked = settingsState.returnToExternalAppAfterSave,
+        startIcon = Icons.Outlined.DoorBack
     )
 }

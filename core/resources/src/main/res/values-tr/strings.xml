@@ -4441,4 +4441,8 @@
     <string name="raw_use_embedded_preview">Gömülü Önizlemeyi kullan</string>
     <string name="raw_use_embedded_preview_sub">RAW görüntüsünü geliştirmek yerine gömülü önizlemeyi kullanın</string>
     <string name="score">Gol</string>
+    <string name="return_to_external_app_after_save">Harici düzenlemeleri kaydettikten sonra geri dönün</string>
+    <string name="return_to_external_app_after_save_sub">Başka bir uygulamadan düzenleme için açılan bir resmi kaydettikten sonra Image Toolbox\'ı kapatın</string>
+    <string name="add_imagetoolbox_metadata">ImageToolbox meta verilerini ekleme</string>
+    <string name="add_imagetoolbox_metadata_sub">Kaydederken uygulama sürümünü ve yapılandırılmış görüntü parametrelerini EXIF\'e yazın</string>
 </resources>
